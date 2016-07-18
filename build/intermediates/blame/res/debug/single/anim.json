@@ -48,6 +48,14 @@
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\anim\\voice_from_icon.xml"
     },
     {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\pop_exit.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\anim\\pop_exit.xml"
+    },
+    {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\pop_enter.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\anim\\pop_enter.xml"
+    },
+    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_to_left.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\anim\\slide_out_to_left.xml"
     },

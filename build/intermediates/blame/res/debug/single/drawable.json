@@ -24,6 +24,10 @@
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable\\btn_green_normal_shape.xml"
     },
     {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_pop_avatar.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable\\selector_pop_avatar.xml"
+    },
+    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_white_selector.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable\\btn_white_selector.xml"
     },
