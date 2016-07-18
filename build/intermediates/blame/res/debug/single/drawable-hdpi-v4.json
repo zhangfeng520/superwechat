@@ -516,12 +516,12 @@
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable-hdpi\\record_animate_07.png"
     },
     {
-        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ee_24.png",
-        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable-hdpi\\ee_24.png"
-    },
-    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\mm_listitem_simple.9.png",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable-hdpi\\mm_listitem_simple.9.png"
+    },
+    {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ee_24.png",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable-hdpi\\ee_24.png"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\video_recorder_start_btn.png",
