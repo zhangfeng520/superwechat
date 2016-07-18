@@ -68,16 +68,16 @@
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable-xhdpi\\delete_expression.png"
     },
     {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\splash.png",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable-xhdpi\\splash.png"
+    },
+    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\app_panel_video_icon.9.png",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable-xhdpi\\app_panel_video_icon.9.png"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\back.png",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable-xhdpi\\back.png"
-    },
-    {
-        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\splash.png",
-        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable-xhdpi\\splash.png"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\groups_icon.png",
