@@ -188,12 +188,12 @@
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\row_group.xml"
     },
     {
-        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_chat_history.xml",
-        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\row_chat_history.xml"
-    },
-    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_chatroom.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\fragment_chatroom.xml"
+    },
+    {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_chat_history.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\row_chat_history.xml"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_pick_contact_no_checkbox.xml",
