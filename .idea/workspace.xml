@@ -28,8 +28,6 @@
     <list default="true" id="5d2099ba-a2ef-428b-8aab-34e41e4c1975" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_login.xml" afterPath="$PROJECT_DIR$/res/layout/activity_login.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_register.xml" afterPath="$PROJECT_DIR$/res/layout/activity_register.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_splash.xml" afterPath="$PROJECT_DIR$/res/layout/activity_splash.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
     </list>
     <ignored path="superwechat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -130,11 +128,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_login.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="activity_login.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/res/layout/activity_login.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.6811595">
-              <caret line="21" column="21" selection-start-line="7" selection-start-column="3" selection-end-line="21" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.61290324">
+              <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -143,19 +141,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_register.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="activity_register.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/activity_register.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.533871">
-              <caret line="199" column="44" selection-start-line="199" selection-start-column="44" selection-end-line="199" selection-end-column="44" />
+            <state vertical-scroll-proportion="-4.7246375">
+              <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
               <folding>
-                <element signature="e#2004#2023#0" expanded="true" />
-                <element signature="e#3199#3217#0" expanded="true" />
-                <element signature="e#4402#4420#0" expanded="true" />
-                <element signature="e#5664#5689#0" expanded="true" />
-                <element signature="e#6922#6949#0" expanded="true" />
-                <element signature="e#7966#7981#0" expanded="true" />
-                <element signature="e#8598#8616#0" expanded="true" />
+                <element signature="e#2050#2069#0" expanded="true" />
+                <element signature="e#3245#3263#0" expanded="true" />
+                <element signature="e#4448#4466#0" expanded="true" />
+                <element signature="e#5710#5735#0" expanded="true" />
+                <element signature="e#6968#6995#0" expanded="true" />
+                <element signature="e#8012#8027#0" expanded="true" />
+                <element signature="e#8644#8662#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1051,8 +1049,8 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/layout/activity_splash.xml" />
-        <option value="$PROJECT_DIR$/res/layout/activity_login.xml" />
         <option value="$PROJECT_DIR$/res/layout/activity_register.xml" />
+        <option value="$PROJECT_DIR$/res/layout/activity_login.xml" />
       </list>
     </option>
   </component>
@@ -1800,30 +1798,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_login.xml">
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_register.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.6811595">
-          <caret line="21" column="21" selection-start-line="7" selection-start-column="3" selection-end-line="21" selection-end-column="21" />
-          <folding />
+        <state vertical-scroll-proportion="-4.7246375">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+          <folding>
+            <element signature="e#2050#2069#0" expanded="true" />
+            <element signature="e#3245#3263#0" expanded="true" />
+            <element signature="e#4448#4466#0" expanded="true" />
+            <element signature="e#5710#5735#0" expanded="true" />
+            <element signature="e#6968#6995#0" expanded="true" />
+            <element signature="e#8012#8027#0" expanded="true" />
+            <element signature="e#8644#8662#0" expanded="true" />
+          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_register.xml">
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_login.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.533871">
-          <caret line="199" column="44" selection-start-line="199" selection-start-column="44" selection-end-line="199" selection-end-column="44" />
-          <folding>
-            <element signature="e#2004#2023#0" expanded="true" />
-            <element signature="e#3199#3217#0" expanded="true" />
-            <element signature="e#4402#4420#0" expanded="true" />
-            <element signature="e#5664#5689#0" expanded="true" />
-            <element signature="e#6922#6949#0" expanded="true" />
-            <element signature="e#7966#7981#0" expanded="true" />
-            <element signature="e#8598#8616#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.61290324">
+          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
