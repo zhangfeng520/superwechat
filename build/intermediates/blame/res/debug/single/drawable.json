@@ -112,12 +112,12 @@
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable\\btn_style_alert_dialog_special.xml"
     },
     {
-        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\chat_location_selector.xml",
-        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable\\chat_location_selector.xml"
-    },
-    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_msg_text_color.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable\\menu_msg_text_color.xml"
+    },
+    {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\chat_location_selector.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable\\chat_location_selector.xml"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_white_normal_shape.xml",
@@ -248,12 +248,12 @@
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable\\common_tab_bg.xml"
     },
     {
-        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\context_menu_item_bg.xml",
-        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable\\context_menu_item_bg.xml"
-    },
-    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\recording_hint_bg.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable\\recording_hint_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\context_menu_item_bg.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable\\context_menu_item_bg.xml"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\chat_press_speak_btn.xml",

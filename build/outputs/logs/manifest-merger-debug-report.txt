@@ -3,6 +3,8 @@ manifest
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:2:1-368:12
 	package
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:3:5-34
+		INJECTED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml
+		INJECTED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml
 	android:versionName
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:5:5-32
 		INJECTED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml
