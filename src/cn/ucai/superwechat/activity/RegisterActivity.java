@@ -73,7 +73,7 @@ public class RegisterActivity extends BaseActivity {
 		findViewById(R.id.layout_register_avatar).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				avatarListener = new OnSetAvatarListener(this, R.layout.activity_register, getAvatarName(), I.AVATAR_TYPE_USER_PATH);
+				avatarListener = new OnSetAvatarListener(RegisterActivity.this, R.layout.activity_register, getAvatarName(), I.AVATAR_TYPE_USER_PATH);
 			}
 		});
 	}
