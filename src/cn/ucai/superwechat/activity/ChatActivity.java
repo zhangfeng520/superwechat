@@ -87,7 +87,7 @@ import com.easemob.chat.NormalFileMessageBody;
 import com.easemob.chat.TextMessageBody;
 import com.easemob.chat.VideoMessageBody;
 import com.easemob.chat.VoiceMessageBody;
-import cn.ucai.superwechat.DemoApplication;
+import cn.ucai.superwechat.SuperWeChatApplication;
 import cn.ucai.superwechat.DemoHXSDKHelper;
 import cn.ucai.superwechat.R;
 import cn.ucai.superwechat.adapter.ExpressionAdapter;
@@ -856,7 +856,7 @@ public class ChatActivity extends BaseActivity implements OnClickListener, EMEve
 			return;
 		}
 
-		cameraFile = new File(PathUtil.getInstance().getImagePath(), DemoApplication.getInstance().getUserName()
+		cameraFile = new File(PathUtil.getInstance().getImagePath(), SuperWeChatApplication.getInstance().getUserName()
 				+ System.currentTimeMillis() + ".jpg");
 		cameraFile.getParentFile().mkdirs();
 		startActivityForResult(
@@ -1241,7 +1241,7 @@ public class ChatActivity extends BaseActivity implements OnClickListener, EMEve
 	 */
 	public void toGroupDetails(View view) {
 		if (room == null && group == null) {
-			Toast.makeText(getApplicationContext(), R.string.gorup_not_found, 0).show();
+			Toast.makeText(getApplicationContext(), R.string.gorup_not_found,Toast.LENGTH_SHORT).show();
 			return;
 		}
 		if(chatType == CHATTYPE_GROUP){

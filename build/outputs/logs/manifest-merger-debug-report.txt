@@ -132,7 +132,7 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:41
 	android:icon
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:44:9-45
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:42:9-39
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:42:9-47
 activity#cn.ucai.superwechat.activity.MainActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:46:9-52:20
 	android:screenOrientation

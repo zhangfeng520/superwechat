@@ -16,17 +16,15 @@ package cn.ucai.superwechat.activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.easemob.EMError;
 import com.easemob.chat.EMChatManager;
-import cn.ucai.superwechat.DemoApplication;
+import cn.ucai.superwechat.SuperWeChatApplication;
 import cn.ucai.superwechat.I;
 import cn.ucai.superwechat.R;
 import cn.ucai.superwechat.listener.OnSetAvatarListener;
@@ -72,7 +70,7 @@ public class RegisterActivity extends BaseActivity {
 		findViewById(R.id.layout_register_avatar).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				avatarListener = new OnSetAvatarListener(RegisterActivity.this, R.id.layout_register_avatar, getAvatarName(), I.AVATAR_TYPE_USER_PATH);
+				avatarListener = new OnSetAvatarListener(RegisterActivity.this, R.id.layoutRegister, getAvatarName(), I.AVATAR_TYPE_USER_PATH);
 			}
 		});
 	}
@@ -150,7 +148,7 @@ public class RegisterActivity extends BaseActivity {
 								if (!RegisterActivity.this.isFinishing())
 									pd.dismiss();
 								// 保存用户名
-								DemoApplication.getInstance().setUserName(username);
+								SuperWeChatApplication.getInstance().setUserName(username);
 								Toast.makeText(getApplicationContext(), getResources().getString(R.string.Registered_successfully), Toast.LENGTH_SHORT).show();
 								finish();
 							}
