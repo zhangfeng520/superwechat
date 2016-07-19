@@ -52,12 +52,12 @@
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\activity_group_pick_contacts.xml"
     },
     {
-        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_contact_list.xml",
-        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\fragment_contact_list.xml"
-    },
-    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_sent_file.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\row_sent_file.xml"
+    },
+    {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_contact_list.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\fragment_contact_list.xml"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\showvideo_activity.xml",
