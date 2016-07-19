@@ -5,15 +5,8 @@
         jar="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         revision="24.0.0"
-        sha1="e1272f0f73dcb824e1c3ab3e849ab033528bacf9">
+        sha1="cc1d607e428612cf8d94d917dd33c779f7af9e78">
         <dex dex="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_d312e5d76fe62c18a6105dd7dac1672ac70d9df4\classes.dex" />
-    </item>
-    <item
-        jar="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        revision="24.0.0"
-        sha1="d22e8257e0e63fc2c965a155fe79ad120280ae6f">
-        <dex dex="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8e865127ada74d9a596dade7c731fad0bf2b7bc4\classes.dex" />
     </item>
     <item
         jar="C:\Users\sks\AndroidStudioProjects\superwechat\libs\MiPush_SDK_Client_2_2_19.jar"
@@ -23,18 +16,46 @@
         <dex dex="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\MiPush_SDK_Client_2_2_19_67dc32faff22a3c3be2d1cbeee9e41540b8c20b0\classes.dex" />
     </item>
     <item
-        jar="C:\Users\sks\AndroidStudioProjects\superwechat\libs\google-play-services.jar"
-        jumboMode="true"
-        revision="24.0.0"
-        sha1="f0d8e4a84fad131bc291c3c4850afcaa8ba0b299">
-        <dex dex="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\google-play-services_53f98a2f53372e594dfe23b49791ffd2bac0e8d9\classes.dex" />
-    </item>
-    <item
         jar="C:\Users\sks\AndroidStudioProjects\superwechat\libs\picasso-2.4.0.jar"
         jumboMode="true"
         revision="24.0.0"
         sha1="f36d2d4e3a36b3259aaf9d004d29b4cdc6c1bfb2">
         <dex dex="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\picasso-2.4.0_5f798a2e4f0d8f8ecd892718cd0dea14255f212d\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\sks\AndroidStudioProjects\superwechat\libs\umeng-analytics-v5.2.4.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="0f9eccf79ae6006e4346725b09114182dca0c023">
+        <dex dex="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\umeng-analytics-v5.2.4_0a289449b2adaffb6d62731e617b63d0fadfab21\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\sks\AndroidStudioProjects\superwechat\libs\android-support-v4.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="b6c138ba72ce38beda559df33d369856854fd6f5">
+        <dex dex="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\android-support-v4_b96d2258311c97e5f2c4570ae73596b68e626e8f\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\sks\AndroidStudioProjects\superwechat\libs\org.apache.http.legacy.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="fa331331b626ee78c52bea16ce1e34b39e666ce5">
+        <dex dex="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\org.apache.http.legacy_b66544a99777c9a99555d523b1e6dd329be7f5ec\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="6d911f08ea073cd46e31d0c775900266253fba53">
+        <dex dex="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8e865127ada74d9a596dade7c731fad0bf2b7bc4\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\sks\AndroidStudioProjects\superwechat\libs\google-play-services.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="f0d8e4a84fad131bc291c3c4850afcaa8ba0b299">
+        <dex dex="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\google-play-services_53f98a2f53372e594dfe23b49791ffd2bac0e8d9\classes.dex" />
     </item>
     <item
         jar="C:\Users\sks\AndroidStudioProjects\superwechat\libs\baidumapapi_v3_2_0.jar"
@@ -58,13 +79,6 @@
         <dex dex="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\bolts-android-1.2.0_b328a01a8b7b9b4abc4752cf19444482c0622993\classes.dex" />
     </item>
     <item
-        jar="C:\Users\sks\AndroidStudioProjects\superwechat\libs\umeng-analytics-v5.2.4.jar"
-        jumboMode="true"
-        revision="24.0.0"
-        sha1="0f9eccf79ae6006e4346725b09114182dca0c023">
-        <dex dex="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\umeng-analytics-v5.2.4_0a289449b2adaffb6d62731e617b63d0fadfab21\classes.dex" />
-    </item>
-    <item
         jar="C:\Users\sks\AndroidStudioProjects\superwechat\libs\Parse-1.9.4.jar"
         jumboMode="true"
         revision="24.0.0"
@@ -72,25 +86,11 @@
         <dex dex="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\Parse-1.9.4_b29d783c757b79c198110114fc5111cf7f793cbf\classes.dex" />
     </item>
     <item
-        jar="C:\Users\sks\AndroidStudioProjects\superwechat\libs\android-support-v4.jar"
-        jumboMode="true"
-        revision="24.0.0"
-        sha1="b6c138ba72ce38beda559df33d369856854fd6f5">
-        <dex dex="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\android-support-v4_b96d2258311c97e5f2c4570ae73596b68e626e8f\classes.dex" />
-    </item>
-    <item
         jar="C:\Users\sks\AndroidStudioProjects\superwechat\libs\easemobchat_2.2.8.jar"
         jumboMode="true"
         revision="24.0.0"
         sha1="8cc35694de3c1a6185566afa93ea73e23d356bd6">
         <dex dex="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\easemobchat_2.2.8_60f5d40a00b5c34e1c6201c983b2bd135dda1fa9\classes.dex" />
-    </item>
-    <item
-        jar="C:\Users\sks\AndroidStudioProjects\superwechat\libs\org.apache.http.legacy.jar"
-        jumboMode="true"
-        revision="24.0.0"
-        sha1="fa331331b626ee78c52bea16ce1e34b39e666ce5">
-        <dex dex="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\org.apache.http.legacy_b66544a99777c9a99555d523b1e6dd329be7f5ec\classes.dex" />
     </item>
 
 </items>
