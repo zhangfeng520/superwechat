@@ -149,6 +149,7 @@
                 android:textSize="18sp" />
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/layout_register_avatar"
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:layout_marginLeft="20dp"
@@ -202,6 +203,7 @@
                 android:textColor="#000"
                 android:textSize="20sp" />
             <Button
+                android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -209,7 +211,6 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/button_login_bg"
-                android:onClick="register"
                 android:paddingBottom="7dp"
                 android:paddingTop="7dp"
                 android:text="@string/register"

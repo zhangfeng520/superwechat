@@ -66,12 +66,12 @@ public class OnSetAvatarListener implements View.OnClickListener {
 
     /**
      * 构造器
-     * @param mActivity ：PopuWindow宿主Activity
-     * @param parentId ：宿主Activity的布局的id
-     * @param userName ：个人账号和群号
-     * @param avatarType ：头像类型：user_avatar或group_icon
+     * @param mActivity：PopuWindow宿主Activity
+     * @param parentId：宿主Activity的布局的id
+     * @param userName：个人账号和群号
+     * @param avatarType：头像类型：user_avatar或group_icon
      */
-    public OnSetAvatarListener(View.OnClickListener mActivity, int parentId, String userName, String avatarType) {
+    public OnSetAvatarListener(Activity mActivity, int parentId, String userName, String avatarType) {
         //成员变量赋值
         this.mActivity = mActivity;
         mUserName=userName;

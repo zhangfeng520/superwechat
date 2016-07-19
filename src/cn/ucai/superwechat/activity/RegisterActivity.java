@@ -42,7 +42,6 @@ public class RegisterActivity extends BaseActivity {
 	private EditText passwordEditText;
 	private EditText confirmPwdEditText;
 	private EditText nickEditText;
-	private RelativeLayout layoutAvatar;
 	private ImageView  imAvatar;
 	OnSetAvatarListener avatarListener;
 
@@ -73,7 +72,7 @@ public class RegisterActivity extends BaseActivity {
 		findViewById(R.id.layout_register_avatar).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				avatarListener = new OnSetAvatarListener(RegisterActivity.this, R.layout.activity_register, getAvatarName(), I.AVATAR_TYPE_USER_PATH);
+				avatarListener = new OnSetAvatarListener(RegisterActivity.this, R.id.layout_register_avatar, getAvatarName(), I.AVATAR_TYPE_USER_PATH);
 			}
 		});
 	}
@@ -98,7 +97,6 @@ public class RegisterActivity extends BaseActivity {
 		passwordEditText = (EditText) findViewById(R.id.password);
 		confirmPwdEditText = (EditText) findViewById(R.id.confirm_password);
 		nickEditText = (EditText) findViewById(R.id.nick);
-		layoutAvatar = (RelativeLayout) findViewById(R.id.layout_register_avatar);
 		imAvatar = (ImageView) findViewById(R.id.iv_avatar);
 	}
 
