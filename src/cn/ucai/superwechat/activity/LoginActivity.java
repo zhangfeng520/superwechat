@@ -38,6 +38,8 @@ import cn.ucai.superwechat.Utils;
 import cn.ucai.superwechat.applib.controller.HXSDKHelper;
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMGroupManager;
+import com.google.gson.Gson;
+
 import cn.ucai.superwechat.Constant;
 import cn.ucai.superwechat.SuperWeChatApplication;
 import cn.ucai.superwechat.DemoHXSDKHelper;
@@ -189,7 +191,9 @@ public class LoginActivity extends BaseActivity {
 					public void onSuccess(Result result) {
 						Log.e(TAG, "result" + result);
 						if (result != null && result.isRetMsg()) {
-							UserAvatar user = (UserAvatar) result.getRetData();
+							String json = result.getRetData().toString();
+							Gson gson = new Gson();
+							UserAvatar user = gson.fromJson(json, UserAvatar.class);
 							Log.e(TAG, "user=" + user);
 							savaUserToDB(user);
 							loginSuccess();
