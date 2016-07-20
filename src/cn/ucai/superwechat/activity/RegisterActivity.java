@@ -97,9 +97,9 @@ public class RegisterActivity extends BaseActivity {
 	}
 
 	private String getAvaterName() {
-
 		avatarName=String.valueOf(System.currentTimeMillis());
 		return avatarName;
+
 	}
 
 	private void initView() {
