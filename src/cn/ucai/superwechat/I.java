@@ -59,6 +59,7 @@ public interface I {
 	}
 
 //	String AVATAR_PATH 								= 		"E:/test/";
+	String MSG_PREFIX_MSG                           =       "msg_";
 	String ISON8859_1 								= 		"iso8859-1";
 	String UTF_8 									= 		"utf-8";
 	String PAGE_ID 									= 		"page_id";						//分页的起始下标
@@ -74,7 +75,7 @@ public interface I {
 	int AVATAR_TYPE_GROUP							=		1;								//群组头像
 	int GROUP_PUBLIC								=		1;								//公开群组
 	int GROUP_NO_PUBLIC								=		0;								//非公开群组
-	String SERVER_ROOT                              =       "http://localhost:9999/SuperWeChatServer/Server";
+	String SERVER_ROOT                              =       "http://192.168.1.155:9999/SuperWeChatServer/Server";
 	String EQU                                      =       "=";                            //等号
 	String QUESTION									=       "?";                            //问号
 	String BACKSLASH								= 		"/";							//反斜杠

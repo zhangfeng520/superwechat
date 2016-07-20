@@ -38,8 +38,6 @@ import cn.ucai.superwechat.Utils;
 import cn.ucai.superwechat.applib.controller.HXSDKHelper;
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMGroupManager;
-import com.google.gson.Gson;
-
 import cn.ucai.superwechat.Constant;
 import cn.ucai.superwechat.SuperWeChatApplication;
 import cn.ucai.superwechat.DemoHXSDKHelper;
@@ -49,6 +47,7 @@ import cn.ucai.superwechat.bean.UserAvatar;
 import cn.ucai.superwechat.data.OkHttpUtils2;
 import cn.ucai.superwechat.db.UserDao;
 import cn.ucai.superwechat.domain.User;
+import cn.ucai.superwechat.task.DownloadContactListTask;
 import cn.ucai.superwechat.utils.CommonUtils;
 
 /**
@@ -181,22 +180,23 @@ public class LoginActivity extends BaseActivity {
 	}
 
 	private void loginAppServer() {
-		final OkHttpUtils2<Result> utils2 = new OkHttpUtils2<Result>();
+		final OkHttpUtils2<String> utils2 = new OkHttpUtils2<String>();
 		utils2.setRequestUrl(I.REQUEST_LOGIN)
 				.addParam(I.User.USER_NAME,currentUsername)
 				.addParam(I.User.PASSWORD,currentPassword)
-				.targetClass(Result.class)
-				.execute(new OkHttpUtils2.OnCompleteListener<Result>() {
+				.targetClass(String.class)
+				.execute(new OkHttpUtils2.OnCompleteListener<String>() {
 					@Override
-					public void onSuccess(Result result) {
-						Log.e(TAG, "result" + result);
+					public void onSuccess(String s) {
+						Log.e(TAG, "s" + s);
+						Result result = Utils.getResultFromJson(s, UserAvatar.class);
 						if (result != null && result.isRetMsg()) {
-							String json = result.getRetData().toString();
-							Gson gson = new Gson();
-							UserAvatar user = gson.fromJson(json, UserAvatar.class);
+							UserAvatar user = (UserAvatar) result.getRetData();
 							Log.e(TAG, "user=" + user);
-							savaUserToDB(user);
-							loginSuccess();
+							if (user != null) {
+								savaUserToDB(user);
+								loginSuccess(user);
+							}
 						} else {
 							pd.dismiss();
 							Toast.makeText(getApplicationContext(),
@@ -214,17 +214,17 @@ public class LoginActivity extends BaseActivity {
 	}
 
 	private void savaUserToDB(UserAvatar user) {
-		if (user != null) {
 			UserDao dao = new UserDao(LoginActivity.this);
 			dao.savaUserAvatar(user);
-		}
 	}
 
 
-	private void loginSuccess(){
+	private void loginSuccess(UserAvatar user){
 		// 登陆成功，保存用户名密码
 		SuperWeChatApplication.getInstance().setUserName(currentUsername);
 		SuperWeChatApplication.getInstance().setPassword(currentPassword);
+		SuperWeChatApplication.getInstance().setUser(user);
+		SuperWeChatApplication.currentUserNick = user.getMUserNick();
 
 		try {
 			// ** 第一次登录或者之前logout后再登录，加载所有本地群和回话
@@ -232,7 +232,9 @@ public class LoginActivity extends BaseActivity {
 			EMGroupManager.getInstance().loadAllGroups();
 			EMChatManager.getInstance().loadAllConversations();
 			// 处理好友和群组
-			initializeContacts();
+//			initializeContacts();
+			DownloadContactListTask contactlist= new DownloadContactListTask(LoginActivity.this,user.getMUserName());
+			contactlist.execute();
 		} catch (Exception e) {
 			e.printStackTrace();
 			// 取好友或者群聊失败，不让进入主页面

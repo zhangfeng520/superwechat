@@ -128,16 +128,16 @@
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
         </LinearLayout>
-        <TextView
-            android:id="@+id/tvIp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="设置服务器的IP地址"
-            android:textSize="20dp"
-            android:textColor="#000"
-            android:layout_alignParentBottom="true"
-            android:background="#fff"/>
     </RelativeLayout>
+    <Button
+        android:id="@+id/tvIp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="设置服务器的IP地址"
+        android:textSize="20dp"
+        android:textColor="#000"
+        android:layout_alignParentBottom="true"
+        android:background="#fff"/>
 
 </LinearLayout>
