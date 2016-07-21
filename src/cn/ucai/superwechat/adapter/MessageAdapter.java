@@ -53,6 +53,8 @@ import android.widget.Toast;
 
 import com.easemob.EMCallBack;
 import com.easemob.EMError;
+
+import cn.ucai.superwechat.Utils;
 import cn.ucai.superwechat.applib.controller.HXSDKHelper;
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMConversation;
@@ -417,8 +419,10 @@ public class MessageAdapter extends BaseAdapter{
 		// 群聊时，显示接收的消息的发送人的名称
 		if ((chatType == ChatType.GroupChat || chatType == ChatType.ChatRoom) && message.direct == EMMessage.Direct.RECEIVE){
 		    //demo里使用username代码nick
-			UserUtils.setUserNick(message.getFrom(), holder.tv_usernick);
+//			UserUtils.setAppUserNick(message.getFrom(), holder.tv_usernick);
+			UserUtils.setCurrentAppUserNick(holder.tv_usernick);
 		}
+
 		if(message.direct == EMMessage.Direct.SEND){
 			UserUtils.setCurrentUserNick(holder.tv_usernick);
 		}
@@ -463,7 +467,7 @@ public class MessageAdapter extends BaseAdapter{
 		
 		//设置用户头像
 		setUserAvatar(message, holder.iv_avatar);
-
+//		UserUtils.setAppUserAvatar(,holder.iv_avatar);
 		switch (message.getType()) {
 		// 根据消息type显示item
 		case IMAGE: // 图片
@@ -571,9 +575,12 @@ public class MessageAdapter extends BaseAdapter{
 	private void setUserAvatar(final EMMessage message, ImageView imageView){
 	    if(message.direct == Direct.SEND){
 	        //显示自己头像
-	        UserUtils.setCurrentUserAvatar(context, imageView);
+//	        UserUtils.setCurrentUserAvatar(context, imageView);
+	        UserUtils.setCurrentUserAvatar( imageView);
 	    }else{
-	        UserUtils.setUserAvatar(context, message.getFrom(), imageView);
+//	        UserUtils.setUserAvatar(context, message.getFrom(), imageView);
+			//对方头像修改
+	        UserUtils.setAppUserAvatar(context, message.getFrom(), imageView);
 	    }
 	    imageView.setOnClickListener(new View.OnClickListener() {
 			
