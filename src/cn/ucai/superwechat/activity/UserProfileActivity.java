@@ -48,7 +48,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 	private TextView tvUsername;
 	private ProgressDialog dialog;
 	private RelativeLayout rlNickName;
-	
+
 	
 	
 	@Override
@@ -74,10 +74,10 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 		String username = intent.getStringExtra("username");
 		boolean enableUpdate = intent.getBooleanExtra("setting", false);
 		if (enableUpdate) {
-			UserAvatar user = SuperWeChatApplication.getInstance().getUser();
-			UserUtils.setAppUserAvatar(this,user.getMUserName(),headAvatar);
-			Log.e(TAG, "ksdfsdfdsfsd=" + user.toString());
-			UserUtils.setAppUserNick(user.getMUserName(),tvNickName);
+//			UserAvatar user = SuperWeChatApplication.getInstance().getUser();
+//			UserUtils.setAppUserAvatar(this,user.getMUserName(),headAvatar);
+//			Log.e(TAG, "ksdfsdfdsfsd=" + user.toString());
+//			UserUtils.setAppUserNick(user.getMUserName(),tvNickName);
 			headPhotoUpdate.setVisibility(View.VISIBLE);
 			iconRightArrow.setVisibility(View.VISIBLE);
 			rlNickName.setOnClickListener(this);
@@ -91,20 +91,27 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 
 		}
 		if (username == null) {
-			tvUsername.setText(EMChatManager.getInstance().getCurrentUser());
-			UserUtils.setCurrentUserNick(tvNickName);
-			UserUtils.setCurrentUserAvatar(this, headAvatar);
+//			tvUsername.setText(EMChatManager.getInstance().getCurrentUser());
+			tvUsername.setText(SuperWeChatApplication.getInstance().getUserName());
+
+//			UserUtils.setCurrentUserNick(tvNickName);
+			UserUtils.setCurrentAppUserNick(tvNickName);
+//			UserUtils.setCurrentUserAvatar(this, headAvatar);
+			UserUtils.setAppUserAvatar(this,SuperWeChatApplication.getInstance().getUserName(),headAvatar);
+
 		} else if (username.equals(EMChatManager.getInstance().getCurrentUser())) {
 			tvUsername.setText(EMChatManager.getInstance().getCurrentUser());
 			UserUtils.setCurrentUserNick(tvNickName);
 			UserUtils.setCurrentUserAvatar(this, headAvatar);
+//			UserUtils.setAppCurrentUserAvatar(this,headAvatar);
 		} else {
 			tvUsername.setText(username);
 //			UserUtils.setUserNick(username, tvNickName);
 //			UserUtils.setUserAvatar(this, username, headAvatar);
+			//修改个人资料的头像和昵称
 			UserUtils.setAppUserNick(username,tvNickName);
 			UserUtils.setAppUserAvatar(this,username,headAvatar);
-			asyncFetchUserInfo2(username);
+//			asyncFetchUserInfo(username);
 		}
 	}
 
@@ -158,31 +165,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 			}
 		});
 	}
-	public void asyncFetchUserInfo2(String username){
-		SuperWeChatApplication.getInstance().getUserProfieManager().asyncGetUserInfo(username, new EMValueCallBack<User>() {
-			@Override
-			public void onSuccess(User user) {
-				if (user != null) {
-					tvNickName.setText(user.getNick());
-					if(!TextUtils.isEmpty(user.getAvatar())){
-						Picasso.with(UserProfileActivity.this).load(user.getAvatar()).placeholder(R.drawable.default_avatar).into(headAvatar);
-					}else{
-						Picasso.with(UserProfileActivity.this).load(R.drawable.default_avatar).into(headAvatar);
-					}
-					UserUtils.saveUserInfo(user);
-				}
-			}
 
-			@Override
-			public void onError(int i, String s) {
-
-			}
-		});
-
-	}
-
-	
-	
 	private void uploadHeadPhoto() {
 		AlertDialog.Builder builder = new Builder(this);
 		builder.setTitle(R.string.dl_title_upload_photo);
