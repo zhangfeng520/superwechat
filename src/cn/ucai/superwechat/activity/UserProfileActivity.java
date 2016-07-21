@@ -92,18 +92,21 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 		}
 		if (username == null) {
 //			tvUsername.setText(EMChatManager.getInstance().getCurrentUser());
-			tvUsername.setText(SuperWeChatApplication.getInstance().getUserName());
-
 //			UserUtils.setCurrentUserNick(tvNickName);
-			UserUtils.setCurrentAppUserNick(tvNickName);
 //			UserUtils.setCurrentUserAvatar(this, headAvatar);
+			tvUsername.setText(SuperWeChatApplication.getInstance().getUserName());
+			UserUtils.setCurrentAppUserNick(tvNickName);
 			UserUtils.setAppUserAvatar(this,SuperWeChatApplication.getInstance().getUserName(),headAvatar);
 
-		} else if (username.equals(EMChatManager.getInstance().getCurrentUser())) {
-			tvUsername.setText(EMChatManager.getInstance().getCurrentUser());
-			UserUtils.setCurrentUserNick(tvNickName);
-			UserUtils.setCurrentUserAvatar(this, headAvatar);
-//			UserUtils.setAppCurrentUserAvatar(this,headAvatar);
+		} else if (username.equals(SuperWeChatApplication.getInstance().getUserName())){
+//			tvUsername.setText(EMChatManager.getInstance().getCurrentUser());
+//			UserUtils.setCurrentUserNick(tvNickName);
+//			UserUtils.setCurrentUserAvatar(this, headAvatar);
+			tvUsername.setText(SuperWeChatApplication.getInstance().getUserName());
+			UserUtils.setCurrentAppUserNick(tvNickName);
+			UserUtils.setAppUserAvatar(this,SuperWeChatApplication.getInstance().getUserName(),headAvatar);
+
+
 		} else {
 			tvUsername.setText(username);
 //			UserUtils.setUserNick(username, tvNickName);
