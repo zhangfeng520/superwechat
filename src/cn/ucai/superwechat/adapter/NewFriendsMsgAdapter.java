@@ -32,10 +32,18 @@ import android.widget.Toast;
 
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMGroupManager;
+
+import cn.ucai.superwechat.I;
 import cn.ucai.superwechat.R;
+import cn.ucai.superwechat.SuperWeChatApplication;
+import cn.ucai.superwechat.Utils;
+import cn.ucai.superwechat.bean.Result;
+import cn.ucai.superwechat.bean.UserAvatar;
+import cn.ucai.superwechat.data.OkHttpUtils2;
 import cn.ucai.superwechat.db.InviteMessgeDao;
 import cn.ucai.superwechat.domain.InviteMessage;
 import cn.ucai.superwechat.domain.InviteMessage.InviteMesageStatus;
+import cn.ucai.superwechat.utils.UserUtils;
 
 public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
 
@@ -124,6 +132,28 @@ public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
 			}
 
 			// 设置用户头像
+
+			UserUtils.setAppUserAvatar(getContext(),msg.getFrom(),holder.avator);
+			//设置昵称
+			final OkHttpUtils2<String> utils2 = new OkHttpUtils2<String>();
+			utils2.setRequestUrl(I.REQUEST_FIND_USER)
+					.addParam(I.User.USER_NAME,msg.getFrom())
+					.targetClass(String.class)
+					.execute(new OkHttpUtils2.OnCompleteListener<String>() {
+						@Override
+						public void onSuccess(String s) {
+							Result result = Utils.getResultFromJson(s, UserAvatar.class);
+							if (result != null && result.isRetMsg()) {
+								UserAvatar user = (UserAvatar) result.getRetData();
+								holder.name.setText(user.getMUserNick());
+							}
+						}
+
+						@Override
+						public void onError(String error) {
+
+						}
+					});
 		}
 
 		return convertView;
@@ -174,7 +204,7 @@ public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
 						@Override
 						public void run() {
 							pd.dismiss();
-							Toast.makeText(context, str3 + e.getMessage(), 1).show();
+							Toast.makeText(context, str3 + e.getMessage(), Toast.LENGTH_SHORT).show();
 						}
 					});
 
