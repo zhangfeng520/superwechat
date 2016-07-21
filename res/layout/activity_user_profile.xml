@@ -124,6 +124,18 @@
                 android:layout_centerVertical="true"
                 android:layout_margin="5dip"
                 />
+            <Button
+                android:id="@+id/btnSendMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200dp"
+                android:background="#7ff000"
+                android:text="发消息"
+                android:textColor="#fff"
+
+                android:textSize="25dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>
