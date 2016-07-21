@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
@@ -23,16 +24,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.easemob.EMValueCallBack;
+
+import cn.ucai.superwechat.SuperWeChatApplication;
 import cn.ucai.superwechat.applib.controller.HXSDKHelper;
 import com.easemob.chat.EMChatManager;
 import cn.ucai.superwechat.DemoHXSDKHelper;
 import cn.ucai.superwechat.R;
+import cn.ucai.superwechat.bean.UserAvatar;
+import cn.ucai.superwechat.data.OkHttpUtils2;
+import cn.ucai.superwechat.db.UserDao;
 import cn.ucai.superwechat.domain.User;
 import cn.ucai.superwechat.utils.UserUtils;
 import com.squareup.picasso.Picasso;
 
 public class UserProfileActivity extends BaseActivity implements OnClickListener{
-	
+	private static final String TAG = UserProfileActivity.class.getSimpleName();
 	private static final int REQUESTCODE_PICK = 1;
 	private static final int REQUESTCODE_CUTTING = 2;
 	private ImageView headAvatar;
@@ -52,7 +58,8 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 		initView();
 		initListener();
 	}
-	
+
+
 	private void initView() {
 		headAvatar = (ImageView) findViewById(R.id.user_head_avatar);
 		headPhotoUpdate = (ImageView) findViewById(R.id.user_head_headphoto_update);
@@ -67,13 +74,21 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 		String username = intent.getStringExtra("username");
 		boolean enableUpdate = intent.getBooleanExtra("setting", false);
 		if (enableUpdate) {
+			UserAvatar user = SuperWeChatApplication.getInstance().getUser();
+			UserUtils.setAppUserAvatar(this,user.getMUserName(),headAvatar);
+			Log.e(TAG, "ksdfsdfdsfsd=" + user.toString());
+			UserUtils.setAppUserNick(user.getMUserName(),tvNickName);
 			headPhotoUpdate.setVisibility(View.VISIBLE);
 			iconRightArrow.setVisibility(View.VISIBLE);
 			rlNickName.setOnClickListener(this);
 			headAvatar.setOnClickListener(this);
+
+
 		} else {
 			headPhotoUpdate.setVisibility(View.GONE);
 			iconRightArrow.setVisibility(View.INVISIBLE);
+
+
 		}
 		if (username == null) {
 			tvUsername.setText(EMChatManager.getInstance().getCurrentUser());
@@ -89,7 +104,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 //			UserUtils.setUserAvatar(this, username, headAvatar);
 			UserUtils.setAppUserNick(username,tvNickName);
 			UserUtils.setAppUserAvatar(this,username,headAvatar);
-//			asyncFetchUserInfo(username);
+			asyncFetchUserInfo2(username);
 		}
 	}
 
@@ -120,6 +135,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 		}
 
 	}
+
 	
 	public void asyncFetchUserInfo(String username){
 		((DemoHXSDKHelper)HXSDKHelper.getInstance()).getUserProfileManager().asyncGetUserInfo(username, new EMValueCallBack<User>() {
@@ -142,7 +158,29 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 			}
 		});
 	}
-	
+	public void asyncFetchUserInfo2(String username){
+		SuperWeChatApplication.getInstance().getUserProfieManager().asyncGetUserInfo(username, new EMValueCallBack<User>() {
+			@Override
+			public void onSuccess(User user) {
+				if (user != null) {
+					tvNickName.setText(user.getNick());
+					if(!TextUtils.isEmpty(user.getAvatar())){
+						Picasso.with(UserProfileActivity.this).load(user.getAvatar()).placeholder(R.drawable.default_avatar).into(headAvatar);
+					}else{
+						Picasso.with(UserProfileActivity.this).load(R.drawable.default_avatar).into(headAvatar);
+					}
+					UserUtils.saveUserInfo(user);
+				}
+			}
+
+			@Override
+			public void onError(int i, String s) {
+
+			}
+		});
+
+	}
+
 	
 	
 	private void uploadHeadPhoto() {
@@ -170,7 +208,11 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 				});
 		builder.create().show();
 	}
-	
+
+	private void updateUserNick(String nickName) {
+		final OkHttpUtils2<String> utils2 = new OkHttpUtils2<String>();
+
+	}
 	
 
 	private void updateRemoteNick(final String nickName) {
