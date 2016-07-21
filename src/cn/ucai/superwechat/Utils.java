@@ -2,6 +2,7 @@ package cn.ucai.superwechat;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -166,4 +167,5 @@ public class Utils {
         }
         return  null;
     }
+
 }
