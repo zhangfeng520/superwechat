@@ -125,6 +125,7 @@ public class UserUtils {
         }
     }
 
+
     private static UserAvatar getAppUserInfo(String username) {
         UserAvatar user = SuperWeChatApplication.getInstance().getUserMap().get(username);
         if(user == null){
