@@ -4,7 +4,7 @@
     api-level="23"
     density="560dpi"
     format="7"
-    timestamp="35606118337729" >
+    timestamp="12454552324560" >
 
     <task
         name="javac"
@@ -19,6 +19,11 @@
         name="verifier"
         duration="0" />
 
-    <build timestamp="35606118337729" />
+    <build timestamp="11815227543343" >
+        <artifact
+            location="C:\Users\sks\AndroidStudioProjects\superwechat\build\outputs\apk\superwechat-debug.apk"
+            type="MAIN" />
+    </build>
+    <build timestamp="12454552324560" />
 
 </instant-run>

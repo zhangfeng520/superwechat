@@ -5,7 +5,7 @@
         jar="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         revision="24.0.0"
-        sha1="30ad18b00744406d850ede5c8aa24fe3232a8881">
+        sha1="4a9007a3de822c1d61632dab9779f51ff5f7b430">
         <dex dex="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_d312e5d76fe62c18a6105dd7dac1672ac70d9df4\classes.dex" />
     </item>
     <item
@@ -61,7 +61,7 @@
         jar="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         revision="24.0.0"
-        sha1="9e5b398cc753870d719476ea6fb0be0f64c7b573">
+        sha1="f690885431b724e445d846c592b9a75fdbd75c2d">
         <dex dex="C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8e865127ada74d9a596dade7c731fad0bf2b7bc4\classes.dex" />
     </item>
     <item

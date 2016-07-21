@@ -2,9 +2,11 @@ package cn.ucai.superwechat.utils;
 
 import android.content.Context;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import cn.ucai.superwechat.I;
 import cn.ucai.superwechat.applib.controller.HXSDKHelper;
 import cn.ucai.superwechat.DemoHXSDKHelper;
 import cn.ucai.superwechat.R;
@@ -12,6 +14,7 @@ import cn.ucai.superwechat.domain.User;
 import com.squareup.picasso.Picasso;
 
 public class UserUtils {
+    private static final String TAG = UserUtils.class.getSimpleName();
     /**
      * 根据username获取相应user，由于demo没有真实的用户数据，这里给的模拟的数据；
      * @param username
@@ -88,5 +91,27 @@ public class UserUtils {
 		}
 		((DemoHXSDKHelper) HXSDKHelper.getInstance()).saveContact(newUser);
 	}
-    
+
+    public static void setAppUserAvatar(Context context, String username, ImageView avatar) {
+        String path = "";
+        if(path != null && username != null){
+            path = getUserAvatarPath(username);
+            Log.e(TAG, "path=" + path);
+            Picasso.with(context).load(path).placeholder(R.drawable.default_avatar).into(avatar);
+        }else{
+            Picasso.with(context).load(R.drawable.default_avatar).into(avatar);
+        }
+    }
+
+    private static String getUserAvatarPath(String username) {
+        StringBuilder path = new StringBuilder(I.SERVER_ROOT);
+        path.append(I.QUESTION).append(I.KEY_REQUEST)
+                .append(I.EQU).append(I.REQUEST_DOWNLOAD_AVATAR)
+                .append(I.AND)
+                .append(I.NAME_OR_HXID).append(I.EQU).append(username)
+                .append(I.AND)
+                .append(I.AVATAR_TYPE).append(I.EQU).append(I.AVATAR_TYPE_USER_PATH);
+        return path.toString();
+
+    }
 }
