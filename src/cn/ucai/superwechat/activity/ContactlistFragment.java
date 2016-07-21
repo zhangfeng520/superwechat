@@ -273,7 +273,7 @@ public class ContactlistFragment extends Fragment {
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(menu, v, menuInfo);
-		if (((AdapterContextMenuInfo) menuInfo).position > 3) {
+		if (((AdapterContextMenuInfo) menuInfo).position > 1) {
 		    toBeProcessUser = adapter.getItem(((AdapterContextMenuInfo) menuInfo).position);
 		    toBeProcessUsername = toBeProcessUser.getUsername();
 			getActivity().getMenuInflater().inflate(R.menu.context_contact_list, menu);
@@ -452,7 +452,7 @@ public class ContactlistFragment extends Fragment {
 			if (!entry.getKey().equals(Constant.NEW_FRIENDS_USERNAME)
 			        && !entry.getKey().equals(Constant.GROUP_USERNAME)
 			        && !entry.getKey().equals(Constant.CHAT_ROOM)
-					&& !entry.getKey().equals(Constant.CHAT_ROBOT)
+//					&& !entry.getKey().equals(Constant.CHAT_ROBOT)
 					&& !blackList.contains(entry.getKey()))
 				contactList.add(entry.getValue());
 		}
@@ -465,12 +465,12 @@ public class ContactlistFragment extends Fragment {
 			}
 		});
 
-		if(users.get(Constant.CHAT_ROBOT)!=null){
+		/*if(users.get(Constant.CHAT_ROBOT)!=null){
 			contactList.add(0, users.get(Constant.CHAT_ROBOT));
-		}
+		}*/
 		// 加入"群聊"和"聊天室"
-        if(users.get(Constant.CHAT_ROOM) != null)
-            contactList.add(0, users.get(Constant.CHAT_ROOM));
+      /*  if(users.get(Constant.CHAT_ROOM) != null)
+            contactList.add(0, users.get(Constant.CHAT_ROOM));*/
         if(users.get(Constant.GROUP_USERNAME) != null)
             contactList.add(0, users.get(Constant.GROUP_USERNAME));
         

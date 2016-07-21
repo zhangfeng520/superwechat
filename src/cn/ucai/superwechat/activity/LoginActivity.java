@@ -225,16 +225,15 @@ public class LoginActivity extends BaseActivity {
 		SuperWeChatApplication.getInstance().setPassword(currentPassword);
 		SuperWeChatApplication.getInstance().setUser(user);
 		SuperWeChatApplication.currentUserNick = user.getMUserNick();
-
+		new DownloadContactListTask(LoginActivity.this,currentUsername).execute();
 		try {
 			// ** 第一次登录或者之前logout后再登录，加载所有本地群和回话
 			// ** manually load all local groups and
 			EMGroupManager.getInstance().loadAllGroups();
 			EMChatManager.getInstance().loadAllConversations();
 			// 处理好友和群组
-//			initializeContacts();
-			DownloadContactListTask contactlist= new DownloadContactListTask(LoginActivity.this,user.getMUserName());
-			contactlist.execute();
+			initializeContacts();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			// 取好友或者群聊失败，不让进入主页面
@@ -274,7 +273,7 @@ public class LoginActivity extends BaseActivity {
 		newFriends.setNick(strChat);
 
 		userlist.put(Constant.NEW_FRIENDS_USERNAME, newFriends);
-		// 添加"群聊"
+		/*// 添加"群聊"
 		User groupUser = new User();
 		String strGroup = getResources().getString(R.string.group_chat);
 		groupUser.setUsername(Constant.GROUP_USERNAME);
@@ -289,7 +288,7 @@ public class LoginActivity extends BaseActivity {
 		robotUser.setNick(strRobot);
 		robotUser.setHeader("");
 		userlist.put(Constant.CHAT_ROBOT, robotUser);
-
+*/
 		// 存入内存
 		((DemoHXSDKHelper)HXSDKHelper.getInstance()).setContactList(userlist);
 		// 存入db
