@@ -178,8 +178,27 @@ public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
 			public void run() {
 				// 调用sdk的同意方法
 				try {
-					if(msg.getGroupId() == null) //同意好友请求
+					if(msg.getGroupId() == null){ //同意好友请求
 						EMChatManager.getInstance().acceptInvitation(msg.getFrom());
+						final OkHttpUtils2<String> utils2 = new OkHttpUtils2<String>();
+						utils2.setRequestUrl(I.REQUEST_ADD_CONTACT)
+								.addParam(I.Contact.USER_NAME,SuperWeChatApplication.getInstance().getUserName())
+								.addParam(I.Contact.CU_NAME,msg.getFrom())
+								.targetClass(String.class)
+								.execute(new OkHttpUtils2.OnCompleteListener<String>() {
+									@Override
+									public void onSuccess(String result) {
+										Toast.makeText(getContext(), "好友已被添加到远端数据库", Toast.LENGTH_SHORT).show();
+									}
+
+									@Override
+									public void onError(String error) {
+										Toast.makeText(getContext(), "好友添加失败", Toast.LENGTH_SHORT).show();
+
+									}
+								});
+
+					}
 					else //同意加群申请
 					    EMGroupManager.getInstance().acceptApplication(msg.getFrom(), msg.getGroupId());
 					((Activity) context).runOnUiThread(new Runnable() {

@@ -142,6 +142,23 @@ public class AddContactActivity extends BaseActivity{
 	 * @param view
 	 */
 	public void addContact(View view){
+		final OkHttpUtils2<String> utils3 = new OkHttpUtils2<String>();
+		utils3.setRequestUrl(I.REQUEST_ADD_CONTACT)
+				.addParam(I.Contact.USER_NAME,SuperWeChatApplication.getInstance().getUserName())
+				.addParam(I.Contact.CU_NAME,toAddUsername)
+				.targetClass(String.class)
+				.execute(new OkHttpUtils2.OnCompleteListener<String>() {
+					@Override
+					public void onSuccess(String result) {
+						Toast.makeText(AddContactActivity.this, "好友请求已发送", Toast.LENGTH_SHORT).show();
+					}
+
+					@Override
+					public void onError(String error) {
+						Toast.makeText(AddContactActivity.this, "好友添加失败", Toast.LENGTH_SHORT).show();
+
+					}
+				});
 
 		
 		if(((DemoHXSDKHelper)HXSDKHelper.getInstance()).getContactList().containsKey(nameText.getText().toString())){
