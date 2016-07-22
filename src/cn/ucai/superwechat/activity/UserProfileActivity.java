@@ -111,7 +111,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 			tvUsername.setText(username);
 //			UserUtils.setUserNick(username, tvNickName);
 //			UserUtils.setUserAvatar(this, username, headAvatar);
-			//修改个人资料的头像和昵称
+			//修改联系人个人资料的头像和昵称
 			UserUtils.setAppUserNick(username,tvNickName);
 			UserUtils.setAppUserAvatar(this,username,headAvatar);
 //			asyncFetchUserInfo(username);

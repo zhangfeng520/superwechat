@@ -106,6 +106,8 @@ public class ContactAdapter extends ArrayAdapter<User>  implements SectionIndexe
 		if(username.equals(Constant.NEW_FRIENDS_USERNAME)){
 		    holder.nameTextview.setText(user.getNick());
 		    holder.avatar.setImageResource(R.drawable.new_friends_icon);
+//			UserUtils.setAppUserNick(username,holder.nameTextview);
+//			UserUtils.setAppUserAvatar(getContext(),username,holder.avatar);
 			if(user.getUnreadMsgCount() > 0){
 			    holder.unreadMsgView.setVisibility(View.VISIBLE);
 //			    holder.unreadMsgView.setText(user.getUnreadMsgCount()+"");

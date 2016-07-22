@@ -551,5 +551,6 @@ public class DemoHXSDKHelper extends HXSDKHelper{
     	}
     	return userProManager;
     }
-    
+
+
 }

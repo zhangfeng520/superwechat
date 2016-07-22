@@ -31,6 +31,7 @@ public class SuperWeChatApplication extends Application {
 	private static SuperWeChatApplication instance;
 	// login user name
 	public final String PREF_USERNAME = "username";
+	private UserProfileManager  userProManager;
 	
 	/**
 	 * 当前用户nickname,为了苹果推送不是userid而是昵称
@@ -139,5 +140,12 @@ public class SuperWeChatApplication extends Application {
 
 	public void setUserList(List<UserAvatar> userList) {
 		this.userList = userList;
+	}
+
+	public UserProfileManager getUserProfieManager() {
+		if(userProManager == null){
+			userProManager = new UserProfileManager();
+		}
+		return userProManager;
 	}
 }

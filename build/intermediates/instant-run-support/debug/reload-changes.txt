@@ -1,2 +1,3 @@
-CHANGED,C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\ucai\superwechat\activity\UserProfileActivity$override.class
+CHANGED,C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\ucai\superwechat\data\OkHttpUtils2$override.class
+CHANGED,C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\ucai\superwechat\utils\UserUtils$override.class
 CHANGED,C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
