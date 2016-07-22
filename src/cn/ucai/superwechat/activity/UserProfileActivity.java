@@ -317,4 +317,12 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 		bm.compress(Bitmap.CompressFormat.PNG, 100, baos);
 		return baos.toByteArray();
 	}
+
+
+	public void onSentMessage(View view) {
+		Toast.makeText(UserProfileActivity.this, "终于点到我了", Toast.LENGTH_SHORT).show();
+//		Intent intent = new Intent();
+//		intent.putExtra("chatType", 1);
+//		startActivity(intent);
+	}
 }

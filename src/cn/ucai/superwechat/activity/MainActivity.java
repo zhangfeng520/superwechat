@@ -44,6 +44,10 @@ import com.easemob.EMEventListener;
 import com.easemob.EMGroupChangeListener;
 import com.easemob.EMNotifierEvent;
 import com.easemob.EMValueCallBack;
+
+import cn.ucai.superwechat.I;
+import cn.ucai.superwechat.SuperWeChatApplication;
+import cn.ucai.superwechat.Utils;
 import cn.ucai.superwechat.applib.controller.HXSDKHelper;
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMContactListener;
@@ -59,6 +63,9 @@ import com.easemob.chat.TextMessageBody;
 import cn.ucai.superwechat.Constant;
 import cn.ucai.superwechat.DemoHXSDKHelper;
 import cn.ucai.superwechat.R;
+import cn.ucai.superwechat.bean.Result;
+import cn.ucai.superwechat.bean.UserAvatar;
+import cn.ucai.superwechat.data.OkHttpUtils2;
 import cn.ucai.superwechat.db.InviteMessgeDao;
 import cn.ucai.superwechat.db.UserDao;
 import cn.ucai.superwechat.domain.InviteMessage;
@@ -518,11 +525,18 @@ public class MainActivity extends BaseActivity implements EMEventListener {
 			// 保存增加的联系人
 			Map<String, User> localUsers = ((DemoHXSDKHelper)HXSDKHelper.getInstance()).getContactList();
 			Map<String, User> toAddUsers = new HashMap<String, User>();
+
+			Map<String, UserAvatar> userMap = new HashMap<String, UserAvatar>();
+			List<String> toAddUserName = new ArrayList<String>();
+
 			for (String username : usernameList) {
 				User user = setUserHead(username);
 				// 添加好友时可能会回调added方法两次
 				if (!localUsers.containsKey(username)) {
 					userDao.saveContact(user);
+				}
+				if (!userMap.containsKey(username)) {
+					toAddUserName.add(username);
 				}
 				toAddUsers.put(username, user);
 			}
@@ -530,6 +544,35 @@ public class MainActivity extends BaseActivity implements EMEventListener {
 			// 刷新ui
 			if (currentTabIndex == 1)
 				contactListFragment.refresh();
+			for (String name : toAddUserName) {
+				final OkHttpUtils2<String> utils3 = new OkHttpUtils2<String>();
+				utils3.setRequestUrl(I.REQUEST_ADD_CONTACT)
+						.addParam(I.Contact.USER_NAME, SuperWeChatApplication.getInstance().getUserName())
+						.addParam(I.Contact.CU_NAME,name)
+						.targetClass(String.class)
+						.execute(new OkHttpUtils2.OnCompleteListener<String>() {
+							@Override
+							public void onSuccess(String s) {
+								Result result = Utils.getResultFromJson(s, UserAvatar.class);
+								if (result != null & result.isRetMsg()) {
+									UserAvatar user = (UserAvatar) result.getRetData();
+									Log.e(TAG, "user=" + user);
+									if (!SuperWeChatApplication.getInstance().getUserMap().containsKey(user.getMUserName())) {
+										SuperWeChatApplication.getInstance().getUserMap().put(user.getMUserName(), user);
+										SuperWeChatApplication.getInstance().getUserList().add(user);
+										sendStickyBroadcast(new Intent("update_contact_list"));
+									}
+								}
+
+							}
+
+							@Override
+							public void onError(String error) {
+
+							}
+						});
+
+			}
 
 		}
 
@@ -548,7 +591,7 @@ public class MainActivity extends BaseActivity implements EMEventListener {
 					String st10 = getResources().getString(R.string.have_you_removed);
 					if (ChatActivity.activityInstance != null
 							&& usernameList.contains(ChatActivity.activityInstance.getToChatUsername())) {
-						Toast.makeText(MainActivity.this, ChatActivity.activityInstance.getToChatUsername() + st10, 1)
+						Toast.makeText(MainActivity.this, ChatActivity.activityInstance.getToChatUsername() + st10, Toast.LENGTH_LONG)
 								.show();
 						ChatActivity.activityInstance.finish();
 					}

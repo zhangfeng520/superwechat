@@ -548,6 +548,7 @@ public class DemoHXSDKHelper extends HXSDKHelper{
     public UserProfileManager getUserProfileManager(){
     	if(userProManager == null){
     		userProManager = new UserProfileManager();
+
     	}
     	return userProManager;
     }

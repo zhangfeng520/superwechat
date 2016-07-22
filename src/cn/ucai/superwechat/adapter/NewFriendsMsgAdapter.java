@@ -91,7 +91,7 @@ public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
 			}
 			
 			holder.reason.setText(msg.getReason());
-			holder.name.setText(msg.getFrom());
+//			holder.name.setText(msg.getFrom());
 			// holder.time.setText(DateUtils.getTimestampString(new
 			// Date(msg.getTime())));
 			if (msg.getStatus() == InviteMesageStatus.BEAGREED) {
@@ -146,6 +146,8 @@ public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
 							if (result != null && result.isRetMsg()) {
 								UserAvatar user = (UserAvatar) result.getRetData();
 								holder.name.setText(user.getMUserNick());
+							}else {
+								holder.name.setText(msg.getFrom());
 							}
 						}
 
@@ -163,7 +165,6 @@ public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
 	 * 同意好友请求或者群申请
 	 * 
 	 * @param button
-	 * @param username
 	 */
 	private void acceptInvitation(final Button button, final InviteMessage msg) {
 		final ProgressDialog pd = new ProgressDialog(context);
@@ -180,24 +181,6 @@ public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
 				try {
 					if(msg.getGroupId() == null){ //同意好友请求
 						EMChatManager.getInstance().acceptInvitation(msg.getFrom());
-						final OkHttpUtils2<String> utils2 = new OkHttpUtils2<String>();
-						utils2.setRequestUrl(I.REQUEST_ADD_CONTACT)
-								.addParam(I.Contact.USER_NAME,SuperWeChatApplication.getInstance().getUserName())
-								.addParam(I.Contact.CU_NAME,msg.getFrom())
-								.targetClass(String.class)
-								.execute(new OkHttpUtils2.OnCompleteListener<String>() {
-									@Override
-									public void onSuccess(String result) {
-										Toast.makeText(getContext(), "好友已被添加到远端数据库", Toast.LENGTH_SHORT).show();
-									}
-
-									@Override
-									public void onError(String error) {
-										Toast.makeText(getContext(), "好友添加失败", Toast.LENGTH_SHORT).show();
-
-									}
-								});
-
 					}
 					else //同意加群申请
 					    EMGroupManager.getInstance().acceptApplication(msg.getFrom(), msg.getGroupId());
