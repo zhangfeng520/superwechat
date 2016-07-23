@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import com.easemob.EMValueCallBack;
 
+import cn.ucai.superwechat.I;
 import cn.ucai.superwechat.SuperWeChatApplication;
 import cn.ucai.superwechat.applib.controller.HXSDKHelper;
 import com.easemob.chat.EMChatManager;
@@ -142,7 +143,9 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 								Toast.makeText(UserProfileActivity.this, getString(R.string.toast_nick_not_isnull), Toast.LENGTH_SHORT).show();
 								return;
 							}
-							updateRemoteNick(nickString);
+//							updateRemoteNick(nickString);
+							//个人资料页面更新用户头像
+							updateUserNick(nickString);
 						}
 					}).setNegativeButton(R.string.dl_cancel, null).show();
 			break;
@@ -201,12 +204,27 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 		builder.create().show();
 	}
 
-	private void updateUserNick(String nickName) {
+	//更新用户头像
+	private void updateUserNick(final String nickname) {
 		final OkHttpUtils2<String> utils2 = new OkHttpUtils2<String>();
+		utils2.setRequestUrl(I.REQUEST_UPDATE_USER_NICK)
+				.addParam(I.User.USER_NAME,SuperWeChatApplication.getInstance().getUserName())
+				.addParam(I.User.NICK,nickname)
+				.targetClass(String.class)
+				.execute(new OkHttpUtils2.OnCompleteListener<String>() {
+					@Override
+					public void onSuccess(String result) {
+						Toast.makeText(UserProfileActivity.this, "更新成功", Toast.LENGTH_SHORT).show();
+						tvNickName.setText(nickname);
+					}
+
+					@Override
+					public void onError(String error) {
+
+					}
+				});
 
 	}
-	
-
 	private void updateRemoteNick(final String nickName) {
 		dialog = ProgressDialog.show(this, getString(R.string.dl_update_nick), getString(R.string.dl_waiting));
 		new Thread(new Runnable() {
