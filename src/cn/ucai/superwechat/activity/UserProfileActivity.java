@@ -48,7 +48,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 	private TextView tvUsername;
 	private ProgressDialog dialog;
 	private RelativeLayout rlNickName;
-	private String username;
+	private String btnname;
 
 	
 	
@@ -72,8 +72,10 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 	
 	private void initListener() {
 		Intent intent = getIntent();
-		username = intent.getStringExtra("username");
+		String username = intent.getStringExtra("username");
+		btnname = username;
 		boolean enableUpdate = intent.getBooleanExtra("setting", false);
+
 		if (enableUpdate) {
 //			UserAvatar user = SuperWeChatApplication.getInstance().getUser();
 //			UserUtils.setAppUserAvatar(this,user.getMUserName(),headAvatar);
@@ -96,6 +98,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 //			UserUtils.setCurrentUserNick(tvNickName);
 //			UserUtils.setCurrentUserAvatar(this, headAvatar);
 			tvUsername.setText(SuperWeChatApplication.getInstance().getUserName());
+			findViewById(R.id.btnSendMessage).setVisibility(View.GONE);
 			if (tvNickName != null) {
 				UserUtils.setCurrentAppUserNick(tvNickName);
 			}
@@ -105,6 +108,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 //			tvUsername.setText(EMChatManager.getInstance().getCurrentUser());
 //			UserUtils.setCurrentUserNick(tvNickName);
 //			UserUtils.setCurrentUserAvatar(this, headAvatar);
+			findViewById(R.id.btnSendMessage).setVisibility(View.GONE);
 			tvUsername.setText(SuperWeChatApplication.getInstance().getUserName());
 			UserUtils.setCurrentAppUserNick(tvNickName);
 			UserUtils.setAppUserAvatar(this,SuperWeChatApplication.getInstance().getUserName(),headAvatar);
@@ -323,7 +327,8 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 
 	public void onSentMessage(View view) {
 		Toast.makeText(UserProfileActivity.this, "终于点到我了", Toast.LENGTH_SHORT).show();
-		startActivity(new Intent(UserProfileActivity.this,ChatActivity.class).putExtra("userId",username));
+		startActivity(new Intent(UserProfileActivity.this,ChatActivity.class).putExtra("userId",btnname));
+
 //		Intent intent = new Intent();
 //		intent.putExtra("chatType", 1);
 //		startActivity(intent);
