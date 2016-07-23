@@ -48,6 +48,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 	private TextView tvUsername;
 	private ProgressDialog dialog;
 	private RelativeLayout rlNickName;
+	private String username;
 
 	
 	
@@ -71,7 +72,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 	
 	private void initListener() {
 		Intent intent = getIntent();
-		String username = intent.getStringExtra("username");
+		username = intent.getStringExtra("username");
 		boolean enableUpdate = intent.getBooleanExtra("setting", false);
 		if (enableUpdate) {
 //			UserAvatar user = SuperWeChatApplication.getInstance().getUser();
@@ -95,7 +96,9 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 //			UserUtils.setCurrentUserNick(tvNickName);
 //			UserUtils.setCurrentUserAvatar(this, headAvatar);
 			tvUsername.setText(SuperWeChatApplication.getInstance().getUserName());
-			UserUtils.setCurrentAppUserNick(tvNickName);
+			if (tvNickName != null) {
+				UserUtils.setCurrentAppUserNick(tvNickName);
+			}
 			UserUtils.setAppUserAvatar(this,SuperWeChatApplication.getInstance().getUserName(),headAvatar);
 
 		} else if (username.equals(SuperWeChatApplication.getInstance().getUserName())){
@@ -105,7 +108,6 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 			tvUsername.setText(SuperWeChatApplication.getInstance().getUserName());
 			UserUtils.setCurrentAppUserNick(tvNickName);
 			UserUtils.setAppUserAvatar(this,SuperWeChatApplication.getInstance().getUserName(),headAvatar);
-
 
 		} else {
 			tvUsername.setText(username);
@@ -321,6 +323,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 
 	public void onSentMessage(View view) {
 		Toast.makeText(UserProfileActivity.this, "终于点到我了", Toast.LENGTH_SHORT).show();
+		startActivity(new Intent(UserProfileActivity.this,ChatActivity.class).putExtra("userId",username));
 //		Intent intent = new Intent();
 //		intent.putExtra("chatType", 1);
 //		startActivity(intent);
