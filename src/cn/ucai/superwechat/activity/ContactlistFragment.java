@@ -51,6 +51,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import cn.ucai.superwechat.I;
+import cn.ucai.superwechat.SuperWeChatApplication;
 import cn.ucai.superwechat.applib.controller.HXSDKHelper;
 import cn.ucai.superwechat.applib.controller.HXSDKHelper.HXSyncListener;
 import com.easemob.chat.EMContactManager;
@@ -58,6 +60,8 @@ import cn.ucai.superwechat.Constant;
 import cn.ucai.superwechat.DemoHXSDKHelper;
 import cn.ucai.superwechat.R;
 import cn.ucai.superwechat.adapter.ContactAdapter;
+import cn.ucai.superwechat.bean.Result;
+import cn.ucai.superwechat.data.OkHttpUtils2;
 import cn.ucai.superwechat.db.InviteMessgeDao;
 import cn.ucai.superwechat.db.UserDao;
 import cn.ucai.superwechat.domain.User;
@@ -290,7 +294,23 @@ public class ContactlistFragment extends Fragment {
 			try {
                 // 删除此联系人
                 deleteContact(toBeProcessUser);
-                // 删除相关的邀请消息
+				final OkHttpUtils2 utils2 = new OkHttpUtils2();
+				utils2.setRequestUrl(I.REQUEST_DELETE_CONTACT)
+						.addParam(I.Contact.USER_NAME, SuperWeChatApplication.getInstance().getUserName())
+						.addParam(I.Contact.CU_NAME,toBeProcessUsername)
+						.targetClass(Result.class)
+						.execute(new OkHttpUtils2.OnCompleteListener() {
+							@Override
+							public void onSuccess(Object result) {
+								Toast.makeText(getContext(), "删除联系人成功", Toast.LENGTH_SHORT).show();
+							}
+
+							@Override
+							public void onError(String error) {
+
+							}
+						});
+				// 删除相关的邀请消息
                 InviteMessgeDao dao = new InviteMessgeDao(getActivity());
                 dao.deleteMessage(toBeProcessUser.getUsername());
             } catch (Exception e) {
@@ -335,6 +355,7 @@ public class ContactlistFragment extends Fragment {
 		pd.show();
 		new Thread(new Runnable() {
 			public void run() {
+
 				try {
 					EMContactManager.getInstance().deleteContact(tobeDeleteUser.getUsername());
 					// 删除db和内存中此用户的数据
