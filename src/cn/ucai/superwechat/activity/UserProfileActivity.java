@@ -223,6 +223,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 					public void onSuccess(Result result) {
 						Toast.makeText(UserProfileActivity.this, "更新头像成功！", Toast.LENGTH_SHORT).show();
 						Log.e(TAG, "222222222222");
+//						SuperWeChatApplication.getInstance().getUser().setMAvatarLastUpdateTime(System.currentTimeMillis() + "");
 					}
 					@Override
 					public void onError(String error) {
@@ -241,9 +242,14 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 				.targetClass(String.class)
 				.execute(new OkHttpUtils2.OnCompleteListener<String>() {
 					@Override
-					public void onSuccess(String result) {
+					public void onSuccess(String s) {
+						Result result = Utils.getResultFromJson(s, UserAvatar.class);
+						UserAvatar  user = (UserAvatar) result.getRetData();
 						Toast.makeText(UserProfileActivity.this, "更新成功", Toast.LENGTH_SHORT).show();
-						SuperWeChatApplication.currentUserNick = nickname;
+						//同步到远端数据
+						tvNickName.setText(nickname);
+						SuperWeChatApplication.currentUserNick = user.getMUserNick();
+						SuperWeChatApplication.getInstance().setUser(user);
 					}
 
 					@Override
@@ -278,8 +284,6 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 							Toast.makeText(UserProfileActivity.this, getString(R.string.toast_updatenick_success), Toast.LENGTH_SHORT)
 									.show();
 							tvNickName.setText(nickName);
-							SuperWeChatApplication.currentUserNick = nickName;
-							SuperWeChatApplication.getInstance().getUser().setMUserNick(nickName);
 						}
 					});
 				}
