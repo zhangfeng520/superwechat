@@ -1,6 +1,7 @@
 package cn.ucai.superwechat.activity;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -13,6 +14,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -27,14 +29,17 @@ import com.easemob.EMValueCallBack;
 
 import cn.ucai.superwechat.I;
 import cn.ucai.superwechat.SuperWeChatApplication;
+import cn.ucai.superwechat.Utils;
 import cn.ucai.superwechat.applib.controller.HXSDKHelper;
 import com.easemob.chat.EMChatManager;
 import cn.ucai.superwechat.DemoHXSDKHelper;
 import cn.ucai.superwechat.R;
+import cn.ucai.superwechat.bean.Result;
 import cn.ucai.superwechat.bean.UserAvatar;
 import cn.ucai.superwechat.data.OkHttpUtils2;
 import cn.ucai.superwechat.db.UserDao;
 import cn.ucai.superwechat.domain.User;
+import cn.ucai.superwechat.listener.OnSetAvatarListener;
 import cn.ucai.superwechat.utils.UserUtils;
 import com.squareup.picasso.Picasso;
 
@@ -50,9 +55,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 	private ProgressDialog dialog;
 	private RelativeLayout rlNickName;
 	private String btnname;
-
-	
-	
+	OnSetAvatarListener mOnSetAvatarListener;
 	@Override
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
@@ -60,7 +63,6 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 		initView();
 		initListener();
 	}
-
 
 	private void initView() {
 		headAvatar = (ImageView) findViewById(R.id.user_head_avatar);
@@ -128,8 +130,10 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
+			//更新头像
 		case R.id.user_head_avatar:
-			uploadHeadPhoto();
+			mOnSetAvatarListener = new OnSetAvatarListener(UserProfileActivity.this, R.id.Layout_user_profile, getAvatarName(), I.AVATAR_TYPE_USER_PATH);
+//			uploadHeadPhoto();
 			break;
 		case R.id.rl_nickname:
 			final EditText editText = new EditText(this);
@@ -144,7 +148,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 								return;
 							}
 //							updateRemoteNick(nickString);
-							//个人资料页面更新用户头像
+							//个人资料页面更新用户昵称
 							updateUserNick(nickString);
 						}
 					}).setNegativeButton(R.string.dl_cancel, null).show();
@@ -202,9 +206,33 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 					}
 				});
 		builder.create().show();
+
+	}
+	//更新用户头像(待完善）
+	private void updateUserAvatar() {
+		final OkHttpUtils2<Result> utils = new OkHttpUtils2<Result>();
+		File file = new File(OnSetAvatarListener.getAvatarPath(UserProfileActivity.this,I.AVATAR_TYPE_USER_PATH),avatarName+I.AVATAR_SUFFIX_JPG);
+		Log.e(TAG, "1111111111111" + file.toString());
+		utils.setRequestUrl(I.REQUEST_UPLOAD_AVATAR)
+				.addParam(I.AVATAR_TYPE,"user_avatar")
+				.addParam(I.NAME_OR_HXID,SuperWeChatApplication.getInstance().getUser().getMUserName())
+				.addFile(file)
+				.targetClass(Result.class)
+				.execute(new OkHttpUtils2.OnCompleteListener<Result>() {
+					@Override
+					public void onSuccess(Result result) {
+						Toast.makeText(UserProfileActivity.this, "更新头像成功！", Toast.LENGTH_SHORT).show();
+						Log.e(TAG, "222222222222");
+					}
+					@Override
+					public void onError(String error) {
+
+					}
+				});
+
 	}
 
-	//更新用户头像
+	//更新用户昵称
 	private void updateUserNick(final String nickname) {
 		final OkHttpUtils2<String> utils2 = new OkHttpUtils2<String>();
 		utils2.setRequestUrl(I.REQUEST_UPDATE_USER_NICK)
@@ -215,7 +243,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 					@Override
 					public void onSuccess(String result) {
 						Toast.makeText(UserProfileActivity.this, "更新成功", Toast.LENGTH_SHORT).show();
-						tvNickName.setText(nickname);
+						SuperWeChatApplication.currentUserNick = nickname;
 					}
 
 					@Override
@@ -247,10 +275,11 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 					runOnUiThread(new Runnable() {
 						@Override
 						public void run() {
-							dialog.dismiss();
 							Toast.makeText(UserProfileActivity.this, getString(R.string.toast_updatenick_success), Toast.LENGTH_SHORT)
 									.show();
 							tvNickName.setText(nickName);
+							SuperWeChatApplication.currentUserNick = nickName;
+							SuperWeChatApplication.getInstance().getUser().setMUserNick(nickName);
 						}
 					});
 				}
@@ -260,22 +289,31 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		switch (requestCode) {
-		case REQUESTCODE_PICK:
-			if (data == null || data.getData() == null) {
-				return;
-			}
-			startPhotoZoom(data.getData());
-			break;
-		case REQUESTCODE_CUTTING:
-			if (data != null) {
-				setPicToView(data);
-			}
-			break;
-		default:
-			break;
-		}
+//		switch (requestCode) {
+//		case REQUESTCODE_PICK:
+//			if (data == null || data.getData() == null) {
+//				return;
+//			}
+//			startPhotoZoom(data.getData());
+//			break;
+//		case REQUESTCODE_CUTTING:
+//			if (data != null) {
+//				setPicToView(data);
+//			}
+//
+//			break;
+//		default:
+//
+//			break;
+//		}
 		super.onActivityResult(requestCode, resultCode, data);
+		if(resultCode!=RESULT_OK){
+			return;
+		}
+		mOnSetAvatarListener.setAvatar(requestCode,data,headAvatar);
+		if (requestCode == OnSetAvatarListener.REQUEST_CROP_PHOTO) {
+			updateUserAvatar();
+		}
 	}
 
 	public void startPhotoZoom(Uri uri) {
@@ -350,5 +388,11 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 //		Intent intent = new Intent();
 //		intent.putExtra("chatType", 1);
 //		startActivity(intent);
+	}
+
+	String avatarName;
+	public String getAvatarName() {
+		avatarName = System.currentTimeMillis() + "";
+		return avatarName;
 	}
 }
