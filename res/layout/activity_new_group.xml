@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#eee"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:id="@+id/ll_new_group">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -122,8 +123,7 @@
             android:textSize="18sp"
             android:layout_weight="1"
             />
-        
-        <CheckBox 
+        <CheckBox
             android:id="@+id/cb_member_inviter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -131,7 +131,36 @@
             android:layout_gravity="center_vertical"
             android:button="@drawable/checkbox_bg_selector"
             />
-        
     </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/rlGroup"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="#fff" >
 
+        <ImageView
+            android:id="@+id/iv_group_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:src="@drawable/default_avatar" />
+
+        <EditText
+            android:id="@+id/avatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/iv_group_avatar"
+            android:background="@null"
+            android:hint="@string/dl_msg_take_photo"
+            android:inputType="textPassword"
+            android:paddingLeft="10dip"
+            android:singleLine="true"
+            android:textSize="18sp" />
+    </RelativeLayout>
 </LinearLayout>
