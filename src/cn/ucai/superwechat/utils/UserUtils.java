@@ -26,6 +26,27 @@ public class UserUtils {
      * @param username
      * @return
      */
+    /**
+     * 设置当前用户头像
+     */
+    public static void setCurrentUserAvatar(Context context, ImageView imageView) {
+        User user = ((DemoHXSDKHelper)HXSDKHelper.getInstance()).getUserProfileManager().getCurrentUserInfo();
+        if(user != null && user.getAvatar() != null) {
+            Picasso.with(context).load(user.getAvatar()).placeholder(2130837620).into(imageView);
+        } else {
+            Picasso.with(context).load(2130837620).into(imageView);
+        }
+
+    }
+    public static void setAppCurrentUserAvatar(Context context, ImageView imageView) {
+        User user = ((DemoHXSDKHelper)HXSDKHelper.getInstance()).getUserProfileManager().getCurrentUserInfo();
+        if (user != null && user.getAvatar() != null) {
+            Picasso.with(context).load(user.getAvatar()).placeholder(R.drawable.default_avatar).into(imageView);
+        } else {
+            Picasso.with(context).load(R.drawable.default_avatar).into(imageView);
+        }
+    }
+
 
     public static User getUserInfo(String username){
         User user = ((DemoHXSDKHelper)HXSDKHelper.getInstance()).getContactList().get(username);
@@ -93,7 +114,7 @@ public class UserUtils {
      */
     public static void setCurrentAppUserNick(TextView textView){
     	UserAvatar user = SuperWeChatApplication.getInstance().getUser();
-    	if(user.getMUserNick() != null&&textView!=null){
+    	if(/*user.getMUserNick() != null&&*/textView!=null&&user!=null){
     		textView.setText(user.getMUserNick());
     	}else {
             textView.setText(user.getMUserName());
@@ -111,6 +132,7 @@ public class UserUtils {
 		((DemoHXSDKHelper) HXSDKHelper.getInstance()).saveContact(newUser);
 	}
 
+
     public static void setAppUserAvatar(Context context, String username, ImageView avatar) {
         String path = "";
         if(path != null && username != null){
@@ -118,11 +140,19 @@ public class UserUtils {
             Log.e(TAG, "path=" + path);
             Picasso.with(context).load(path).placeholder(R.drawable.default_avatar).into(avatar);
         }else{
-            Picasso.with(context).load(R.drawable.default_avatar).into(avatar);
+//            Picasso.with(context).load(R.drawable.default_avatar).into(avatar);
+            Picasso.with(context).load(path).placeholder(R.drawable.default_avatar).into(avatar);
         }
     }
 
-    private static String getUserAvatarPath(String username) {
+    public static String getUserAvatarPath(String username) {
+//        StringBuilder path = new StringBuilder(I.SERVER_ROOT);
+//        path.append(I.QUESTION).append(I.KEY_REQUEST)
+//                .append(I.EQU).append(I.REQUEST_UPLOAD_AVATAR)
+//                .append(I.AND)
+//                .append(I.AVATAR_TYPE).append(I.EQU).append(I.AVATAR_TYPE_USER_PATH)
+//                .append(I.AND)
+//                .append(I.NAME_OR_HXID).append(I.EQU).append(username);
         StringBuilder path = new StringBuilder(I.SERVER_ROOT);
         path.append(I.QUESTION).append(I.KEY_REQUEST)
                 .append(I.EQU).append(I.REQUEST_DOWNLOAD_AVATAR)

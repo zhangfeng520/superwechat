@@ -192,7 +192,7 @@ public class OnSetAvatarListener implements View.OnClickListener {
      * @param ivAvatar
      * @param data
      */
-    private void saveCropAndShowAvatar(ImageView ivAvatar, Intent data) {
+    public void saveCropAndShowAvatar(ImageView ivAvatar, Intent data) {
         Bundle extras = data.getExtras();
         Bitmap avatar = extras.getParcelable("data");
         if (avatar == null) {

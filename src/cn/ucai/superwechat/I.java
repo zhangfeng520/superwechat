@@ -75,7 +75,7 @@ public interface I {
 	int AVATAR_TYPE_GROUP							=		1;								//群组头像
 	int GROUP_PUBLIC								=		1;								//公开群组
 	int GROUP_NO_PUBLIC								=		0;								//非公开群组
-	String SERVER_ROOT                              =       "http://192.168.1.155:9999/SuperWeChatServer/Server";
+	String SERVER_ROOT                              =       "http://192.168.1.79:9999/SuperWeChatServer/Server";
 	String EQU                                      =       "=";                            //等号
 	String AND                                      =       "&";                            //&符号
 	String QUESTION									=       "?";                            //问号

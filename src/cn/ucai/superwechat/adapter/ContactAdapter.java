@@ -32,8 +32,10 @@ import android.widget.TextView;
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMConversation;
 import cn.ucai.superwechat.Constant;
+import cn.ucai.superwechat.DemoHXSDKHelper;
 import cn.ucai.superwechat.R;
 import cn.ucai.superwechat.Utils;
+import cn.ucai.superwechat.applib.controller.HXSDKHelper;
 import cn.ucai.superwechat.bean.UserAvatar;
 import cn.ucai.superwechat.domain.User;
 import cn.ucai.superwechat.utils.UserUtils;
@@ -108,7 +110,10 @@ public class ContactAdapter extends ArrayAdapter<User>  implements SectionIndexe
 		    holder.avatar.setImageResource(R.drawable.new_friends_icon);
 //			UserUtils.setAppUserNick(username,holder.nameTextview);
 //			UserUtils.setAppUserAvatar(getContext(),username,holder.avatar);
-			if(user.getUnreadMsgCount() > 0){
+			//从环信上获取消息，布局如果有消息，提示小圆点在下方。
+			int unreadMsgCount= ((DemoHXSDKHelper) HXSDKHelper.getInstance()).getContactList().get(Constant.NEW_FRIENDS_USERNAME)
+					.getUnreadMsgCount();
+			if(user.getUnreadMsgCount() > 0||unreadMsgCount>0){
 			    holder.unreadMsgView.setVisibility(View.VISIBLE);
 //			    holder.unreadMsgView.setText(user.getUnreadMsgCount()+"");
 			}else{

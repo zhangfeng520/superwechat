@@ -576,7 +576,7 @@ public class MessageAdapter extends BaseAdapter{
 	    if(message.direct == Direct.SEND){
 	        //显示自己头像
 //	        UserUtils.setCurrentUserAvatar(context, imageView);
-	        UserUtils.setCurrentUserAvatar( imageView);
+	        UserUtils.setCurrentUserAvatar(context,imageView);
 	    }else{
 //	        UserUtils.setUserAvatar(context, message.getFrom(), imageView);
 			//对方头像修改

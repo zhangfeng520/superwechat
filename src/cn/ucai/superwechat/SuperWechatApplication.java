@@ -23,7 +23,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import cn.ucai.superwechat.bean.GroupAvatar;
 import cn.ucai.superwechat.bean.UserAvatar;
+import cn.ucai.superwechat.db.UserDao;
+import cn.ucai.superwechat.domain.User;
 
 public class SuperWeChatApplication extends Application {
 
@@ -142,10 +145,20 @@ public class SuperWeChatApplication extends Application {
 		this.userList = userList;
 	}
 
+	public List<GroupAvatar> groupList = new ArrayList<GroupAvatar>();
+
 	public UserProfileManager getUserProfieManager() {
 		if(userProManager == null){
 			userProManager = new UserProfileManager();
 		}
 		return userProManager;
+	}
+
+	public List<GroupAvatar> getGroupList() {
+		return groupList;
+	}
+
+	public void setGroupList(List<GroupAvatar> groupList) {
+		this.groupList = groupList;
 	}
 }

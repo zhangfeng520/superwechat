@@ -215,13 +215,14 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 				.execute(new OkHttpUtils2.OnCompleteListener<Result>() {
 					@Override
 					public void onSuccess(Result result) {
-						Toast.makeText(UserProfileActivity.this, "更新头像成功！", Toast.LENGTH_SHORT).show();
+//						Toast.makeText(UserProfileActivity.this, "更新头像成功！", Toast.LENGTH_SHORT).show();
 						Log.e(TAG, "222222222222");
 						setPicToView(data);
 
 					}
 					@Override
 					public void onError(String error) {
+						dialog.dismiss();
 
 					}
 				});
@@ -240,7 +241,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 					public void onSuccess(String s) {
 						Result result = Utils.getResultFromJson(s, UserAvatar.class);
 						UserAvatar  user = (UserAvatar) result.getRetData();
-						Toast.makeText(UserProfileActivity.this, "更新成功", Toast.LENGTH_SHORT).show();
+//						Toast.makeText(UserProfileActivity.this, "更新成功", Toast.LENGTH_SHORT).show();
 						updateRemoteNick(nickname);
 						//同步到远端数据
 						tvNickName.setText(nickname);
@@ -314,6 +315,8 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 		}
 		mOnSetAvatarListener.setAvatar(requestCode,data,headAvatar);
 		if (requestCode == OnSetAvatarListener.REQUEST_CROP_PHOTO) {
+			dialog = ProgressDialog.show(this, getString(R.string.dl_update_photo), getString(R.string.dl_waiting));
+			dialog.show();
 			updateUserAvatar(data);
 		}
 	}
@@ -349,7 +352,6 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 	}
 	
 	private void uploadUserAvatar(final byte[] data) {
-		dialog = ProgressDialog.show(this, getString(R.string.dl_update_photo), getString(R.string.dl_waiting));
 		new Thread(new Runnable() {
 
 			@Override
@@ -374,7 +376,6 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 			}
 		}).start();
 
-		dialog.show();
 	}
 	
 	

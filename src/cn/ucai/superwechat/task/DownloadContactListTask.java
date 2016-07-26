@@ -37,16 +37,19 @@ public class DownloadContactListTask {
                         Log.e(TAG, "s="+s);
                         Result result = Utils.getListResultFromJson(s, UserAvatar.class);
                         Log.e(TAG, "result=" + result);
-                        List<UserAvatar> list = (List<UserAvatar>) result.getRetData();
-                        if (list!=null&&list.size()>0) {
-                            Map<String, UserAvatar> userMap = SuperWeChatApplication.getInstance().getUserMap();
-                            for(UserAvatar u:list){
-                                userMap.put(u.getMUserName(), u);
+                        if (result != null && result.isRetMsg()) {
+                            List<UserAvatar> list = (List<UserAvatar>) result.getRetData();
+                            if (list!=null&&list.size()>0) {
+                                Map<String, UserAvatar> userMap = SuperWeChatApplication.getInstance().getUserMap();
+                                for(UserAvatar u:list){
+                                    userMap.put(u.getMUserName(), u);
+                                }
+                                Log.e(TAG, "list.size=" + list.size());
+                                SuperWeChatApplication.getInstance().setUserList(list);
+                                mContext.sendStickyBroadcast(new Intent("update_contact_list"));
                             }
-                            Log.e(TAG, "list.size=" + list.size());
-                            SuperWeChatApplication.getInstance().setUserList(list);
-                            mContext.sendStickyBroadcast(new Intent("update_contact_list"));
                         }
+
                     }
 
                     @Override

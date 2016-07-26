@@ -116,12 +116,12 @@
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable\\btn_style_alert_dialog_special.xml"
     },
     {
-        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\chat_location_selector.xml",
-        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable\\chat_location_selector.xml"
-    },
-    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_msg_text_color.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable\\menu_msg_text_color.xml"
+    },
+    {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\chat_location_selector.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable\\chat_location_selector.xml"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_white_normal_shape.xml",

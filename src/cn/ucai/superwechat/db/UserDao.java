@@ -19,6 +19,7 @@ import java.util.Map;
 import android.content.Context;
 
 
+import cn.ucai.superwechat.SuperWeChatApplication;
 import cn.ucai.superwechat.bean.UserAvatar;
 import cn.ucai.superwechat.domain.RobotUser;
 import cn.ucai.superwechat.domain.User;
@@ -85,7 +86,7 @@ public class UserDao {
 	public void saveContact(User user){
 	    DemoDBManager.getInstance().saveContact(user);
 	}
-	
+
 	public void setDisabledGroups(List<String> groups){
 	    DemoDBManager.getInstance().setDisabledGroups(groups);
     }
@@ -115,5 +116,9 @@ public class UserDao {
 
 	public UserAvatar getUserAvatar(String userName) {
 		return DemoDBManager.getInstance().getUserAvatar(userName);
+	}
+
+	public void updateUserNick(UserAvatar user) {
+		DemoDBManager.getInstance().updateUserNick(user);
 	}
 }
