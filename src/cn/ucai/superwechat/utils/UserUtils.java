@@ -138,6 +138,17 @@ public class UserUtils {
         if(path != null && username != null){
             path = getUserAvatarPath(username);
             Log.e(TAG, "path=" + path);
+            Picasso.with(context).load(path).placeholder(R.drawable.group_icon).into(avatar);
+        }else{
+//            Picasso.with(context).load(R.drawable.default_avatar).into(avatar);
+            Picasso.with(context).load(path).placeholder(R.drawable.group_icon).into(avatar);
+        }
+    }
+    public static void setAppGroupAvatar(Context context, String hxid, ImageView avatar) {
+        String path = "";
+        if(path != null && hxid != null){
+            path = getGroupAvatarPath(hxid);
+            Log.e(TAG, "path=" + path);
             Picasso.with(context).load(path).placeholder(R.drawable.default_avatar).into(avatar);
         }else{
 //            Picasso.with(context).load(R.drawable.default_avatar).into(avatar);
@@ -146,13 +157,6 @@ public class UserUtils {
     }
 
     public static String getUserAvatarPath(String username) {
-//        StringBuilder path = new StringBuilder(I.SERVER_ROOT);
-//        path.append(I.QUESTION).append(I.KEY_REQUEST)
-//                .append(I.EQU).append(I.REQUEST_UPLOAD_AVATAR)
-//                .append(I.AND)
-//                .append(I.AVATAR_TYPE).append(I.EQU).append(I.AVATAR_TYPE_USER_PATH)
-//                .append(I.AND)
-//                .append(I.NAME_OR_HXID).append(I.EQU).append(username);
         StringBuilder path = new StringBuilder(I.SERVER_ROOT);
         path.append(I.QUESTION).append(I.KEY_REQUEST)
                 .append(I.EQU).append(I.REQUEST_DOWNLOAD_AVATAR)
@@ -160,6 +164,17 @@ public class UserUtils {
                 .append(I.NAME_OR_HXID).append(I.EQU).append(username)
                 .append(I.AND)
                 .append(I.AVATAR_TYPE).append(I.EQU).append(I.AVATAR_TYPE_USER_PATH);
+        return path.toString();
+
+    }
+    public static String getGroupAvatarPath(String hxid) {
+        StringBuilder path = new StringBuilder(I.SERVER_ROOT);
+        path.append(I.QUESTION).append(I.KEY_REQUEST)
+                .append(I.EQU).append(I.REQUEST_DOWNLOAD_AVATAR)
+                .append(I.AND)
+                .append(I.NAME_OR_HXID).append(I.EQU).append(hxid)
+                .append(I.AND)
+                .append(I.AVATAR_TYPE).append(I.EQU).append(I.AVATAR_TYPE_GROUP_PATH);
         return path.toString();
 
     }
