@@ -13,6 +13,7 @@
  */
 package cn.ucai.superwechat.activity;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,6 +24,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -38,6 +40,10 @@ import cn.ucai.superwechat.Utils;
 import cn.ucai.superwechat.applib.controller.HXSDKHelper;
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMGroupManager;
+import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
+
 import cn.ucai.superwechat.Constant;
 import cn.ucai.superwechat.SuperWeChatApplication;
 import cn.ucai.superwechat.DemoHXSDKHelper;
@@ -49,6 +55,7 @@ import cn.ucai.superwechat.db.UserDao;
 import cn.ucai.superwechat.domain.User;
 import cn.ucai.superwechat.task.DownloadContactListTask;
 import cn.ucai.superwechat.utils.CommonUtils;
+import cn.ucai.superwechat.utils.UserUtils;
 
 /**
  * 登陆页面
@@ -196,6 +203,7 @@ public class LoginActivity extends BaseActivity {
 							if (user != null) {
 								savaUserToDB(user);
 								loginSuccess(user);
+								downloadAvatar();
 							}
 						} else {
 							pd.dismiss();
@@ -213,6 +221,36 @@ public class LoginActivity extends BaseActivity {
 				});
 	}
 
+	private void downloadAvatar() {
+		final OkHttpUtils2<Message> utils = new OkHttpUtils2<Message>();
+		utils.url(UserUtils.getUserAvatarPath(currentUsername))
+				.targetClass(Message.class)
+				.doInBackground(new Callback() {
+					@Override
+					public void onFailure(Request request, IOException e) {
+						Log.e(TAG, "IOException " + e.getMessage());
+					}
+
+					@Override
+					public void onResponse(Response response) throws IOException {
+						byte[] date = response.body().bytes();
+						final String avatarUrl = ((DemoHXSDKHelper) HXSDKHelper.getInstance()).getUserProfileManager().uploadUserAvatar(date);
+						Log.e(TAG, "avatarUrl = " + avatarUrl);
+					}
+				})
+				.execute(new OkHttpUtils2.OnCompleteListener<Message>() {
+					@Override
+					public void onSuccess(Message result) {
+						Log.e(TAG, "result = " + result.toString());
+					}
+
+					@Override
+					public void onError(String error) {
+						Log.e(TAG, "error = " + error);
+					}
+				});
+	}
+
 	private void savaUserToDB(UserAvatar user) {
 			UserDao dao = new UserDao(LoginActivity.this);
 			dao.savaUserAvatar(user);
@@ -225,6 +263,7 @@ public class LoginActivity extends BaseActivity {
 		SuperWeChatApplication.getInstance().setPassword(currentPassword);
 		SuperWeChatApplication.getInstance().setUser(user);
 		SuperWeChatApplication.currentUserNick = user.getMUserNick();
+
 		new DownloadContactListTask(LoginActivity.this,currentUsername).execute();
 		try {
 			// ** 第一次登录或者之前logout后再登录，加载所有本地群和回话
