@@ -22,6 +22,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -41,7 +42,13 @@ import android.widget.Toast;
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMGroup;
 import com.easemob.chat.EMGroupManager;
+
+import cn.ucai.superwechat.I;
 import cn.ucai.superwechat.R;
+import cn.ucai.superwechat.Utils;
+import cn.ucai.superwechat.bean.GroupAvatar;
+import cn.ucai.superwechat.bean.Result;
+import cn.ucai.superwechat.data.OkHttpUtils2;
 import cn.ucai.superwechat.utils.UserUtils;
 import cn.ucai.superwechat.widget.ExpandGridView;
 import com.easemob.exceptions.EaseMobException;
@@ -431,6 +438,45 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 				}
 			}
 		}).start();
+		//添加好友到本地数据库
+		createGroupMembers(groupId,newmembers);
+	}
+	private void createGroupMembers(String groupId, String[] members) {
+		String member = "";
+		for (String m : members) {
+			member += m + ",";
+		}
+		member=member.substring(0, member.length() - 1);
+		Log.e(TAG, member);
+		final OkHttpUtils2<String> utils2 = new OkHttpUtils2<String>();
+		utils2.setRequestUrl(I.REQUEST_ADD_GROUP_MEMBERS)
+				.addParam(I.Member.USER_NAME,member)
+				.addParam(I.Member.GROUP_HX_ID,groupId)
+				.targetClass(String.class)
+				.execute(new OkHttpUtils2.OnCompleteListener<String>() {
+					@Override
+					public void onSuccess(String s) {
+						Log.e(TAG, "s=" + s);
+						Result result = Utils.getResultFromJson(s, GroupAvatar.class);
+						Log.e(TAG, "result=" + result);
+						progressDialog.dismiss();
+						runOnUiThread(new Runnable() {
+							public void run() {
+								progressDialog.dismiss();
+								setResult(RESULT_OK);
+								finish();
+								Toast.makeText(getApplicationContext(), "增加好友入群成功", Toast.LENGTH_SHORT).show();
+							}
+						});
+					}
+
+					@Override
+					public void onError(String error) {
+						Log.e(TAG, "error=" + error);
+						Toast.makeText(getApplicationContext(), "好友入群失败", Toast.LENGTH_SHORT).show();
+						progressDialog.dismiss();
+					}
+				});
 	}
 
 	@Override
