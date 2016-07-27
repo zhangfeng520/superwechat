@@ -17,8 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -45,10 +47,12 @@ import com.easemob.chat.EMGroupManager;
 
 import cn.ucai.superwechat.I;
 import cn.ucai.superwechat.R;
+import cn.ucai.superwechat.SuperWeChatApplication;
 import cn.ucai.superwechat.Utils;
 import cn.ucai.superwechat.bean.GroupAvatar;
 import cn.ucai.superwechat.bean.Result;
 import cn.ucai.superwechat.data.OkHttpUtils2;
+import cn.ucai.superwechat.task.DownloadMemberMapTask;
 import cn.ucai.superwechat.utils.UserUtils;
 import cn.ucai.superwechat.widget.ExpandGridView;
 import com.easemob.exceptions.EaseMobException;
@@ -185,6 +189,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 		clearAllHistory.setOnClickListener(this);
 		blacklistLayout.setOnClickListener(this);
 		changeGroupNameLayout.setOnClickListener(this);
+		updateMemberReceiver();
 
 	}
 
@@ -432,7 +437,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 					runOnUiThread(new Runnable() {
 						public void run() {
 							progressDialog.dismiss();
-							Toast.makeText(getApplicationContext(), st6 + e.getMessage(), 1).show();
+							Toast.makeText(getApplicationContext(), st6 + e.getMessage(), Toast.LENGTH_LONG).show();
 						}
 					});
 				}
@@ -441,7 +446,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 		//添加好友到本地数据库
 		createGroupMembers(groupId,newmembers);
 	}
-	private void createGroupMembers(String groupId, String[] members) {
+	private void createGroupMembers(final String groupId, String[] members) {
 		String member = "";
 		for (String m : members) {
 			member += m + ",";
@@ -460,6 +465,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 						Result result = Utils.getResultFromJson(s, GroupAvatar.class);
 						Log.e(TAG, "result=" + result);
 						progressDialog.dismiss();
+						new DownloadMemberMapTask(getApplicationContext(), groupId).execute();
 						runOnUiThread(new Runnable() {
 							public void run() {
 								progressDialog.dismiss();
@@ -703,6 +709,8 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 							}
 							EMLog.d("group", "remove user from group:" + username);
 							deleteMembersFromGroup(username);
+							//删除点中的好友
+							deleteMembers(username);
 						} else {
 							// 正常情况下点击user，可以进入用户详情或者聊天页面等等
 							// startActivity(new
@@ -723,6 +731,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 						deleteDialog.setMessage(st13);
 						deleteDialog.setCanceledOnTouchOutside(false);
 						deleteDialog.show();
+						//删除选中的成员
 						new Thread(new Runnable() {
 
 							@Override
@@ -779,6 +788,48 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 		public int getCount() {
 			return super.getCount() + 2;
 		}
+	}
+
+	private void deleteMembers(final String username) {
+		final OkHttpUtils2<String> utils2 = new OkHttpUtils2<String>();
+		utils2.setRequestUrl(I.REQUEST_FIND_GROUP_BY_HXID)
+				.addParam(I.Group.HX_ID, groupId)
+				.targetClass(String.class)
+				.execute(new OkHttpUtils2.OnCompleteListener<String>() {
+					@Override
+					public void onSuccess(String s) {
+						Result result = Utils.getResultFromJson(s, GroupAvatar.class);
+						if (result != null) {
+							GroupAvatar group = (GroupAvatar) result.getRetData();
+							final String groupId = group.getMGroupId().toString();
+							Log.e(TAG, "groupId================="+ groupId);
+							final OkHttpUtils2<String> utils = new OkHttpUtils2<String>();
+							utils.setRequestUrl(I.REQUEST_DELETE_GROUP_MEMBER)
+									.addParam(I.Member.GROUP_ID, groupId)
+									.addParam(I.Member.USER_NAME,username)
+									.targetClass(String.class)
+									.execute(new OkHttpUtils2.OnCompleteListener<String>() {
+										@Override
+										public void onSuccess(String result) {
+											Log.e(TAG, "username============" + username);
+											Toast.makeText(GroupDetailsActivity.this, "删除成功啦！", Toast.LENGTH_SHORT).show();
+										}
+
+										@Override
+										public void onError(String error) {
+											Toast.makeText(GroupDetailsActivity.this, "删除失败", Toast.LENGTH_SHORT).show();
+										}
+									});
+
+						}
+					}
+
+					@Override
+					public void onError(String error) {
+
+					}
+				});
+
 	}
 
 	protected void updateGroup() {
@@ -843,12 +894,29 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 	protected void onDestroy() {
 		super.onDestroy();
 		instance = null;
+		if (mReceiver != null) {
+			unregisterReceiver(mReceiver);
+		}
 	}
 	
 	private static class ViewHolder{
 	    ImageView imageView;
 	    TextView textView;
 	    ImageView badgeDeleteView;
+	}
+
+	class UpdateMemberReceiver extends BroadcastReceiver {
+
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			refreshMembers();
+		}
+	}
+	UpdateMemberReceiver mReceiver;
+	public void updateMemberReceiver() {
+		mReceiver = new UpdateMemberReceiver();
+		IntentFilter filter = new IntentFilter("update_member_list");
+		registerReceiver(mReceiver, filter);
 	}
 
 }
