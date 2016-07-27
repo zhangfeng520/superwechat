@@ -373,6 +373,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 				}
 			}
 		}).start();
+		deleteMembers(SuperWeChatApplication.getInstance().getUserName());
 	}
 
 	/**
