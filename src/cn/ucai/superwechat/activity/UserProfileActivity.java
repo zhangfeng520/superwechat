@@ -2,6 +2,7 @@ package cn.ucai.superwechat.activity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.util.List;
 
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -79,12 +80,9 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 		String username = intent.getStringExtra("username");
 		btnname = username;
 		boolean enableUpdate = intent.getBooleanExtra("setting", false);
+		String hxid = intent.getStringExtra("groupId");
 
 		if (enableUpdate) {
-//			UserAvatar user = SuperWeChatApplication.getInstance().getUser();
-//			UserUtils.setAppUserAvatar(this,user.getMUserName(),headAvatar);
-//			Log.e(TAG, "ksdfsdfdsfsd=" + user.toString());
-//			UserUtils.setAppUserNick(user.getMUserName(),tvNickName);
 			headPhotoUpdate.setVisibility(View.VISIBLE);
 			iconRightArrow.setVisibility(View.VISIBLE);
 			rlNickName.setOnClickListener(this);
@@ -98,26 +96,33 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 
 		}
 		if (username == null||username.equals(SuperWeChatApplication.getInstance().getUserName())) {
-//			tvUsername.setText(EMChatManager.getInstance().getCurrentUser());
-//			UserUtils.setCurrentUserNick(tvNickName);
-//			UserUtils.setCurrentUserAvatar(this, headAvatar);
 			tvUsername.setText(SuperWeChatApplication.getInstance().getUserName());
 			findViewById(R.id.btnSendMessage).setVisibility(View.GONE);
 			if (tvNickName != null) {
 				UserUtils.setCurrentAppUserNick(tvNickName);
 			}
-//			UserUtils.setAppUserAvatar(this,SuperWeChatApplication.getInstance().getUserName(),headAvatar);
 			UserUtils.setCurrentUserAvatar(this,headAvatar);
 
 
-		} else {
+		} else if (hxid != null) {
 			tvUsername.setText(username);
-//			UserUtils.setUserNick(username, tvNickName);
-//			UserUtils.setUserAvatar(this, username, headAvatar);
-			//修改联系人个人资料的头像和昵称
-			UserUtils.setAppUserNick(username,tvNickName);
+			UserUtils.setAppMemberNick(hxid, username, tvNickName);
 			UserUtils.setAppUserAvatar(this,username,headAvatar);
-//			asyncFetchUserInfo(username);
+			if (SuperWeChatApplication.getInstance().getB() ==0) {
+				findViewById(R.id.btnSendMessage).setVisibility(View.GONE);
+				findViewById(R.id.btnAddContact).setVisibility(View.VISIBLE);
+			}
+		} else {
+			if (hxid != null) {
+				UserUtils.setAppMemberNick(hxid, username, tvNickName);
+				UserUtils.setAppUserAvatar(this,username,headAvatar);
+
+			}else {
+				tvUsername.setText(username);
+				//修改联系人个人资料的头像和昵称
+				UserUtils.setAppUserNick(username, tvNickName);
+				UserUtils.setAppUserAvatar(this, username, headAvatar);
+			}
 		}
 	}
 
@@ -390,6 +395,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 		Toast.makeText(UserProfileActivity.this, "终于点到我了", Toast.LENGTH_SHORT).show();
 		startActivity(new Intent(UserProfileActivity.this,ChatActivity.class).putExtra("userId",btnname));
 
+
 //		Intent intent = new Intent();
 //		intent.putExtra("chatType", 1);
 //		startActivity(intent);
@@ -400,4 +406,9 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 		avatarName = System.currentTimeMillis() + "";
 		return avatarName;
 	}
+
+	public void back(View view) {
+		finish();
+	}
+
 }

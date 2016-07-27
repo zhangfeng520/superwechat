@@ -16,6 +16,7 @@ package cn.ucai.superwechat.adapter;
 import java.io.File;
 import java.util.Date;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -54,6 +55,8 @@ import android.widget.Toast;
 import com.easemob.EMCallBack;
 import com.easemob.EMError;
 
+import cn.ucai.superwechat.I;
+import cn.ucai.superwechat.SuperWeChatApplication;
 import cn.ucai.superwechat.Utils;
 import cn.ucai.superwechat.applib.controller.HXSDKHelper;
 import com.easemob.chat.EMChatManager;
@@ -80,6 +83,9 @@ import cn.ucai.superwechat.activity.ShowBigImage;
 import cn.ucai.superwechat.activity.ShowNormalFileActivity;
 import cn.ucai.superwechat.activity.ShowVideoActivity;
 import cn.ucai.superwechat.activity.UserProfileActivity;
+import cn.ucai.superwechat.bean.Result;
+import cn.ucai.superwechat.bean.UserAvatar;
+import cn.ucai.superwechat.data.OkHttpUtils2;
 import cn.ucai.superwechat.task.LoadImageTask;
 import cn.ucai.superwechat.task.LoadVideoImageTask;
 import cn.ucai.superwechat.utils.DateUtils;
@@ -587,6 +593,8 @@ public class MessageAdapter extends BaseAdapter{
 			
 			@Override
 			public void onClick(View v) {
+				//判断是否为好友
+				isContact(message.getFrom());
 				Intent intent = new Intent();
 				intent.setClass(context, UserProfileActivity.class);
 				intent.putExtra("username", message.getFrom());
@@ -1587,6 +1595,40 @@ public class MessageAdapter extends BaseAdapter{
 			activity.startActivity(intent);
 		}
 
+	}
+	public void isContact(final String name) {
+		final OkHttpUtils2<String> utils2 = new OkHttpUtils2<String>();
+		utils2.setRequestUrl(I.REQUEST_DOWNLOAD_CONTACT_ALL_LIST)
+				.addParam(I.Contact.USER_NAME,SuperWeChatApplication.getInstance().getUserName())
+				.targetClass(String.class)
+				.execute(new OkHttpUtils2.OnCompleteListener<String>() {
+					@Override
+					public void onSuccess(String s) {
+						Log.e(TAG, "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+						Result result = Utils.getListResultFromJson(s, UserAvatar.class);
+						if (result != null && result.isRetMsg()) {
+							List<UserAvatar> list= (List<UserAvatar>) result.getRetData();
+							Log.e(TAG, "111111111111111111111111111111111111" + list);
+							for (UserAvatar user : list) {
+								if (user.getMUserName().equals(name)) {
+									int b=1;
+									SuperWeChatApplication.getInstance().setB(b);
+									Log.e(TAG, "bbbbbbbbbbbbbbbbbbbb=" + 1);
+									return;
+								}else {
+									int b=0;
+									SuperWeChatApplication.getInstance().setB(b);
+									Log.e(TAG,"bbbbbbbbbbbbbbbbbb="+0);
+								}
+							}
+						}
+
+					}
+
+					@Override
+					public void onError(String error) {
+					}
+				});
 	}
 
 }
