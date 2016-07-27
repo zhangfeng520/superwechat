@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 import cn.ucai.superwechat.bean.GroupAvatar;
+import cn.ucai.superwechat.bean.MemberUserAvatar;
 import cn.ucai.superwechat.bean.UserAvatar;
 import cn.ucai.superwechat.db.UserDao;
 import cn.ucai.superwechat.domain.User;
@@ -125,6 +126,8 @@ public class SuperWeChatApplication extends Application {
 		return userMap;
 	}
 
+	//创建map的集合，保存群组成员
+	public Map<String, HashMap<String, MemberUserAvatar>> memberMap = new HashMap<String, HashMap<String, MemberUserAvatar>>();
 	public void setUserMap(Map<String, UserAvatar> userMap) {
 		this.userMap = userMap;
 	}
@@ -144,8 +147,10 @@ public class SuperWeChatApplication extends Application {
 	public void setUserList(List<UserAvatar> userList) {
 		this.userList = userList;
 	}
-
+	//全局的当前登录用户的群组集合
 	public List<GroupAvatar> groupList = new ArrayList<GroupAvatar>();
+	//全局的当前登录用户的群组Map集合
+	public Map<String, GroupAvatar> groupMap = new HashMap<String, GroupAvatar>();
 
 	public UserProfileManager getUserProfieManager() {
 		if(userProManager == null){
@@ -160,5 +165,21 @@ public class SuperWeChatApplication extends Application {
 
 	public void setGroupList(List<GroupAvatar> groupList) {
 		this.groupList = groupList;
+	}
+
+	public Map<String, HashMap<String, MemberUserAvatar>> getMemberMap() {
+		return memberMap;
+	}
+
+	public void setMemberMap(Map<String, HashMap<String, MemberUserAvatar>> memberMap) {
+		this.memberMap = memberMap;
+	}
+
+	public Map<String, GroupAvatar> getGroupMap() {
+		return groupMap;
+	}
+
+	public void setGroupMap(Map<String, GroupAvatar> groupMap) {
+		this.groupMap = groupMap;
 	}
 }

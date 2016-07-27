@@ -20,6 +20,7 @@ import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -37,12 +38,14 @@ import cn.ucai.superwechat.I;
 import cn.ucai.superwechat.R;
 import cn.ucai.superwechat.SuperWeChatApplication;
 import cn.ucai.superwechat.Utils;
+import cn.ucai.superwechat.bean.GroupAvatar;
 import cn.ucai.superwechat.bean.Result;
 import cn.ucai.superwechat.bean.UserAvatar;
 import cn.ucai.superwechat.data.OkHttpUtils2;
 import cn.ucai.superwechat.db.InviteMessgeDao;
 import cn.ucai.superwechat.domain.InviteMessage;
 import cn.ucai.superwechat.domain.InviteMessage.InviteMesageStatus;
+import cn.ucai.superwechat.task.DownloadMemberMapTask;
 import cn.ucai.superwechat.utils.UserUtils;
 
 public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
@@ -182,8 +185,10 @@ public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
 					if(msg.getGroupId() == null){ //同意好友请求
 						EMChatManager.getInstance().acceptInvitation(msg.getFrom());
 					}
-					else //同意加群申请
+					else {//同意加群申请
+						createGroupMembers(msg.getGroupId(),msg.getFrom());
 					    EMGroupManager.getInstance().acceptApplication(msg.getFrom(), msg.getGroupId());
+					}
 					((Activity) context).runOnUiThread(new Runnable() {
 
 						@Override
@@ -215,6 +220,30 @@ public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
 		}).start();
 	}
 
+	private void createGroupMembers(final String groupId, String member) {
+		final OkHttpUtils2<String> utils2 = new OkHttpUtils2<String>();
+		utils2.setRequestUrl(I.REQUEST_ADD_GROUP_MEMBER)
+				.addParam(I.Member.USER_NAME,member)
+				.addParam(I.Member.GROUP_HX_ID,groupId)
+				.targetClass(String.class)
+				.execute(new OkHttpUtils2.OnCompleteListener<String>() {
+					@Override
+					public void onSuccess(String s) {
+						Result result = Utils.getResultFromJson(s, GroupAvatar.class);
+						if (result != null && result.isRetMsg()) {
+
+//							new DownloadMemberMapTask(getContext(),groupId).execute();
+									Toast.makeText(getContext(), "增加好友入群成功", Toast.LENGTH_SHORT).show();
+								}
+					}
+
+					@Override
+					public void onError(String error) {
+						Toast.makeText(getContext(), "好友入群失败", Toast.LENGTH_SHORT).show();
+					}
+				});
+	}
+
 	private static class ViewHolder {
 		ImageView avator;
 		TextView name;
@@ -224,5 +253,6 @@ public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
 		TextView groupname;
 		// TextView time;
 	}
+
 
 }
