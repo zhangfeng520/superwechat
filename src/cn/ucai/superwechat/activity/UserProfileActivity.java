@@ -43,6 +43,8 @@ import cn.ucai.superwechat.db.UserDao;
 import cn.ucai.superwechat.domain.User;
 import cn.ucai.superwechat.listener.OnSetAvatarListener;
 import cn.ucai.superwechat.utils.UserUtils;
+
+import com.easemob.chat.EMContactManager;
 import com.squareup.picasso.Picasso;
 
 public class UserProfileActivity extends BaseActivity implements OnClickListener{
@@ -391,15 +393,6 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 	}
 
 
-	public void onSentMessage(View view) {
-		Toast.makeText(UserProfileActivity.this, "终于点到我了", Toast.LENGTH_SHORT).show();
-		startActivity(new Intent(UserProfileActivity.this,ChatActivity.class).putExtra("userId",btnname));
-
-
-//		Intent intent = new Intent();
-//		intent.putExtra("chatType", 1);
-//		startActivity(intent);
-	}
 
 	String avatarName;
 	public String getAvatarName() {
@@ -410,5 +403,44 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 	public void back(View view) {
 		finish();
 	}
+	public void onSentMessage(View view) {
+		Toast.makeText(UserProfileActivity.this, "终于点到我了", Toast.LENGTH_SHORT).show();
+		startActivity(new Intent(UserProfileActivity.this,ChatActivity.class).putExtra("userId",btnname));
+	}
+	//个人资料页面加好友的点击事件
+	private ProgressDialog progressDialog;
+	public void onAddContact(View view) {
+		Toast.makeText(UserProfileActivity.this, "等你等了这么久", Toast.LENGTH_SHORT).show();
+		progressDialog = new ProgressDialog(this);
+		String stri = getResources().getString(R.string.Is_sending_a_request);
+		progressDialog.setMessage(stri);
+		progressDialog.setCanceledOnTouchOutside(false);
+		progressDialog.show();
 
+		new Thread(new Runnable() {
+			public void run() {
+
+				try {
+					//demo写死了个reason，实际应该让用户手动填入
+					String s = getResources().getString(R.string.Add_a_friend);
+					EMContactManager.getInstance().addContact(btnname, s);
+					runOnUiThread(new Runnable() {
+						public void run() {
+							progressDialog.dismiss();
+							String s1 = getResources().getString(R.string.send_successful);
+							Toast.makeText(getApplicationContext(), s1, Toast.LENGTH_LONG).show();
+						}
+					});
+				} catch (final Exception e) {
+					runOnUiThread(new Runnable() {
+						public void run() {
+							progressDialog.dismiss();
+							String s2 = getResources().getString(R.string.Request_add_buddy_failure);
+							Toast.makeText(getApplicationContext(), s2 + e.getMessage(), Toast.LENGTH_LONG).show();
+						}
+					});
+				}
+			}
+		}).start();
+	}
 }
