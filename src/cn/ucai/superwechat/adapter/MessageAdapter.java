@@ -419,7 +419,7 @@ public class MessageAdapter extends BaseAdapter{
 		// 群聊时，显示接收的消息的发送人的名称
 		if ((chatType == ChatType.GroupChat || chatType == ChatType.ChatRoom) && message.direct == EMMessage.Direct.RECEIVE){
 		    //demo里使用username代码nick
-			UserUtils.setAppUserNick(message.getFrom(), holder.tv_usernick);
+			UserUtils.setAppMemberNick(username,message.getFrom(), holder.tv_usernick);
 //			UserUtils.setCurrentAppUserNick(holder.tv_usernick);
 		}
 
