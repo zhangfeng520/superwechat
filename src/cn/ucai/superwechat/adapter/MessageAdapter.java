@@ -421,6 +421,7 @@ public class MessageAdapter extends BaseAdapter{
 		    //demo里使用username代码nick
 			UserUtils.setAppMemberNick(username,message.getFrom(), holder.tv_usernick);
 //			UserUtils.setCurrentAppUserNick(holder.tv_usernick);
+
 		}
 
 		if(message.direct == EMMessage.Direct.SEND){
@@ -589,6 +590,8 @@ public class MessageAdapter extends BaseAdapter{
 				Intent intent = new Intent();
 				intent.setClass(context, UserProfileActivity.class);
 				intent.putExtra("username", message.getFrom());
+				//发送一个群ID的意图，在MessageAdapter中，username单聊代表名字，群聊代表环信Id
+				intent.putExtra("groupId", username);
 				context.startActivity(intent);
 			}
 		});

@@ -186,6 +186,7 @@ public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
 						EMChatManager.getInstance().acceptInvitation(msg.getFrom());
 					}
 					else {//同意加群申请
+						//当点击时候增加一条数据到数据库
 						createGroupMembers(msg.getGroupId(),msg.getFrom());
 					    EMGroupManager.getInstance().acceptApplication(msg.getFrom(), msg.getGroupId());
 					}
