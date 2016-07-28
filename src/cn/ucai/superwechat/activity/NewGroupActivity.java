@@ -173,10 +173,12 @@ public class NewGroupActivity extends BaseActivity {
                         Result result = Utils.getResultFromJson(s, GroupAvatar.class);
                         Log.e(TAG, "result=" + result);
                         if (result != null && result.isRetMsg()) {
-                            final GroupAvatar groupAvatar = (GroupAvatar) result.getRetData();
+                            final GroupAvatar group = (GroupAvatar) result.getRetData();
                             if (members != null && members.length > 0) {
                                 createGroupMembers(groupId, members);
                             }else {
+                                SuperWeChatApplication.getInstance().getGroupMap().put(group.getMGroupHxid(), group);
+                                SuperWeChatApplication.getInstance().getGroupList().add(group);
                                 runOnUiThread(new Runnable() {
                                     public void run() {
                                         progressDialog.dismiss();
@@ -202,7 +204,7 @@ public class NewGroupActivity extends BaseActivity {
 
     }
 
-    private void createGroupMembers(String groupId, String[] members) {
+    private void createGroupMembers(final String groupId, String[] members) {
         String member = "";
         for (String m : members) {
             member += m + ",";
@@ -220,7 +222,10 @@ public class NewGroupActivity extends BaseActivity {
                         Log.e(TAG, "s=" + s);
                         Result result = Utils.getResultFromJson(s, GroupAvatar.class);
                         Log.e(TAG, "result=" + result);
+                        GroupAvatar group= (GroupAvatar) result.getRetData();
                         progressDialog.dismiss();
+                        SuperWeChatApplication.getInstance().getGroupMap().put(group.getMGroupHxid(), group);
+                        SuperWeChatApplication.getInstance().getGroupList().add(group);
                         runOnUiThread(new Runnable() {
                             public void run() {
                                 progressDialog.dismiss();
