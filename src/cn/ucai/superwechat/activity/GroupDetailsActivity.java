@@ -147,7 +147,9 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 			exitBtn.setVisibility(View.GONE);
 			deleteBtn.setVisibility(View.GONE);
 			blacklistLayout.setVisibility(View.GONE);
-			changeGroupNameLayout.setVisibility(View.GONE);
+//			changeGroupNameLayout.setVisibility(View.GONE);
+			//非群主同样可以修改群昵称
+			changeGroupNameLayout.setVisibility(View.VISIBLE);
 		}
 		// 如果自己是群主，显示解散按钮
 		if (EMChatManager.getInstance().getCurrentUser().equals(group.getOwner())) {
@@ -229,8 +231,6 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 				progressDialog.setMessage(st3);
 				progressDialog.show();
 				deleteGrop();
-				//删除群组里边所有数据（本地）
-				deleteAppGroup();
 				break;
 			case REQUEST_CODE_CLEAR_ALL_HISTORY:
 				// 清空此群聊的聊天记录
@@ -269,6 +269,10 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 							}
 						}
 					}).start();
+					//修改群组名称
+					UpdateGroupName(returnData);
+
+
 				}
 				break;
 			case REQUEST_CODE_ADD_TO_BALCKLIST:
@@ -301,6 +305,33 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 				break;
 			}
 		}
+	}
+
+	private void UpdateGroupName(String groupname) {
+		final GroupAvatar group = SuperWeChatApplication.getInstance().getGroupMap().get(groupId);
+		final OkHttpUtils2<String> utils = new OkHttpUtils2<String>();
+		utils.setRequestUrl(I.REQUEST_UPDATE_GROUP_NAME)
+				.addParam(I.Group.NAME,groupname)
+				.addParam(I.Group.GROUP_ID,String.valueOf(group.getMGroupId()))
+				.targetClass(String.class)
+				.execute(new OkHttpUtils2.OnCompleteListener<String>() {
+					@Override
+					public void onSuccess(String s) {
+						Log.e(TAG, "修改群组名称成功");
+						Result result = Utils.getResultFromJson(s, GroupAvatar.class);
+						if (result != null && result.isRetMsg()) {
+							Log.e(TAG, "result==============" + result);
+							GroupAvatar groupAvatar = (GroupAvatar) result.getRetData();
+							SuperWeChatApplication.getInstance().getGroupMap().put(groupId, groupAvatar);
+							SuperWeChatApplication.getInstance().getGroupList().add(groupAvatar);
+						}
+					}
+
+					@Override
+					public void onError(String error) {
+
+					}
+				});
 	}
 
 	/**
@@ -426,12 +457,15 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 					runOnUiThread(new Runnable() {
 						public void run() {
 							progressDialog.dismiss();
-							Toast.makeText(getApplicationContext(), st5 + e.getMessage(), 1).show();
+							Toast.makeText(getApplicationContext(), st5 + e.getMessage(), Toast.LENGTH_LONG).show();
 						}
 					});
 				}
 			}
 		}).start();
+
+		//删除群组里边所有数据（本地）
+		deleteAppGroup();
 	}
 
 	/**
