@@ -208,7 +208,7 @@ public class UserUtils {
         if(member != null&&member.getMUserNick()!=null){
             textView.setText(member.getMUserNick());
         }else{
-            textView.setText(member.getMUserName());
+            textView.setText(username);
         }
     }
 
@@ -217,7 +217,7 @@ public class UserUtils {
         HashMap<String, MemberUserAvatar> members =
                 SuperWeChatApplication.getInstance().getMemberMap().get(hxid);
         Log.e(TAG, "hxid=" + hxid + ",members=" + members);
-        if (members == null && members.size() < 0) {
+        if (members == null || members.size() <0) {
             return null;
         } else {
             member = members.get(username);

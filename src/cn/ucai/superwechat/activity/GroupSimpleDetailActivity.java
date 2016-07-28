@@ -69,8 +69,7 @@ public class GroupSimpleDetailActivity extends BaseActivity {
 		tv_name.setText(groupname);
 		//增加公共群资料里的群头像
 		UserUtils.setAppGroupAvatar(GroupSimpleDetailActivity.this, groupid, ivAvatar);
-		
-		
+
 		if(group != null){
 		    showGroupDetail();
 		    return;
@@ -154,6 +153,7 @@ public class GroupSimpleDetailActivity extends BaseActivity {
          tv_name.setText(group.getGroupName());
          tv_admin.setText(group.getOwner());
          tv_introduction.setText(group.getDescription());
+//		 UserUtils.setAppUserAvatar(GroupSimpleDetailActivity.this,group.getGroupId(),ivAvatar);
      }
 	
 	public void back(View view){

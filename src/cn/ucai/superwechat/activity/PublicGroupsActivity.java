@@ -143,6 +143,7 @@ public class PublicGroupsActivity extends BaseActivity {
 
                         public void run() {
                             searchBtn.setVisibility(View.VISIBLE);
+                            //过滤公开群组，已拥有的公开群组在查找时不显示
                             for (EMGroupInfo g : returnGroups) {
                                 if (!SuperWeChatApplication.getInstance().getGroupMap().containsKey(g.getGroupId())) {
                                     groupsList.add(g);

@@ -22,8 +22,10 @@ import java.util.List;
 import java.util.Map;
 
 import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
@@ -95,6 +97,7 @@ import cn.ucai.superwechat.adapter.ExpressionPagerAdapter;
 import cn.ucai.superwechat.adapter.MessageAdapter;
 import cn.ucai.superwechat.adapter.VoicePlayClickListener;
 import cn.ucai.superwechat.domain.RobotUser;
+import cn.ucai.superwechat.task.DownloadMemberMapTask;
 import cn.ucai.superwechat.utils.CommonUtils;
 import cn.ucai.superwechat.utils.ImageUtils;
 import cn.ucai.superwechat.utils.SmileUtils;
@@ -422,6 +425,7 @@ public class ChatActivity extends BaseActivity implements OnClickListener, EMEve
 	            forwardMessage(forward_msg_id);
 	        }
 		}
+		UpdateMemebers();
 	}
 
 	protected void onConversationInit(){
@@ -517,10 +521,10 @@ public class ChatActivity extends BaseActivity implements OnClickListener, EMEve
         }else{
             ((TextView) findViewById(R.id.name)).setText(toChatUsername);
         }
-        
-        // 监听当前会话的群聊解散被T事件
-        groupListener = new GroupListener();
-        EMGroupManager.getInstance().addGroupChangeListener(groupListener);
+		// 监听当前会话的群聊解散被T事件
+		groupListener = new GroupListener();
+		new DownloadMemberMapTask(getApplicationContext(), toChatUsername).execute();
+		EMGroupManager.getInstance().addGroupChangeListener(groupListener);
 	}
 	
 	protected void onChatRoomViewCreation(){
@@ -1469,6 +1473,9 @@ public class ChatActivity extends BaseActivity implements OnClickListener, EMEve
 		if(groupListener != null){
 		    EMGroupManager.getInstance().removeGroupChangeListener(groupListener);
 		}
+		if (mMemberMapReceiver != null) {
+			unregisterReceiver(mMemberMapReceiver);
+		}
 	}
 
 	@Override
@@ -1751,6 +1758,20 @@ public class ChatActivity extends BaseActivity implements OnClickListener, EMEve
 
 	public ListView getListView() {
 		return listView;
+	}
+
+	class MemberMapReceiver extends BroadcastReceiver {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			adapter.notifyDataSetChanged();
+		}
+	}
+	MemberMapReceiver mMemberMapReceiver;
+
+	public void UpdateMemebers() {
+		mMemberMapReceiver = new MemberMapReceiver();
+		IntentFilter filter = new IntentFilter("update_member_list");
+		registerReceiver(mMemberMapReceiver, filter);
 	}
 
 }

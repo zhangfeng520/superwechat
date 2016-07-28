@@ -233,7 +233,7 @@ public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
 						Result result = Utils.getResultFromJson(s, GroupAvatar.class);
 						if (result != null && result.isRetMsg()) {
 
-//							new DownloadMemberMapTask(getContext(),groupId).execute();
+							new DownloadMemberMapTask(context,groupId).execute();
 									Toast.makeText(getContext(), "增加好友入群成功", Toast.LENGTH_SHORT).show();
 								}
 					}

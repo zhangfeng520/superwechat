@@ -115,6 +115,7 @@ public class GroupAdapter extends ArrayAdapter<EMGroup> {
 				convertView = inflater.inflate(R.layout.row_group, null);
 			}
 			((TextView) convertView.findViewById(R.id.name)).setText(getItem(position - 3).getGroupName());
+			//群头像的修改
 			UserUtils.setAppGroupAvatar(mContext,getItem(position - 3).getGroupId(),(ImageView) convertView.findViewById(R.id.avatar));
 		}
 
