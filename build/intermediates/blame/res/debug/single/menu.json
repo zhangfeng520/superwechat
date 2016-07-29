@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\menu\\category_child.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\menu\\category_child.xml"
+    },
+    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\menu\\remove_from_blacklist.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\menu\\remove_from_blacklist.xml"
     },

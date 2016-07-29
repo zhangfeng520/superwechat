@@ -49,6 +49,7 @@ public class AddContactActivity extends BaseActivity{
 	private InputMethodManager inputMethodManager;
 	private String toAddUsername;
 	private TextView mtvResult;
+	ProgressDialog progressDialog;
 	private static final String TAG = AddContactActivity.class.getSimpleName();
 
 	@Override

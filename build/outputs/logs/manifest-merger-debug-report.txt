@@ -123,10 +123,10 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:37
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:38:9-44
 	android:name
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:37:17-73
-uses-permission#cn.ucai.superwechat.permission.C2D_MESSAGE
-ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:39:5-82
+uses-permission#cn.ucai.fulicenter.permission.C2D_MESSAGE
+ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:39:5-81
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:39:22-79
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:39:22-78
 application
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:42:5-367:25
 	android:label
@@ -507,16 +507,16 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:31
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:314:13-73
 	android:name
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:312:13-67
-intent-filter#cn.ucai.superwechat+com.google.android.c2dm.intent.RECEIVE
+intent-filter#cn.ucai.fulicenter+com.google.android.c2dm.intent.RECEIVE
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:315:13-318:29
 action#com.google.android.c2dm.intent.RECEIVE
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:316:17-81
 	android:name
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:316:25-78
-category#cn.ucai.superwechat
-ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:317:17-64
+category#cn.ucai.fulicenter
+ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:317:17-63
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:317:27-61
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:317:27-60
 service#com.easemob.chat.EMGCMListenerService
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:321:9-323:19
 	android:exported
@@ -529,7 +529,7 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:32
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:327:13-37
 	android:name
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:326:13-72
-intent-filter#cn.ucai.superwechat+com.easemob.sdk.push
+intent-filter#cn.ucai.fulicenter+com.easemob.sdk.push
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:328:13-331:29
 action#com.easemob.sdk.push
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:329:17-62

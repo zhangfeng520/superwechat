@@ -37,7 +37,7 @@
         android:name="cn.ucai.fulicenter.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="cn.ucai.superwechat.permission.C2D_MESSAGE" />
+    <uses-permission android:name="cn.ucai.fulicenter.permission.C2D_MESSAGE" />
 
     <application
         android:name="cn.ucai.fulicenter.SuperWeChatApplication"
@@ -309,7 +309,7 @@
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
 
-                <category android:name="cn.ucai.superwechat" />
+                <category android:name="cn.ucai.fulicenter" />
             </intent-filter>
         </receiver>
 
@@ -324,7 +324,7 @@
             <intent-filter>
                 <action android:name="com.easemob.sdk.push" />
 
-                <category android:name="cn.ucai.superwechat" />
+                <category android:name="cn.ucai.fulicenter" />
             </intent-filter>
         </receiver>
         <!-- gcm end -->

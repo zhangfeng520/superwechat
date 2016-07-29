@@ -1,5 +1,13 @@
 [
     {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\color\\wallet_base_click_text_color.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\color\\wallet_base_click_text_color.xml"
+    },
+    {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\color\\wallet_base_dialog_btntext_color_selector.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\color\\wallet_base_dialog_btntext_color_selector.xml"
+    },
+    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\color\\main_botton_text_color.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\color\\main_botton_text_color.xml"
     }
