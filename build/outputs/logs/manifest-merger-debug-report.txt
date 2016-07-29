@@ -2,7 +2,7 @@
 manifest
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:2:1-369:12
 	package
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:3:5-34
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:3:5-33
 		INJECTED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml
 		INJECTED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml
 	android:versionName
@@ -117,12 +117,12 @@ uses-permission#com.google.android.c2dm.permission.RECEIVE
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:35:5-82
 	android:name
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:35:22-79
-permission#cn.ucai.superwechat.permission.C2D_MESSAGE
+permission#cn.ucai.fulicenter.permission.C2D_MESSAGE
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:37:5-38:47
 	android:protectionLevel
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:38:9-44
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:37:17-74
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:37:17-73
 uses-permission#cn.ucai.superwechat.permission.C2D_MESSAGE
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:39:5-82
 	android:name
@@ -136,8 +136,8 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:42
 	android:icon
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:45:9-45
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:43:9-47
-activity#cn.ucai.superwechat.activity.MainActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:43:9-65
+activity#cn.ucai.fulicenter.activity.MainActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:47:9-53:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:50:13-49
@@ -148,15 +148,15 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:47
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:51:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:48:13-50
-activity#cn.ucai.superwechat.activity.SplashActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:48:13-68
+activity#cn.ucai.fulicenter.activity.SplashActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:56:9-65:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:58:13-49
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:59:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:57:13-52
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:57:13-70
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:60:13-64:29
 action#android.intent.action.MAIN
@@ -167,7 +167,7 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:63:17-77
 	android:name
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:63:27-74
-activity#cn.ucai.superwechat.activity.LoginActivity
+activity#cn.ucai.fulicenter.activity.LoginActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:68:9-73:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:70:13-49
@@ -176,8 +176,8 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:68
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:71:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:69:13-51
-activity#cn.ucai.superwechat.activity.RegisterActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:69:13-69
+activity#cn.ucai.fulicenter.activity.RegisterActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:76:9-81:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:78:13-49
@@ -186,8 +186,8 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:76
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:79:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:77:13-54
-activity#cn.ucai.superwechat.activity.ChatActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:77:13-72
+activity#cn.ucai.fulicenter.activity.ChatActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:83:9-89:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:86:13-49
@@ -198,8 +198,8 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:83
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:87:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:84:13-50
-activity#cn.ucai.superwechat.activity.AddContactActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:84:13-68
+activity#cn.ucai.fulicenter.activity.AddContactActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:91:9-96:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:93:13-49
@@ -208,16 +208,16 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:91
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:95:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:92:13-56
-activity#cn.ucai.superwechat.activity.GroupDetailsActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:92:13-74
+activity#cn.ucai.fulicenter.activity.GroupDetailsActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:98:9-102:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:100:13-49
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:101:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:99:13-58
-activity#cn.ucai.superwechat.activity.GroupsActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:99:13-76
+activity#cn.ucai.fulicenter.activity.GroupsActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:104:9-109:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:106:13-49
@@ -226,8 +226,8 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:10
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:107:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:105:13-52
-activity#cn.ucai.superwechat.activity.ChatRoomActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:105:13-70
+activity#cn.ucai.fulicenter.activity.ChatRoomActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:111:9-116:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:113:13-49
@@ -236,16 +236,16 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:11
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:114:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:112:13-54
-activity#cn.ucai.superwechat.activity.ChatRoomDetailsActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:112:13-72
+activity#cn.ucai.fulicenter.activity.ChatRoomDetailsActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:118:9-122:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:120:13-49
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:121:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:119:13-61
-activity#cn.ucai.superwechat.activity.NewGroupActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:119:13-79
+activity#cn.ucai.fulicenter.activity.NewGroupActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:125:9-130:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:127:13-49
@@ -254,16 +254,16 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:12
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:128:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:126:13-54
-activity#cn.ucai.superwechat.activity.ExitGroupDialog
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:126:13-72
+activity#cn.ucai.fulicenter.activity.ExitGroupDialog
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:132:9-136:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:134:13-49
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:135:13-55
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:133:13-53
-activity#cn.ucai.superwechat.activity.GroupPickContactsActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:133:13-71
+activity#cn.ucai.fulicenter.activity.GroupPickContactsActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:138:9-143:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:140:13-49
@@ -272,24 +272,24 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:13
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:141:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:139:13-63
-activity#cn.ucai.superwechat.activity.BaiduMapActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:139:13-81
+activity#cn.ucai.fulicenter.activity.BaiduMapActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:145:9-149:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:147:13-49
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:148:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:146:13-73
-activity#cn.ucai.superwechat.activity.NewFriendsMsgActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:146:13-72
+activity#cn.ucai.fulicenter.activity.NewFriendsMsgActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:152:9-156:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:154:13-49
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:155:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:153:13-59
-activity#cn.ucai.superwechat.activity.ForwardMessageActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:153:13-77
+activity#cn.ucai.fulicenter.activity.ForwardMessageActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:158:9-163:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:160:13-49
@@ -298,48 +298,48 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:15
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:161:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:159:13-60
-activity#cn.ucai.superwechat.activity.ContextMenu
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:159:13-78
+activity#cn.ucai.fulicenter.activity.ContextMenu
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:165:9-169:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:167:13-49
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:168:13-49
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:166:13-49
-activity#cn.ucai.superwechat.activity.AlertDialog
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:166:13-67
+activity#cn.ucai.fulicenter.activity.AlertDialog
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:171:9-175:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:173:13-49
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:174:13-49
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:172:13-49
-activity#cn.ucai.superwechat.activity.ShowBigImage
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:172:13-67
+activity#cn.ucai.fulicenter.activity.ShowBigImage
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:177:9-181:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:179:13-49
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:180:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:178:13-50
-activity#cn.ucai.superwechat.activity.ShowNormalFileActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:178:13-68
+activity#cn.ucai.fulicenter.activity.ShowNormalFileActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:183:9-187:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:185:13-49
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:186:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:184:13-60
-activity#cn.ucai.superwechat.activity.BlacklistActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:184:13-78
+activity#cn.ucai.fulicenter.activity.BlacklistActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:189:9-193:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:191:13-49
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:192:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:190:13-55
-activity#cn.ucai.superwechat.activity.PublicGroupsActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:190:13-73
+activity#cn.ucai.fulicenter.activity.PublicGroupsActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:196:9-201:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:198:13-49
@@ -348,8 +348,8 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:19
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:199:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:197:13-58
-activity#cn.ucai.superwechat.activity.PublicChatRoomsActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:197:13-76
+activity#cn.ucai.fulicenter.activity.PublicChatRoomsActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:203:9-208:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:205:13-49
@@ -358,8 +358,8 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:20
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:206:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:204:13-61
-activity#cn.ucai.superwechat.activity.VoiceCallActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:204:13-79
+activity#cn.ucai.fulicenter.activity.VoiceCallActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:211:9-216:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:213:13-49
@@ -368,8 +368,8 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:21
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:215:13-48
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:212:13-55
-activity#cn.ucai.superwechat.activity.VideoCallActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:212:13-73
+activity#cn.ucai.fulicenter.activity.VideoCallActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:218:9-224:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:221:13-49
@@ -380,32 +380,32 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:21
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:223:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:219:13-55
-activity#cn.ucai.superwechat.activity.GroupSimpleDetailActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:219:13-73
+activity#cn.ucai.fulicenter.activity.GroupSimpleDetailActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:226:9-230:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:228:13-49
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:229:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:227:13-63
-activity#cn.ucai.superwechat.activity.GroupBlacklistActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:227:13-81
+activity#cn.ucai.fulicenter.activity.GroupBlacklistActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:232:9-236:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:234:13-49
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:235:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:233:13-60
-activity#cn.ucai.superwechat.activity.PublicGroupsSeachActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:233:13-78
+activity#cn.ucai.fulicenter.activity.PublicGroupsSeachActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:237:9-241:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:239:13-49
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:240:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:238:13-63
-activity#cn.ucai.superwechat.activity.EditActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:238:13-81
+activity#cn.ucai.fulicenter.activity.EditActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:242:9-247:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:244:13-49
@@ -414,8 +414,8 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:24
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:245:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:243:13-50
-activity#cn.ucai.superwechat.activity.ShowVideoActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:243:13-68
+activity#cn.ucai.fulicenter.activity.ShowVideoActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:248:9-253:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:250:13-49
@@ -424,8 +424,8 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:24
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:251:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:249:13-55
-activity#cn.ucai.superwechat.activity.ImageGridActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:249:13-73
+activity#cn.ucai.fulicenter.activity.ImageGridActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:255:9-260:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:257:13-49
@@ -434,8 +434,8 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:25
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:258:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:256:13-55
-activity#cn.ucai.superwechat.activity.RecorderVideoActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:256:13-73
+activity#cn.ucai.fulicenter.activity.RecorderVideoActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:261:9-266:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:263:13-49
@@ -444,8 +444,8 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:26
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:264:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:262:13-59
-activity#cn.ucai.superwechat.activity.DiagnoseActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:262:13-77
+activity#cn.ucai.fulicenter.activity.DiagnoseActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:268:9-273:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:270:13-49
@@ -454,8 +454,8 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:26
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:271:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:269:13-54
-activity#cn.ucai.superwechat.activity.OfflinePushNickActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:269:13-72
+activity#cn.ucai.fulicenter.activity.OfflinePushNickActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:276:9-281:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:278:13-49
@@ -464,8 +464,8 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:27
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:279:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:277:13-61
-activity#cn.ucai.superwechat.activity.RobotsActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:277:13-79
+activity#cn.ucai.fulicenter.activity.RobotsActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:283:9-290:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:285:13-49
@@ -474,15 +474,15 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:28
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:286:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:284:13-52
-activity#cn.ucai.superwechat.activity.UserProfileActivity
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:284:13-70
+activity#cn.ucai.fulicenter.activity.UserProfileActivity
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:292:3-298:20
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:294:7-43
 	android:theme
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:295:7-46
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:293:7-51
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:293:7-69
 receiver#com.easemob.chat.StartServiceReceiver
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:301:9-308:20
 	android:name
@@ -523,12 +523,12 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:32
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:322:13-37
 	android:name
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:321:18-70
-receiver#cn.ucai.superwechat.receiver.GCMPushBroadCast
+receiver#cn.ucai.fulicenter.receiver.GCMPushBroadCast
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:325:9-332:20
 	android:exported
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:327:13-37
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:326:13-73
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:326:13-72
 intent-filter#cn.ucai.superwechat+com.easemob.sdk.push
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:328:13-331:29
 action#com.easemob.sdk.push

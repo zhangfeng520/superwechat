@@ -36,12 +36,12 @@
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\fragment_conversation_settings.xml"
     },
     {
-        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\main_botton_tab.xml",
-        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\main_botton_tab.xml"
-    },
-    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_voice_call.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\activity_voice_call.xml"
+    },
+    {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\main_botton_tab.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\main_botton_tab.xml"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_sent_video_call.xml",
