@@ -52,7 +52,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import cn.ucai.fulicenter.I;
-import cn.ucai.fulicenter.SuperWeChatApplication;
+import cn.ucai.fulicenter.FuliCenterApplication;
 import cn.ucai.fulicenter.applib.controller.HXSDKHelper;
 import cn.ucai.fulicenter.applib.controller.HXSDKHelper.HXSyncListener;
 import com.easemob.chat.EMContactManager;
@@ -107,7 +107,7 @@ public class ContactlistFragment extends Fragment {
                                 refresh();
 		                    }else{
 		                        String s1 = getResources().getString(R.string.get_failed_please_check);
-		                        Toast.makeText(getActivity(), s1, 1).show();
+		                        Toast.makeText(getActivity(), s1, Toast.LENGTH_LONG).show();
 		                        progressBar.setVisibility(View.GONE);
 		                    }
 		                }
@@ -218,9 +218,6 @@ public class ContactlistFragment extends Fragment {
 					User user = ((DemoHXSDKHelper)HXSDKHelper.getInstance()).getContactList().get(Constant.NEW_FRIENDS_USERNAME);
 					user.setUnreadMsgCount(0);
 					startActivity(new Intent(getActivity(), NewFriendsMsgActivity.class));
-				} else if (Constant.GROUP_USERNAME.equals(username)) {
-					// 进入群聊列表页面
-					startActivity(new Intent(getActivity(), GroupsActivity.class));
 				} else if(Constant.CHAT_ROOM.equals(username)){
 					//进入聊天室列表页面
 				    startActivity(new Intent(getActivity(), PublicChatRoomsActivity.class));
@@ -329,7 +326,6 @@ public class ContactlistFragment extends Fragment {
 	/**
 	 * 删除联系人
 	 * 
-	 * @param toDeleteUser
 	 */
 	public void deleteContact(final User tobeDeleteUser) {
 		String st1 = getResources().getString(R.string.deleting);
@@ -341,7 +337,7 @@ public class ContactlistFragment extends Fragment {
 		//删除数据库中的2条数据
 		final OkHttpUtils2 utils2 = new OkHttpUtils2();
 		utils2.setRequestUrl(I.REQUEST_DELETE_CONTACT)
-				.addParam(I.Contact.USER_NAME, SuperWeChatApplication.getInstance().getUserName())
+				.addParam(I.Contact.USER_NAME, FuliCenterApplication.getInstance().getUserName())
 				.addParam(I.Contact.CU_NAME,toBeProcessUsername)
 				.targetClass(Result.class)
 				.execute(new OkHttpUtils2.OnCompleteListener() {
@@ -349,10 +345,10 @@ public class ContactlistFragment extends Fragment {
 					public void onSuccess(Object result) {
 						Toast.makeText(getContext(), "删除联系人成功", Toast.LENGTH_SHORT).show();
 						//删除远端数据，使得删除联系人后再添加时不再显示个人资料，显示添加！
-						SuperWeChatApplication.getInstance().getUserMap().remove(SuperWeChatApplication.getInstance().getUserName());
-						SuperWeChatApplication.getInstance().getUserList().remove(SuperWeChatApplication.getInstance().getUser());
-						SuperWeChatApplication.getInstance().getUserMap().remove(toBeProcessUsername);
-						SuperWeChatApplication.getInstance().getUserList().remove(toBeProcessUser);
+						FuliCenterApplication.getInstance().getUserMap().remove(FuliCenterApplication.getInstance().getUserName());
+						FuliCenterApplication.getInstance().getUserList().remove(FuliCenterApplication.getInstance().getUser());
+						FuliCenterApplication.getInstance().getUserMap().remove(toBeProcessUsername);
+						FuliCenterApplication.getInstance().getUserList().remove(toBeProcessUser);
 					}
 
 					@Override

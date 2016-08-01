@@ -242,7 +242,7 @@ public interface I {
     public final int SORT_BY_ADDTIME_ASC=3;
     public final int SORT_BY_ADDTIME_DESC=4;
 
-	String AVATAR_PATH 								= 		"//Users/clawpo/work/ucai/work/projects/SuperWeChat/teaching/201603/superwechatDB/";
+	String AVATAR_PATH 								= 		"//D:/test/FuLiCenter-data";
 	String ISON8859_1 								= 		"iso8859-1";
 	String UTF_8 									= 		"utf-8";
 	String PAGE_ID 									= 		"page_id";						//分页的起始下标
@@ -260,7 +260,7 @@ public interface I {
 	int AVATAR_TYPE_GROUP							=		1;								//群组头像
 	int GROUP_PUBLIC								=		1;								//公开群组
 	int GROUP_NO_PUBLIC								=		0;								//非公开群组
-	String SERVER_ROOT                              =       "http://192.168.1.69:9999/FuliCenter/Server";
+	String SERVER_ROOT                              =       "http://192.168.7.14:9999/FuLiCenterServer/Server";
 	String EQU                                      =       "=";                            //等号
 	String AND                                      =       "&";                            //&符号
 	String QUESTION									=       "?";                            //问号

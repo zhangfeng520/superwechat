@@ -203,7 +203,17 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">1</item>
     </style>
-    <!-- 菜单项属性的style-->
+    <!--<style name="menu_item_style">-->
+        <!--<item name="android:textColor">#fff</item>-->
+        <!--<item name="android:textSize">18sp</item>-->
+        <!--<item name="android:gravity">center_horizontal</item>-->
+        <!--<item name="android:layout_gravity">center_vertical</item>-->
+        <!--<item name="android:layout_width">0dp</item>-->
+        <!--<item name="android:layout_height">wrap_content</item>-->
+        <!--<item name="android:layout_weight">1</item>-->
+        <!--<item name="android:button">@null</item>-->
+    <!--</style>-->
+     菜单项属性的style
     <style name="menu_item_style">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
@@ -212,6 +222,7 @@
         <item name="android:gravity">center</item>
         <item name="android:paddingTop">7dp</item>
         <item name="android:textColor">#fff</item>
+        <item name="android:button">@null</item>
         <item name="android:onClick">onCheckedChange</item>
     </style>
     <style name="menu_item_style_cart">
@@ -224,15 +235,16 @@
         <item name="android:textColor">#fff</item>
         <item name="android:onClick">onCheckedChange</item>
     </style>
-    <!--
+    <!--:layout_marginRight="5dp"
+         android:layout_marginTop="5dp"
+         android:background="#fff"
     android:layout_width="match_parent"
          android:layout_height="40dp"
          android:layout_marginBottom="5dp"
          android:layout_marginLeft="5dp"
-         android:layout_marginRight="5dp"
-         android:layout_marginTop="5dp"
-         android:background="#fff"
+         android
      -->
+
     <style name="style_menu_layout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">40dp</item>
@@ -245,5 +257,6 @@
     <style name="CustomCheckboxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
         <item name="android:button">@drawable/checkbox_style</item>
     </style>
+
 
 </resources>

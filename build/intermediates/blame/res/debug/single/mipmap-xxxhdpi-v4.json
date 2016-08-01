@@ -96,12 +96,12 @@
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\mipmap-xxxhdpi\\menu_item_cart_normal.png"
     },
     {
-        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\arrow_order_down.png",
-        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\mipmap-xxxhdpi\\arrow_order_down.png"
-    },
-    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\menu_item_category_selected.png",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\mipmap-xxxhdpi\\menu_item_category_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\arrow_order_down.png",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\mipmap-xxxhdpi\\arrow_order_down.png"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\del_cart.png",

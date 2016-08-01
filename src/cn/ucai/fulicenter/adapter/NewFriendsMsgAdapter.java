@@ -36,14 +36,12 @@ import com.easemob.chat.EMGroupManager;
 import cn.ucai.fulicenter.I;
 import cn.ucai.fulicenter.R;
 import cn.ucai.fulicenter.Utils;
-import cn.ucai.fulicenter.bean.GroupAvatar;
 import cn.ucai.fulicenter.bean.Result;
 import cn.ucai.fulicenter.bean.UserAvatar;
 import cn.ucai.fulicenter.data.OkHttpUtils2;
 import cn.ucai.fulicenter.db.InviteMessgeDao;
 import cn.ucai.fulicenter.domain.InviteMessage;
 import cn.ucai.fulicenter.domain.InviteMessage.InviteMesageStatus;
-import cn.ucai.fulicenter.task.DownloadMemberMapTask;
 import cn.ucai.fulicenter.utils.UserUtils;
 
 public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
@@ -185,7 +183,6 @@ public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
 					}
 					else {//同意加群申请
 						//当点击时候增加一条数据到数据库
-						createGroupMembers(msg.getGroupId(),msg.getFrom());
 					    EMGroupManager.getInstance().acceptApplication(msg.getFrom(), msg.getGroupId());
 					}
 					((Activity) context).runOnUiThread(new Runnable() {
@@ -217,30 +214,6 @@ public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
 				}
 			}
 		}).start();
-	}
-
-	private void createGroupMembers(final String groupId, String member) {
-		final OkHttpUtils2<String> utils2 = new OkHttpUtils2<String>();
-		utils2.setRequestUrl(I.REQUEST_ADD_GROUP_MEMBER)
-				.addParam(I.Member.USER_NAME,member)
-				.addParam(I.Member.GROUP_HX_ID,groupId)
-				.targetClass(String.class)
-				.execute(new OkHttpUtils2.OnCompleteListener<String>() {
-					@Override
-					public void onSuccess(String s) {
-						Result result = Utils.getResultFromJson(s, GroupAvatar.class);
-						if (result != null && result.isRetMsg()) {
-
-							new DownloadMemberMapTask(context,groupId).execute();
-									Toast.makeText(getContext(), "增加好友入群成功", Toast.LENGTH_SHORT).show();
-								}
-					}
-
-					@Override
-					public void onError(String error) {
-						Toast.makeText(getContext(), "好友入群失败", Toast.LENGTH_SHORT).show();
-					}
-				});
 	}
 
 	private static class ViewHolder {

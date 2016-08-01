@@ -78,9 +78,18 @@ public class Utils {
     public static <T> Result getResultFromJson(String jsonStr,Class<T> clazz){
         Result result = new Result();
         try {
+            if(jsonStr==null||jsonStr.isEmpty()||jsonStr.length()<3) return null;
             JSONObject jsonObject = new JSONObject(jsonStr);
-            result.setRetCode(jsonObject.getInt("retCode"));
-            result.setRetMsg(jsonObject.getBoolean("retMsg"));
+            if (!jsonObject.isNull("retCode")) {
+                result.setRetCode(jsonObject.getInt("retCode"));
+            } else if (!jsonObject.isNull("msg")) {
+                result.setRetCode(jsonObject.getInt("msg"));
+            }
+            if (!jsonObject.isNull("retMsg")) {
+                result.setRetMsg(jsonObject.getBoolean("retMsg"));
+            } else if (!jsonObject.isNull("result")) {
+                result.setRetMsg(jsonObject.getBoolean("retMsg"));
+            }
             if(!jsonObject.isNull("retData")) {
                 JSONObject jsonRetData = jsonObject.getJSONObject("retData");
                 if (jsonRetData != null) {
@@ -99,6 +108,15 @@ public class Utils {
                         result.setRetData(t);
                         return result;
                     }
+                }
+            }else {
+                if (jsonObject != null) {
+                    String date;
+                    date = URLDecoder.decode(jsonObject.toString(), I.UTF_8);
+                    Log.e("Utils", "jsonRetData=" + jsonObject);
+                    T t = new Gson().fromJson(date, clazz);
+                    result.setRetData(t);
+                    return result;
                 }
             }
             return result;

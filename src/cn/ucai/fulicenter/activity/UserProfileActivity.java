@@ -27,7 +27,7 @@ import android.widget.Toast;
 import com.easemob.EMValueCallBack;
 
 import cn.ucai.fulicenter.I;
-import cn.ucai.fulicenter.SuperWeChatApplication;
+import cn.ucai.fulicenter.FuliCenterApplication;
 import cn.ucai.fulicenter.Utils;
 import cn.ucai.fulicenter.applib.controller.HXSDKHelper;
 import cn.ucai.fulicenter.DemoHXSDKHelper;
@@ -93,8 +93,8 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 
 
 		}
-		if (username == null||username.equals(SuperWeChatApplication.getInstance().getUserName())) {
-			tvUsername.setText(SuperWeChatApplication.getInstance().getUserName());
+		if (username == null||username.equals(FuliCenterApplication.getInstance().getUserName())) {
+			tvUsername.setText(FuliCenterApplication.getInstance().getUserName());
 			findViewById(R.id.btnSendMessage).setVisibility(View.GONE);
 			if (tvNickName != null) {
 				UserUtils.setCurrentAppUserNick(tvNickName);
@@ -102,25 +102,20 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 			UserUtils.setCurrentUserAvatar(this,headAvatar);
 
 
-		} else if (hxid != null) {
-			tvUsername.setText(username);
-			UserUtils.setAppMemberNick(hxid, username, tvNickName);
-			UserUtils.setAppUserAvatar(this,username,headAvatar);
-			if (SuperWeChatApplication.getInstance().getB() ==0) {
-				findViewById(R.id.btnSendMessage).setVisibility(View.GONE);
-				findViewById(R.id.btnAddContact).setVisibility(View.VISIBLE);
-			}
+//		} else if (hxid != null) {
+//			tvUsername.setText(username);
+//			UserUtils.setAppUserAvatar(this,username,headAvatar);
+//			if (FuliCenterApplication.getInstance().getB() ==0) {
+//				findViewById(R.id.btnSendMessage).setVisibility(View.GONE);
+//				findViewById(R.id.btnAddContact).setVisibility(View.VISIBLE);
+//			}
 		} else {
-			if (hxid != null) {
-				UserUtils.setAppMemberNick(hxid, username, tvNickName);
-				UserUtils.setAppUserAvatar(this,username,headAvatar);
 
-			}else {
 				tvUsername.setText(username);
 				//修改联系人个人资料的头像和昵称
 				UserUtils.setAppUserNick(username, tvNickName);
 				UserUtils.setAppUserAvatar(this, username, headAvatar);
-			}
+
 		}
 	}
 
@@ -212,7 +207,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 		Log.e(TAG, "1111111111111" + file.toString());
 		utils.setRequestUrl(I.REQUEST_UPLOAD_AVATAR)
 				.addParam(I.AVATAR_TYPE,"user_avatar")
-				.addParam(I.NAME_OR_HXID,SuperWeChatApplication.getInstance().getUser().getMUserName())
+				.addParam(I.NAME_OR_HXID, FuliCenterApplication.getInstance().getUser().getMUserName())
 				.addFile(file)
 				.targetClass(Result.class)
 				.execute(new OkHttpUtils2.OnCompleteListener<Result>() {
@@ -236,7 +231,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 	private void updateUserNick(final String nickname) {
 		final OkHttpUtils2<String> utils2 = new OkHttpUtils2<String>();
 		utils2.setRequestUrl(I.REQUEST_UPDATE_USER_NICK)
-				.addParam(I.User.USER_NAME,SuperWeChatApplication.getInstance().getUserName())
+				.addParam(I.User.USER_NAME, FuliCenterApplication.getInstance().getUserName())
 				.addParam(I.User.NICK,nickname)
 				.targetClass(String.class)
 				.execute(new OkHttpUtils2.OnCompleteListener<String>() {
@@ -248,8 +243,8 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 						updateRemoteNick(nickname);
 						//同步到远端数据
 						tvNickName.setText(nickname);
-						SuperWeChatApplication.currentUserNick = user.getMUserNick();
-						SuperWeChatApplication.getInstance().setUser(user);
+						FuliCenterApplication.currentUserNick = user.getMUserNick();
+						FuliCenterApplication.getInstance().setUser(user);
 						UserDao dao = new UserDao(UserProfileActivity.this);
 						dao.updateUserNick(user);
 					}

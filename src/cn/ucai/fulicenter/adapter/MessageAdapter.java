@@ -56,7 +56,7 @@ import com.easemob.EMCallBack;
 import com.easemob.EMError;
 
 import cn.ucai.fulicenter.I;
-import cn.ucai.fulicenter.SuperWeChatApplication;
+import cn.ucai.fulicenter.FuliCenterApplication;
 import cn.ucai.fulicenter.Utils;
 import cn.ucai.fulicenter.applib.controller.HXSDKHelper;
 import com.easemob.chat.EMChatManager;
@@ -423,12 +423,7 @@ public class MessageAdapter extends BaseAdapter{
 		}
 
 		// 群聊时，显示接收的消息的发送人的名称
-		if ((chatType == ChatType.GroupChat || chatType == ChatType.ChatRoom) && message.direct == EMMessage.Direct.RECEIVE){
-		    //demo里使用username代码nick
-			UserUtils.setAppMemberNick(username,message.getFrom(), holder.tv_usernick);
-//			UserUtils.setCurrentAppUserNick(holder.tv_usernick);
 
-		}
 
 		if(message.direct == EMMessage.Direct.SEND){
 			UserUtils.setCurrentUserNick(holder.tv_usernick);
@@ -1600,7 +1595,7 @@ public class MessageAdapter extends BaseAdapter{
 	public void isContact(final String name) {
 		final OkHttpUtils2<String> utils2 = new OkHttpUtils2<String>();
 		utils2.setRequestUrl(I.REQUEST_DOWNLOAD_CONTACT_ALL_LIST)
-				.addParam(I.Contact.USER_NAME,SuperWeChatApplication.getInstance().getUserName())
+				.addParam(I.Contact.USER_NAME, FuliCenterApplication.getInstance().getUserName())
 				.targetClass(String.class)
 				.execute(new OkHttpUtils2.OnCompleteListener<String>() {
 					@Override
@@ -1613,12 +1608,12 @@ public class MessageAdapter extends BaseAdapter{
 							for (UserAvatar user : list) {
 								if (user.getMUserName().equals(name)) {
 									int b=1;
-									SuperWeChatApplication.getInstance().setB(b);
+									FuliCenterApplication.getInstance().setB(b);
 									Log.e(TAG, "bbbbbbbbbbbbbbbbbbbb=" + 1);
 									return;
 								}else {
 									int b=0;
-									SuperWeChatApplication.getInstance().setB(b);
+									FuliCenterApplication.getInstance().setB(b);
 									Log.e(TAG,"bbbbbbbbbbbbbbbbbb="+0);
 								}
 							}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- 底部菜单栏-->
+    <RadioGroup
+        android:id="@+id/llMenu"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:background="#36f">
+        <RadioButton
+            android:id="@+id/rbGoodNews"
+            android:text="新品"
+            android:drawableTop="@drawable/selector_menu_item_new_good"
+            style="@style/menu_item_style"
+            />
+        <RadioButton
+            android:id="@+id/rbBoutique"
+            android:text="精品"
+            android:drawableTop="@drawable/selector_menu_item_boutique"
+            style="@style/menu_item_style"
+
+            />
+        <RadioButton
+            android:id="@+id/rbCategory"
+            android:text="分类"
+            android:drawableTop="@drawable/selector_menu_item_category"
+            style="@style/menu_item_style"
+            />
+
+        <RelativeLayout
+            android:id="@+id/aaaa"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <RadioButton
+                android:id="@+id/rbCart"
+                android:text="购物车"
+                android:drawableTop="@drawable/selector_menu_item_cart"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                style="@style/menu_item_style"
+
+                />
+            <TextView
+                android:id="@+id/tvCartHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textColor="#000"
+                android:background="#f60"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"/>
+        </RelativeLayout>
+
+        <RadioButton
+            android:id="@+id/rbContact"
+            android:text="我"
+            android:drawableTop="@drawable/selector_menu_item_personal_center"
+            android:layout_marginTop="5dp"
+            style="@style/menu_item_style"
+            />
+    </RadioGroup>
+</RelativeLayout>

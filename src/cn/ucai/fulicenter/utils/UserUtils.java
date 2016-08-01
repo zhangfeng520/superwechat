@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import cn.ucai.fulicenter.I;
-import cn.ucai.fulicenter.SuperWeChatApplication;
+import cn.ucai.fulicenter.FuliCenterApplication;
 import cn.ucai.fulicenter.applib.controller.HXSDKHelper;
 import cn.ucai.fulicenter.DemoHXSDKHelper;
 import cn.ucai.fulicenter.R;
@@ -81,7 +81,7 @@ public class UserUtils {
      * 设置当前用户头像
      */
 	public static void setCurrentUserAvatar( ImageView imageView) {
-        UserAvatar user = SuperWeChatApplication.getInstance().getUser();
+        UserAvatar user = FuliCenterApplication.getInstance().getUser();
         if (user != null) {
             setAppUserAvatar(null,user.getMUserName(),imageView);
         }
@@ -113,7 +113,7 @@ public class UserUtils {
      * 设置当前用户昵称(本地）
      */
     public static void setCurrentAppUserNick(TextView textView){
-    	UserAvatar user = SuperWeChatApplication.getInstance().getUser();
+    	UserAvatar user = FuliCenterApplication.getInstance().getUser();
     	if(/*user.getMUserNick() != null&&*/textView!=null&&user!=null){
     		textView.setText(user.getMUserNick());
     	}else {
@@ -144,17 +144,6 @@ public class UserUtils {
             Picasso.with(context).load(path).placeholder(R.drawable.group_icon).into(avatar);
         }
     }
-    public static void setAppGroupAvatar(Context context, String hxid, ImageView avatar) {
-        String path = "";
-        if(path != null && hxid != null){
-            path = getGroupAvatarPath(hxid);
-            Log.e(TAG, "path=" + path);
-            Picasso.with(context).load(path).placeholder(R.drawable.default_avatar).into(avatar);
-        }else{
-//            Picasso.with(context).load(R.drawable.default_avatar).into(avatar);
-            Picasso.with(context).load(path).placeholder(R.drawable.default_avatar).into(avatar);
-        }
-    }
 
     public static String getUserAvatarPath(String username) {
         StringBuilder path = new StringBuilder(I.SERVER_ROOT);
@@ -167,17 +156,7 @@ public class UserUtils {
         return path.toString();
 
     }
-    public static String getGroupAvatarPath(String hxid) {
-        StringBuilder path = new StringBuilder(I.SERVER_ROOT);
-        path.append(I.QUESTION).append(I.KEY_REQUEST)
-                .append(I.EQU).append(I.REQUEST_DOWNLOAD_AVATAR)
-                .append(I.AND)
-                .append(I.NAME_OR_HXID).append(I.EQU).append(hxid)
-                .append(I.AND)
-                .append(I.AVATAR_TYPE).append(I.EQU).append(I.AVATAR_TYPE_GROUP_PATH);
-        return path.toString();
 
-    }
 
     public static void setAppUserNick(String username, TextView nameTextview) {
         UserAvatar user = getAppUserInfo(username);
@@ -193,26 +172,18 @@ public class UserUtils {
 
 
     private static UserAvatar getAppUserInfo(String username) {
-        UserAvatar user = SuperWeChatApplication.getInstance().getUserMap().get(username);
+        UserAvatar user = FuliCenterApplication.getInstance().getUserMap().get(username);
         if(user == null){
             user = new UserAvatar(username);
         }
         return user;
     }
 
-    public static void setAppMemberNick(String hxid, String username, TextView textView) {
-        MemberUserAvatar member= getMemberInfo(hxid,username);
-        if(member != null&&member.getMUserNick()!=null){
-            textView.setText(member.getMUserNick());
-        }else{
-            textView.setText(username);
-        }
-    }
 
     private static MemberUserAvatar getMemberInfo(String hxid, String username) {
         MemberUserAvatar member=null;
         HashMap<String, MemberUserAvatar> members =
-                SuperWeChatApplication.getInstance().getMemberMap().get(hxid);
+                FuliCenterApplication.getInstance().getMemberMap().get(hxid);
         Log.e(TAG, "hxid=" + hxid + ",members=" + members);
         if (members == null || members.size() <0) {
             return null;

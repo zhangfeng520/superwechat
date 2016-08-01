@@ -36,12 +36,12 @@
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\mipmap-xhdpi\\bg_collect_out.png"
     },
     {
-        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\arrow2_up.png",
-        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\mipmap-xhdpi\\arrow2_up.png"
-    },
-    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\menu_item_collect_selected.png",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\mipmap-xhdpi\\menu_item_collect_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\arrow2_up.png",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\mipmap-xhdpi\\arrow2_up.png"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\bg_share_sel.png",

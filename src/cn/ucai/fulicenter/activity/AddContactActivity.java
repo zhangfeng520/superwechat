@@ -32,7 +32,7 @@ import cn.ucai.fulicenter.I;
 import cn.ucai.fulicenter.Utils;
 import cn.ucai.fulicenter.applib.controller.HXSDKHelper;
 import com.easemob.chat.EMContactManager;
-import cn.ucai.fulicenter.SuperWeChatApplication;
+import cn.ucai.fulicenter.FuliCenterApplication;
 import cn.ucai.fulicenter.DemoHXSDKHelper;
 import cn.ucai.fulicenter.R;
 import cn.ucai.fulicenter.bean.Result;
@@ -83,7 +83,7 @@ public class AddContactActivity extends BaseActivity{
 
 		if (getString(R.string.button_search).equals(saveText)) {
 			toAddUsername = name;
-			UserAvatar userAvatar = SuperWeChatApplication.getInstance().getUserMap().get(toAddUsername);
+			UserAvatar userAvatar = FuliCenterApplication.getInstance().getUserMap().get(toAddUsername);
 			if (userAvatar != null) {
 				startActivity(new Intent(AddContactActivity.this,UserProfileActivity.class).putExtra("username",toAddUsername));
 				return;
@@ -94,7 +94,7 @@ public class AddContactActivity extends BaseActivity{
 				return;
 			}
 
-			if(SuperWeChatApplication.getInstance().getUserName().equals(toAddUsername)){
+			if(FuliCenterApplication.getInstance().getUserName().equals(toAddUsername)){
 				String str = getString(R.string.not_add_myself);
 				startActivity(new Intent(this, AlertDialog.class).putExtra("msg", str));
 				return;
