@@ -36,12 +36,16 @@
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\fragment_conversation_settings.xml"
     },
     {
-        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_voice_call.xml",
-        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\activity_voice_call.xml"
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_new_goods.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\fragment_new_goods.xml"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\main_botton_tab.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\main_botton_tab.xml"
+    },
+    {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_voice_call.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\activity_voice_call.xml"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_sent_video_call.xml",
@@ -256,12 +260,20 @@
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\activity_group_details.xml"
     },
     {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\item_footer.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\item_footer.xml"
+    },
+    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\expression_gridview.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\expression_gridview.xml"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_received_video_call.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\row_received_video_call.xml"
+    },
+    {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\item_new_goods.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\item_new_goods.xml"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_received_video.xml",

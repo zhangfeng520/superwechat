@@ -17,6 +17,9 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:2:
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:2:11-69
 uses-sdk
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:9:9-38
 	android:minSdkVersion
@@ -129,6 +132,8 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:40
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:40:22-78
 application
 ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:42:5-294:19
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:46:9-41
 	android:allowBackup
