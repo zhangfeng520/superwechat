@@ -38,8 +38,7 @@ public class NewGoodsFragment extends Fragment {
     static final int ACITON_PULL_DOWN=1;
     static final int ACTION_PULL_UP=2;
     static final int PAGE_SIZE=10;
-    static final String USER_NAME = "a";
-    static final int CAT_ID= 262;
+    static final int CAT_ID= 0;
     int mPageId=1;
     NewGoodsAdapter mAdapter;
     RecyclerView mrvNewGoods;
@@ -119,11 +118,9 @@ public class NewGoodsFragment extends Fragment {
                     public void onSuccess(String result) {
                         Toast.makeText(getContext(), "坑爹啊！", Toast.LENGTH_SHORT).show();
                         Log.e(TAG, "111111111111");
-                        Log.e(TAG, "result=" + result.toString());
-                        String json = result.toString();
-                        String s=json.substring(1, result.length() - 1);
+                        Log.e(TAG, "result=" +result);
                         Gson gson = new Gson();
-                        NewGoodBean[] array = gson.fromJson(s, NewGoodBean[].class);
+                        NewGoodBean[] array = gson.fromJson(result, NewGoodBean[].class);
                         mAdapter.setMore(!(array == null || array.length == 0));
                         if (!mAdapter.isMore()) {
                             if (action == ACTION_PULL_UP) {
@@ -161,7 +158,7 @@ public class NewGoodsFragment extends Fragment {
 
     private void initView(View layout) {
         mrvNewGoods = (RecyclerView) layout.findViewById(R.id.rvNewGoods);
-        mGoodsList = new ArrayList<NewGoodBean>();
+        mGoodsList = new ArrayList<>();
         mAdapter = new NewGoodsAdapter(mContext, mGoodsList);
         mrvNewGoods.setAdapter(mAdapter);
         mLayoutManager = new GridLayoutManager(mContext, 2);
