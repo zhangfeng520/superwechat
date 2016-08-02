@@ -12,6 +12,7 @@ import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import cn.ucai.fulicenter.Fragments.BoutiqueFragment;
 import cn.ucai.fulicenter.Fragments.NewGoodsFragment;
 import cn.ucai.fulicenter.R;
 
@@ -34,12 +35,40 @@ public class FuliCenterMainActivity extends BaseActivity {
         setContentView(R.layout.activity_fuli_center_main);
         initFragment();
         initView();
+        setListener();
+    }
+
+    private void setListener() {
+        mvpGoods.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position) {
+                    case 0:
+                        setRadioButtonStatus(0);
+                        break;
+                    case 1:
+                        setRadioButtonStatus(1);
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
 
     private void initFragment() {
-        mFragments = new Fragment[1];
+        mFragments = new Fragment[2];
         mFragments[0] = new NewGoodsFragment();
+        mFragments[1] = new BoutiqueFragment();
 
     }
     class GoodsAdapter extends FragmentPagerAdapter {
@@ -85,6 +114,7 @@ public class FuliCenterMainActivity extends BaseActivity {
                 break;
             case R.id.rbBoutique:
                 index=1;
+                mvpGoods.setCurrentItem(1);
                 break;
             case R.id.rbCategory:
                 index=2;
