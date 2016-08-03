@@ -14,6 +14,7 @@ import com.google.gson.Gson;
 import cn.ucai.fulicenter.D;
 import cn.ucai.fulicenter.I;
 import cn.ucai.fulicenter.R;
+import cn.ucai.fulicenter.bean.AlbumsBean;
 import cn.ucai.fulicenter.bean.GoodDetailsBean;
 import cn.ucai.fulicenter.data.OkHttpUtils2;
 import cn.ucai.fulicenter.view.FlowIndicator;
@@ -60,10 +61,7 @@ public class GoodDetailsActivity extends BaseActivity {
                         Gson gson = new Gson();
                         GoodDetailsBean goodDetailsBean = gson.fromJson(result, GoodDetailsBean.class);
                         if (goodDetailsBean != null) {
-                            tvEnglishName.setText(goodDetailsBean.getGoodsEnglishName());
-                            tvName.setText(goodDetailsBean.getGoodsName());
-                            tvPriceShop.setText("商店价格："+goodDetailsBean.getShopPrice());
-                            tvPriceCurrent.setText("当前价格："+goodDetailsBean.getCurrencyPrice());
+                            showGoodDetails(goodDetailsBean);
 
                         }else{
                             Toast.makeText(GoodDetailsActivity.this, "获取信息失败", Toast.LENGTH_SHORT).show();
@@ -75,6 +73,27 @@ public class GoodDetailsActivity extends BaseActivity {
                         Log.e(TAG, "error=" + error);
                     }
                 });
+    }
+
+    private void showGoodDetails(GoodDetailsBean goodDetailsBean) {
+        tvEnglishName.setText(goodDetailsBean.getGoodsEnglishName());
+        tvName.setText(goodDetailsBean.getGoodsName());
+        tvPriceShop.setText("商店价格："+goodDetailsBean.getShopPrice());
+        tvPriceCurrent.setText("当前价格："+goodDetailsBean.getCurrencyPrice());
+        mSlideAutoLoopView.startPlayLoop(mFlowIndicator, getAlbumImagUrl(goodDetailsBean), goodDetailsBean.getProperties()[0].getAlbums().length);
+        mwbGoodBrief.loadDataWithBaseURL(null,goodDetailsBean.getGoodsBrief(),D.TEXT_HTML,D.UTF_8,null);
+    }
+
+    private String[] getAlbumImagUrl(GoodDetailsBean goodDetailsBean) {
+        String[] albumImagUrl = new String[]{};
+        if (goodDetailsBean.getProperties() != null && goodDetailsBean.getProperties().length > 0) {
+            AlbumsBean[] albums = goodDetailsBean.getProperties()[0].getAlbums();
+            albumImagUrl = new String[albums.length];
+            for(int i=0;i<albumImagUrl.length;i++) {
+                albumImagUrl[i] = albums[i].getImgUrl();
+            }
+        }
+            return albumImagUrl;
     }
 
     private void initData() {
