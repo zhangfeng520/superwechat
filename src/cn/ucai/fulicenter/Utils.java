@@ -2,6 +2,7 @@ package cn.ucai.fulicenter;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import cn.ucai.fulicenter.I;
 import cn.ucai.fulicenter.bean.Pager;
 import cn.ucai.fulicenter.bean.Result;
 
@@ -25,11 +27,11 @@ public class Utils {
     public static String getPackageName(Context context){
         return context.getPackageName();
     }
-    
+
     public static void showToast(Context context,String text,int time){
         Toast.makeText(context,text,time).show();
     }
-    
+
     public static void showToast(Context context,int  strId,int time){
         Toast.makeText(context, strId, time).show();
     }
@@ -78,18 +80,9 @@ public class Utils {
     public static <T> Result getResultFromJson(String jsonStr,Class<T> clazz){
         Result result = new Result();
         try {
-            if(jsonStr==null||jsonStr.isEmpty()||jsonStr.length()<3) return null;
             JSONObject jsonObject = new JSONObject(jsonStr);
-            if (!jsonObject.isNull("retCode")) {
-                result.setRetCode(jsonObject.getInt("retCode"));
-            } else if (!jsonObject.isNull("msg")) {
-                result.setRetCode(jsonObject.getInt("msg"));
-            }
-            if (!jsonObject.isNull("retMsg")) {
-                result.setRetMsg(jsonObject.getBoolean("retMsg"));
-            } else if (!jsonObject.isNull("result")) {
-                result.setRetMsg(jsonObject.getBoolean("retMsg"));
-            }
+            result.setRetCode(jsonObject.getInt("retCode"));
+            result.setRetMsg(jsonObject.getBoolean("retMsg"));
             if(!jsonObject.isNull("retData")) {
                 JSONObject jsonRetData = jsonObject.getJSONObject("retData");
                 if (jsonRetData != null) {
@@ -108,15 +101,6 @@ public class Utils {
                         result.setRetData(t);
                         return result;
                     }
-                }
-            }else {
-                if (jsonObject != null) {
-                    String date;
-                    date = URLDecoder.decode(jsonObject.toString(), I.UTF_8);
-                    Log.e("Utils", "jsonRetData=" + jsonObject);
-                    T t = new Gson().fromJson(date, clazz);
-                    result.setRetData(t);
-                    return result;
                 }
             }
             return result;
@@ -182,6 +166,16 @@ public class Utils {
             e.printStackTrace();
         }
         return  null;
+    }
+
+    public static int px2dp(Context context,int px){
+        int density = (int) context.getResources().getDisplayMetrics().density;
+        return px/density;
+    }
+
+    public static int dp2px(Context context,int dp){
+        int density = (int) context.getResources().getDisplayMetrics().density;
+        return dp*density;
     }
 
 }

@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -13,7 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -23,9 +21,7 @@ import cn.ucai.fulicenter.I;
 import cn.ucai.fulicenter.ImageLoader;
 import cn.ucai.fulicenter.R;
 import cn.ucai.fulicenter.adapter.BoutiqueAdapter;
-import cn.ucai.fulicenter.adapter.NewGoodsAdapter;
 import cn.ucai.fulicenter.bean.BoutiqueBean;
-import cn.ucai.fulicenter.bean.NewGoodBean;
 import cn.ucai.fulicenter.data.OkHttpUtils2;
 
 /**

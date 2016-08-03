@@ -12,20 +12,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 import cn.ucai.fulicenter.I;
 import cn.ucai.fulicenter.ImageLoader;
 import cn.ucai.fulicenter.R;
-import cn.ucai.fulicenter.Utils;
 import cn.ucai.fulicenter.adapter.NewGoodsAdapter;
 import cn.ucai.fulicenter.bean.NewGoodBean;
-import cn.ucai.fulicenter.bean.Result;
 import cn.ucai.fulicenter.data.OkHttpUtils2;
 
 /**
@@ -116,7 +112,6 @@ public class NewGoodsFragment extends Fragment {
                 .execute(new OkHttpUtils2.OnCompleteListener<String>() {
                     @Override
                     public void onSuccess(String result) {
-                        Toast.makeText(getContext(), "坑爹啊！", Toast.LENGTH_SHORT).show();
                         Log.e(TAG, "111111111111");
                         Log.e(TAG, "result=" +result);
                         Gson gson = new Gson();

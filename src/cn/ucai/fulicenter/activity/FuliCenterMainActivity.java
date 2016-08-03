@@ -13,6 +13,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import cn.ucai.fulicenter.Fragments.BoutiqueFragment;
+import cn.ucai.fulicenter.Fragments.CategoryFragment;
 import cn.ucai.fulicenter.Fragments.NewGoodsFragment;
 import cn.ucai.fulicenter.R;
 
@@ -66,9 +67,10 @@ public class FuliCenterMainActivity extends BaseActivity {
 
 
     private void initFragment() {
-        mFragments = new Fragment[2];
+        mFragments = new Fragment[3];
         mFragments[0] = new NewGoodsFragment();
         mFragments[1] = new BoutiqueFragment();
+        mFragments[2] = new CategoryFragment();
 
     }
     class GoodsAdapter extends FragmentPagerAdapter {
@@ -118,6 +120,7 @@ public class FuliCenterMainActivity extends BaseActivity {
                 break;
             case R.id.rbCategory:
                 index=2;
+                mvpGoods.setCurrentItem(2);
                 break;
             case R.id.rbCart:
                 index=3;
