@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import cn.ucai.fulicenter.I;
 import cn.ucai.fulicenter.ImageLoader;
@@ -43,6 +45,8 @@ public class NewGoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public NewGoodsAdapter(Context mContext, ArrayList<NewGoodBean> mGoodsList) {
         this.mContext = mContext;
         this.mGoodsList = mGoodsList;
+        mGoodsList.addAll(mGoodsList);
+        sortByAddTime();
     }
 
     @Override
@@ -104,10 +108,12 @@ public class NewGoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public void initGoodsList(ArrayList<NewGoodBean> mGoodsList) {
         this.mGoodsList.clear();
         this.mGoodsList.addAll(mGoodsList);
+//        sortByAddTime();
         notifyDataSetChanged();
     }
     public void addGoodsList(ArrayList<NewGoodBean> mGoodsList) {
         this.mGoodsList.addAll(mGoodsList);
+//        sortByAddTime();
         notifyDataSetChanged();
     }
 
@@ -130,5 +136,14 @@ public class NewGoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             super(itemView);
             tvFooter = (TextView) itemView.findViewById(R.id.tvFooter);
         }
+    }
+
+    private void sortByAddTime() {
+        Collections.sort(mGoodsList, new Comparator<NewGoodBean>() {
+            @Override
+            public int compare(NewGoodBean newGoodBean, NewGoodBean t1) {
+                return (int) (Long.valueOf(newGoodBean.getAddTime())-Long.valueOf(t1.getAddTime()));
+            }
+        });
     }
 }
