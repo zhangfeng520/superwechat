@@ -38,6 +38,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"/>
             <TextView
+                android:id="@+id/tv_good_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000"
@@ -92,7 +93,7 @@
             android:id="@+id/rl_layout_loop"
             android:layout_below="@id/tv_price_current"
             android:layout_width="match_parent"
-            android:layout_height="180dp">
+            android:layout_height="190dp">
             <cn.ucai.fulicenter.view.SlideAutoLoopView
                 android:id="@+id/salv"
                 android:layout_width="match_parent"
@@ -112,11 +113,12 @@
                 app:space="3dp" />
         </RelativeLayout>
         <WebView
-            android:id="@+id/wv_good"
+            android:id="@+id/wvBrief"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/rl_layout_loop"
             android:layout_marginTop="15dp"
+            android:background="@color/good_detail_bg_white"
             >
 
         </WebView>

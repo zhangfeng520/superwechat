@@ -1,40 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lllayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/tvGoodsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="商品标题"
-        android:textSize="20dp"
-        android:textColor="#f00"/>
+    android:layout_height="220dp">
     <ImageView
         android:id="@+id/ivAvatar"
-        android:layout_width="380dp"
+        android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/default_face" />
-    <TextView
-        android:id="@+id/tvGoodsName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="商品名称"
-        android:textSize="20dp"
-        android:textColor="#000"/>
-    <TextView
-        android:id="@+id/tvGoodsDesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="商品介绍"
-        android:textSize="20dp"
-        android:textColor="#f50"/>
-    <TextView
-        android:layout_marginTop="10dp"
+        android:src="@drawable/nopic"
+        android:layout_centerVertical="true"/>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#f0c"/>
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/ivAvatar"
+        android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/tvGoodsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品标题"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textColor="@color/bd_wallet_blue_sectips"/>
+        <TextView
+            android:id="@+id/tvGoodsName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品名称"
+            android:textSize="20dp"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/bd_wallet_pwdpay_light_gray"/>
+        <TextView
+            android:id="@+id/tvGoodsDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="商品价格"
+            android:textSize="20dp"
+            android:textColor="#f50"/>
+    </LinearLayout>
 
-
-</LinearLayout>
+</RelativeLayout>
