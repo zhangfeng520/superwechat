@@ -512,12 +512,12 @@
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable\\wallet_base_btn.xml"
     },
     {
-        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_green_selector.xml",
-        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable\\btn_green_selector.xml"
-    },
-    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\wallet_base_progressbar.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable\\wallet_base_progressbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_green_selector.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\drawable\\btn_green_selector.xml"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_item_new_good_selected.png",

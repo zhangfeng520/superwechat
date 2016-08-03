@@ -49,8 +49,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/horizontal_slide"
-            android:windowSoftInputMode="adjustPan" >
-        </activity>
+            android:windowSoftInputMode="adjustPan" />
 
         <!-- 开屏页 -->
         <activity
@@ -70,6 +69,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/horizontal_slide"
             android:windowSoftInputMode="adjustResize|stateVisible" />
+        <!-- 商品详情 -->
+        <activity
+            android:name="cn.ucai.fulicenter.activity.GoodDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
 
         <!-- 注册 -->
         <activity
@@ -290,6 +294,7 @@
         <!-- android:theme="@style/horizontal_slide" -->
         <!-- android:windowSoftInputMode="adjustPan"> -->
         <!-- </activity> -->
+        <activity android:name="cn.ucai.fulicenter.activity.BoutiqueChildActivity" />
     </application>
 
 </manifest>

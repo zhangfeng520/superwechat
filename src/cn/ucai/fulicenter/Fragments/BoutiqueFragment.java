@@ -116,18 +116,18 @@ public class BoutiqueFragment extends Fragment {
                         switch (action) {
                             case ACTION_DOWNLOAD:
                                 mAdapter.initGoodsList(mGoodsList);
-                                mAdapter.setFooterText("疯狂加载中...");
+//                                mAdapter.setFooterText("疯狂加载中...");
                                 break;
                             case ACITON_PULL_DOWN:
                                 mAdapter.initGoodsList(mGoodsList);
-                                mAdapter.setFooterText("疯狂加载中...");
+//                                mAdapter.setFooterText("疯狂加载中...");
                                 msrl.setRefreshing(false);
                                 mtvRefreshHint.setVisibility(View.GONE);
                                 ImageLoader.release();
                                 break;
-                            case ACTION_PULL_UP:
-                                mAdapter.setFooterText("没有更多新货了！");
-                                break;
+//                            case ACTION_PULL_UP:
+//                                mAdapter.setFooterText("没有更多新货了！");
+//                                break;
                         }
                     }
 

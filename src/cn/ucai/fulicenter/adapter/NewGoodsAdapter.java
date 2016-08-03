@@ -1,20 +1,25 @@
 package cn.ucai.fulicenter.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import cn.ucai.fulicenter.D;
 import cn.ucai.fulicenter.I;
 import cn.ucai.fulicenter.ImageLoader;
 import cn.ucai.fulicenter.R;
+import cn.ucai.fulicenter.activity.GoodDetailsActivity;
 import cn.ucai.fulicenter.bean.NewGoodBean;
 
 /**
@@ -23,8 +28,8 @@ import cn.ucai.fulicenter.bean.NewGoodBean;
 public class NewGoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     Context mContext;
     ArrayList<NewGoodBean> mGoodsList;
-    static final int ITEM_FOOTER=0;
-    static final int ITEM_GOODS=1;
+    static final int ITEM_FOOTER=1;
+    static final int ITEM_GOODS=0;
     String footerText;
     ViewGroup parent;
     boolean more;
@@ -75,8 +80,8 @@ public class NewGoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             return;
         }
         NewGoodsViewHolder viewHolder = (NewGoodsViewHolder) holder;
-        NewGoodBean goods = mGoodsList.get(position);
-        viewHolder.tvDescription.setText(goods.getGoodsBrief());
+        final NewGoodBean goods = mGoodsList.get(position);
+        viewHolder.tvDescription.setText(goods.getGoodsName());
         viewHolder.tvMoney.setText(goods.getCurrencyPrice());
         ImageLoader.build()
                 .url(I.SERVER_ROOT)
@@ -88,6 +93,12 @@ public class NewGoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 .defaultPicture(R.drawable.default_image)
                 .listener(parent)
                 .showImage(mContext);
+        viewHolder.lllayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mContext.startActivity(new Intent(mContext, GoodDetailsActivity.class).putExtra(D.NewGood.KEY_GOODS_ID, goods.getGoodsId()));
+            }
+        });
 
     }
 
@@ -120,12 +131,14 @@ public class NewGoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     class NewGoodsViewHolder extends RecyclerView.ViewHolder {
         ImageView ivNewGoods;
         TextView tvDescription, tvMoney;
+        LinearLayout lllayout;
 
         public NewGoodsViewHolder(View itemView) {
             super(itemView);
             ivNewGoods = (ImageView) itemView.findViewById(R.id.ivNewGoods);
             tvDescription = (TextView) itemView.findViewById(R.id.tvDescription);
             tvMoney = (TextView) itemView.findViewById(R.id.tvMoney);
+            lllayout = (LinearLayout) itemView.findViewById(R.id.lllayout);
         }
     }
 

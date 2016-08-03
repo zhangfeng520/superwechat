@@ -35,7 +35,7 @@ public class NewGoodsFragment extends Fragment {
     static final int ACTION_PULL_UP=2;
     static final int PAGE_SIZE=10;
     static final int CAT_ID= 0;
-    int mPageId=1;
+    int mPageId=0;
     NewGoodsAdapter mAdapter;
     RecyclerView mrvNewGoods;
     SwipeRefreshLayout msrl;
@@ -72,7 +72,7 @@ public class NewGoodsFragment extends Fragment {
                 msrl.setEnabled(true);
                 msrl.setRefreshing(true);
                 mtvRefreshHint.setVisibility(View.VISIBLE);
-                mPageId=1;
+                mPageId=0;
                 downloadNewGoodsList(ACITON_PULL_DOWN,mPageId);
             }
         });
@@ -90,8 +90,8 @@ public class NewGoodsFragment extends Fragment {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
-                if (newState == RecyclerView.SCROLL_STATE_IDLE && lastPosition >= mAdapter.getItemCount() - 1 && mAdapter.isMore()) {
-                    mPageId++;
+                if (newState == RecyclerView.SCROLL_STATE_IDLE && lastPosition >=mAdapter.getItemCount() - 1 && mAdapter.isMore()) {
+                    mPageId+=lastPosition;
                     downloadNewGoodsList(ACTION_PULL_UP,mPageId);
                 }
             }
@@ -124,6 +124,8 @@ public class NewGoodsFragment extends Fragment {
                             return;
                         }
                         ArrayList<NewGoodBean> mGoodsList = utils.array2List(array);
+                        Log.e(TAG, "mGoodsList=" + mGoodsList);
+
                         switch (action) {
                             case ACTION_DOWNLOAD:
                                 mAdapter.initGoodsList(mGoodsList);

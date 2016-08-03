@@ -1,18 +1,22 @@
 package cn.ucai.fulicenter.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import cn.ucai.fulicenter.D;
 import cn.ucai.fulicenter.I;
 import cn.ucai.fulicenter.ImageLoader;
 import cn.ucai.fulicenter.R;
+import cn.ucai.fulicenter.activity.GoodDetailsActivity;
 import cn.ucai.fulicenter.bean.BoutiqueBean;
 
 /**
@@ -71,9 +75,9 @@ public class BoutiqueAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             return;
         }
         BoutiqueViewHolder viewHolder = (BoutiqueViewHolder) holder;
-        BoutiqueBean goods = mGoodsList.get(position);
-        viewHolder.tvGoodsName.setText(goods.getName());
-        viewHolder.tvDesc.setText(goods.getDescription());
+        final BoutiqueBean goods = mGoodsList.get(position);
+        viewHolder.tvGoodsName.setText("商品名称："+goods.getName());
+        viewHolder.tvDesc.setText("商品描述："+goods.getDescription());
         viewHolder.tvTitle.setText(goods.getTitle());
         ImageLoader.build()
                 .url(I.SERVER_ROOT)
@@ -85,7 +89,12 @@ public class BoutiqueAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 .defaultPicture(R.drawable.default_image)
                 .listener(parent)
                 .showImage(mContext);
-
+        viewHolder.lllayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mContext.startActivity(new Intent(mContext, GoodDetailsActivity.class).putExtra(D.NewGood.KEY_GOODS_ID, goods.getId()));
+            }
+        });
     }
 
     @Override
@@ -115,13 +124,14 @@ public class BoutiqueAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     class BoutiqueViewHolder extends RecyclerView.ViewHolder {
         ImageView ivAvatar;
         TextView tvDesc, tvTitle,tvGoodsName;
-
+        RelativeLayout lllayout;
         public BoutiqueViewHolder(View itemView) {
             super(itemView);
             ivAvatar = (ImageView) itemView.findViewById(R.id.ivAvatar);
             tvDesc = (TextView) itemView.findViewById(R.id.tvGoodsDesc);
             tvTitle = (TextView) itemView.findViewById(R.id.tvGoodsTitle);
             tvGoodsName = (TextView) itemView.findViewById(R.id.tvGoodsName);
+            lllayout = (RelativeLayout) itemView.findViewById(R.id.lllayout);
         }
     }
 

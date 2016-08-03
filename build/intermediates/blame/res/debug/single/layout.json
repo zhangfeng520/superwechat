@@ -4,6 +4,10 @@
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\row_sent_voice.xml"
     },
     {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\common_head_title.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\common_head_title.xml"
+    },
+    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_sent_location.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\row_sent_location.xml"
     },
@@ -26,6 +30,10 @@
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_received_menu.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\row_received_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\item_category_child.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\item_category_child.xml"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_contact_with_checkbox.xml",
@@ -86,6 +94,10 @@
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_chat.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\activity_chat.xml"
+    },
+    {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\layout_property_color.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\layout_property_color.xml"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_public_groups.xml",
@@ -164,6 +176,10 @@
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\logout_actionsheet.xml"
     },
     {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\item_boutique.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\item_boutique.xml"
+    },
+    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_received_picture.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\row_received_picture.xml"
     },
@@ -180,6 +196,10 @@
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\activity_choosevideoactivity.xml"
     },
     {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_good_details.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\activity_good_details.xml"
+    },
+    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\activity_edit.xml"
     },
@@ -188,12 +208,20 @@
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\activity_offline_push.xml"
     },
     {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_category.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\fragment_category.xml"
+    },
+    {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\popu_show_avatar.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\popu_show_avatar.xml"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\context_menu_for_text.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\context_menu_for_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_boutique.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\fragment_boutique.xml"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_chat_history.xml",
@@ -222,6 +250,10 @@
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_received_voice.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\row_received_voice.xml"
+    },
+    {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_boutique_child.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\activity_boutique_child.xml"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\alert_dialog.xml",
@@ -262,6 +294,10 @@
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\item_footer.xml",
         "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\item_footer.xml"
+    },
+    {
+        "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\item_category_group.xml",
+        "source": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\res\\layout\\item_category_group.xml"
     },
     {
         "merged": "C:\\Users\\sks\\AndroidStudioProjects\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\expression_gridview.xml",
