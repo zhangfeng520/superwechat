@@ -3,6 +3,7 @@ package cn.ucai.fulicenter.Fragments;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
@@ -59,7 +60,6 @@ public class CategoryFragment extends Fragment {
     }
 
 
-    int i=0;
     private void getGroupList() {
         final OkHttpUtils2<String> utils = new OkHttpUtils2<>();
         utils.setRequestUrl(I.REQUEST_FIND_CATEGORY_GROUP);
@@ -67,40 +67,21 @@ public class CategoryFragment extends Fragment {
         utils.execute(new OkHttpUtils2.OnCompleteListener<String>() {
             @Override
             public void onSuccess(String result) {
+                int i=0;
                 Log.e(TAG, "result02=" + result);
                 Gson gson = new Gson();
                 final CategoryGroupBean[] array = gson.fromJson(result, CategoryGroupBean[].class);
                 ArrayList<CategoryGroupBean> group = utils.array2List(array);
-                mAdapter.addGroup(group);
                 Log.e(TAG, "group=" + group);
-                for(int i=0;i<group.size();i++) {
-                    final OkHttpUtils2<String> utils2 = new OkHttpUtils2<String>();
-                    utils2.setRequestUrl(I.REQUEST_FIND_CATEGORY_CHILDREN)
-                            .addParam("parent_id", String.valueOf(  group.get(i).getId()))
-                            .addParam(I.PAGE_ID, "1")
-                            .addParam(I.PAGE_SIZE, "100")
-                            .targetClass(String.class)
-                            .execute(new OkHttpUtils2.OnCompleteListener<String>() {
-                                @Override
-                                public void onSuccess(String result) {
-                                    Gson gson = new Gson();
-                                    CategoryChildBean[] categoryChildBeen = gson.fromJson(result, CategoryChildBean[].class);
-                                    ArrayList<CategoryChildBean> categoryChildBeen1 = utils2.array2List(categoryChildBeen);
-                                    ArrayList<ArrayList<CategoryChildBean>> child = new ArrayList<ArrayList<CategoryChildBean>>();
-                                    child.add(categoryChildBeen1);
-                                    Log.e(TAG, "child=" + child);
-                                    mAdapter.addChild(child);
-                                }
-
-                                @Override
-                                public void onError(String error) {
-
-                                }
-                            });
+                for(CategoryGroupBean g:group) {
+                    mChildList.add(new ArrayList<CategoryChildBean>());
+                    Log.e(TAG, "id========"+g.getId());
+                    getChild(i, group);
+                    i++;
                 }
 
 
-                }
+            }
 
             @Override
             public void onError(String error) {
@@ -108,6 +89,37 @@ public class CategoryFragment extends Fragment {
             }
         });
     }
+    int groupcount=0;
+    private void getChild(final int i, final ArrayList<CategoryGroupBean> group) {
+        final OkHttpUtils2<String> utils2 = new OkHttpUtils2<String>();
+        utils2.setRequestUrl(I.REQUEST_FIND_CATEGORY_CHILDREN)
+                .addParam("parent_id", String.valueOf(group.get(i).getId()))
+                .addParam(I.PAGE_ID, "1")
+                .addParam(I.PAGE_SIZE, "100")
+                .targetClass(String.class)
+                .execute(new OkHttpUtils2.OnCompleteListener<String>() {
+                    @Override
+                    public void onSuccess(String result) {
+                        groupcount++;
+                        Gson gson = new Gson();
+                        CategoryChildBean[] categoryChildBeen = gson.fromJson(result, CategoryChildBean[].class);
+                        ArrayList<CategoryChildBean> categoryChildBeen1 = utils2.array2List(categoryChildBeen);
+                        ArrayList<ArrayList<CategoryChildBean>> child = new ArrayList<ArrayList<CategoryChildBean>>();
+                        child.add(categoryChildBeen1);
+                        mChildList.set(i, categoryChildBeen1);
+                        Log.e(TAG, "child=" + child);
+                        if (groupcount == group.size()) {
+                            mAdapter.addItems(group,mChildList);
+                        }
+                    }
+
+                    @Override
+                    public void onError(String error) {
+
+                    }
+                });
+    }
+
 
     private void initView(View layout) {
         mGroupList = new ArrayList<>();
