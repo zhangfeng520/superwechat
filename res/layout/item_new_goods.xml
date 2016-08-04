@@ -3,18 +3,21 @@
     android:orientation="vertical"
     android:id="@+id/lllayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/good_detail_bg_white">
     <ImageView
         android:id="@+id/ivNewGoods"
-        android:layout_width="180dp"
-        android:layout_height="200dp"
-        android:src="@drawable/default_image"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/nopic"
+        android:scaleType="fitXY"
+        android:layout_weight="0.42"/>
     <TextView
         android:id="@+id/tvDescription"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:text="商品介绍"
-        android:textSize="5dp"/>
+        android:textSize="20dp"/>
     <TextView
         android:id="@+id/tvMoney"
         android:layout_width="180dp"

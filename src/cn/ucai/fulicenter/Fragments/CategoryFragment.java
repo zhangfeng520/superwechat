@@ -15,6 +15,7 @@ import android.widget.ExpandableListView;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import cn.ucai.fulicenter.I;
 import cn.ucai.fulicenter.R;
@@ -34,6 +35,7 @@ public class CategoryFragment extends Fragment {
     CategroyAdapter mAdapter;
     ArrayList<CategoryGroupBean> mGroupList;
     ArrayList<ArrayList<CategoryChildBean>> mChildList;
+
     public CategoryFragment() {
         // Required empty public constructor
     }
@@ -56,24 +58,55 @@ public class CategoryFragment extends Fragment {
 
     }
 
+
+    int i=0;
     private void getGroupList() {
         final OkHttpUtils2<String> utils = new OkHttpUtils2<>();
-        utils.setRequestUrl(I.REQUEST_FIND_CATEGORY_GROUP)
-                .targetClass(String.class)
-                .execute(new OkHttpUtils2.OnCompleteListener<String>() {
-                    @Override
-                    public void onSuccess(String result) {
-                        Log.e(TAG, "result01=" + result);
-                        Gson gson = new Gson();
-                        CategoryGroupBean[] array = gson.fromJson(result, CategoryGroupBean[].class);
-                        mGroupList = utils.array2List(array);
-                    }
+        utils.setRequestUrl(I.REQUEST_FIND_CATEGORY_GROUP);
+        utils.targetClass(String.class);
+        utils.execute(new OkHttpUtils2.OnCompleteListener<String>() {
+            @Override
+            public void onSuccess(String result) {
+                Log.e(TAG, "result02=" + result);
+                Gson gson = new Gson();
+                final CategoryGroupBean[] array = gson.fromJson(result, CategoryGroupBean[].class);
+                ArrayList<CategoryGroupBean> group = utils.array2List(array);
+                mAdapter.addGroup(group);
+                Log.e(TAG, "group=" + group);
+                for(int i=0;i<group.size();i++) {
+                    final OkHttpUtils2<String> utils2 = new OkHttpUtils2<String>();
+                    utils2.setRequestUrl(I.REQUEST_FIND_CATEGORY_CHILDREN)
+                            .addParam("parent_id", String.valueOf(  group.get(i).getId()))
+                            .addParam(I.PAGE_ID, "1")
+                            .addParam(I.PAGE_SIZE, "100")
+                            .targetClass(String.class)
+                            .execute(new OkHttpUtils2.OnCompleteListener<String>() {
+                                @Override
+                                public void onSuccess(String result) {
+                                    Gson gson = new Gson();
+                                    CategoryChildBean[] categoryChildBeen = gson.fromJson(result, CategoryChildBean[].class);
+                                    ArrayList<CategoryChildBean> categoryChildBeen1 = utils2.array2List(categoryChildBeen);
+                                    ArrayList<ArrayList<CategoryChildBean>> child = new ArrayList<ArrayList<CategoryChildBean>>();
+                                    child.add(categoryChildBeen1);
+                                    Log.e(TAG, "child=" + child);
+                                    mAdapter.addChild(child);
+                                }
 
-                    @Override
-                    public void onError(String error) {
+                                @Override
+                                public void onError(String error) {
 
-                    }
-                });
+                                }
+                            });
+                }
+
+
+                }
+
+            @Override
+            public void onError(String error) {
+
+            }
+        });
     }
 
     private void initView(View layout) {
