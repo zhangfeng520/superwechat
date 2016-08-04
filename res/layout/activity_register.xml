@@ -7,26 +7,46 @@
     android:id="@+id/layoutRegister">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1" >
+        android:layout_height="50dp"
+        android:background="@color/good_detail_bg_white">
+        <LinearLayout
+            android:id="@+id/ll_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp">
+            <ImageView
+                android:id="@+id/back"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/good_detail_bg_white"
+                android:onClick="onBack"
+                android:src="@drawable/back_press"
+                android:layout_gravity="center_vertical"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/mobile"
-            android:text="超级微信"
-            android:gravity="center_vertical"
-            android:textSize="30dp"
-            android:textColor="#000"
-            android:layout_centerInParent="true"
-            />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            >
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="帐号注册"
+                android:textSize="18dp"
+                android:textColor="#000"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
     </RelativeLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_weight="5"
         android:orientation="vertical" >
 
@@ -189,20 +209,7 @@
             android:layout_marginTop="20dp"
             android:orientation="horizontal" >
 
-            <Button
-                android:id="@+id/btnLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="10dp"
-                android:background="#fff"
-                android:paddingBottom="7dp"
-                android:paddingTop="7dp"
-                android:text="@string/login"
-                android:textColor="#000"
-                android:textSize="20sp" />
+
             <Button
                 android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
@@ -211,10 +218,10 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/button_login_bg"
+                android:background="@color/main_orange"
                 android:paddingBottom="7dp"
                 android:paddingTop="7dp"
-                android:text="@string/register"
+                android:text="免费注册"
                 android:textColor="@android:color/white"
                 android:textSize="20sp" />
         </LinearLayout>
