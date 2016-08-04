@@ -49,7 +49,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/horizontal_slide"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
 
         <!-- 开屏页 -->
         <activity
@@ -294,7 +294,11 @@
         <!-- android:theme="@style/horizontal_slide" -->
         <!-- android:windowSoftInputMode="adjustPan"> -->
         <!-- </activity> -->
-        <activity android:name=".activity.BoutiqueChildActivity"
+        <activity
+            android:name=".activity.BoutiqueChildActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+        <activity android:name=".activity.CategoryChildActivity"
             android:screenOrientation="portrait"
             android:theme="@style/horizontal_slide"/>
     </application>
