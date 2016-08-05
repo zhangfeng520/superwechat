@@ -43,12 +43,12 @@ public class PersonalCenterFragment extends Fragment {
         // Required empty public constructor
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        FuliCenterMainActivity activity = (FuliCenterMainActivity) getActivity();
-        handler=activity.handler;
-    }
+//    @Override
+//    public void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        FuliCenterMainActivity activity = (FuliCenterMainActivity) getActivity();
+//        handler=activity.handler;
+//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -103,11 +103,23 @@ public class PersonalCenterFragment extends Fragment {
                 UserUtils.setAppUserAvatar(mContext,username,holder.ivAvatar);
                 UserUtils.setAppUserNick(username,holder.tvUserName);
             }
+            holder.ivAvatar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(mContext,UserProfileActivity.class));
+                }
+            });
+            holder.tvUserName.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(mContext,UserProfileActivity.class));
+                }
+            });
             holder.tvSettings.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-//                        startActivity(new Intent(mContext, SettingActivity.class).putExtra("action",action));
-                    handler.sendEmptyMessage(100);
+                        startActivity(new Intent(mContext, SettingActivity.class).putExtra("action",action));
+//                    handler.sendEmptyMessage(100);
                 }
             });
             return holder;
