@@ -2,19 +2,25 @@ package cn.ucai.fulicenter.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
 import cn.ucai.fulicenter.Fragments.BoutiqueFragment;
+import cn.ucai.fulicenter.Fragments.CartFragment;
 import cn.ucai.fulicenter.Fragments.CategoryFragment;
 import cn.ucai.fulicenter.Fragments.NewGoodsFragment;
+import cn.ucai.fulicenter.Fragments.PersonalCenterFragment;
+import cn.ucai.fulicenter.FuliCenterApplication;
 import cn.ucai.fulicenter.R;
 
 /**
@@ -37,6 +43,9 @@ public class FuliCenterMainActivity extends BaseActivity {
         initFragment();
         initView();
         setListener();
+        String username = getIntent().getStringExtra("username");
+        Intent intent = new Intent();
+        intent.putExtra("username", username);
     }
 
     private void setListener() {
@@ -55,6 +64,15 @@ public class FuliCenterMainActivity extends BaseActivity {
                     case 1:
                         setRadioButtonStatus(1);
                         break;
+                    case 2:
+                        setRadioButtonStatus(2);
+                        break;
+                    case 3:
+                        setRadioButtonStatus(3);
+                        break;
+                    case 4:
+                        setRadioButtonStatus(4);
+                        break;
                 }
             }
 
@@ -67,10 +85,12 @@ public class FuliCenterMainActivity extends BaseActivity {
 
 
     private void initFragment() {
-        mFragments = new Fragment[3];
+        mFragments = new Fragment[5];
         mFragments[0] = new NewGoodsFragment();
         mFragments[1] = new BoutiqueFragment();
         mFragments[2] = new CategoryFragment();
+        mFragments[3] = new CartFragment();
+        mFragments[4] = new PersonalCenterFragment();
 
     }
     class GoodsAdapter extends FragmentPagerAdapter {
@@ -87,6 +107,21 @@ public class FuliCenterMainActivity extends BaseActivity {
         @Override
         public int getCount() {
             return fragments.length;
+        }
+
+        @Override
+        public Object instantiateItem(ViewGroup container, int position) {
+            return super.instantiateItem(container, position);
+        }
+
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+            super.destroyItem(container, position, object);
+        }
+
+        @Override
+        public Parcelable saveState() {
+            return super.saveState();
         }
     }
 
@@ -124,9 +159,15 @@ public class FuliCenterMainActivity extends BaseActivity {
                 break;
             case R.id.rbCart:
                 index=3;
+                mvpGoods.setCurrentItem(3);
                 break;
             case R.id.rbContact:
-                index=4;
+                if (FuliCenterApplication.getInstance().getUser() != null) {
+                    mvpGoods.setCurrentItem(4);
+                    index=4;
+                }else{
+                    startActivity(new Intent(FuliCenterMainActivity.this,LoginActivity.class));
+                }
                 break;
         }
         if (index != currentIndex) {
@@ -144,5 +185,11 @@ public class FuliCenterMainActivity extends BaseActivity {
                 rbArr[i].setChecked(false);
             }
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setRadioButtonStatus(index);
     }
 }
