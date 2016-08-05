@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -40,6 +41,7 @@ public class FuliCenterMainActivity extends BaseActivity {
     Fragment[] mFragments;
     int index;
     int currentIndex;
+    int haha;
     ViewPager mvpGoods;
     GoodsAdapter mAdapter;
     @Override
@@ -49,7 +51,10 @@ public class FuliCenterMainActivity extends BaseActivity {
         initFragment();
         initView();
         setListener();
+        setRadioButtonStatus(0);
     }
+
+
 
     private void setListener() {
         mvpGoods.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -74,7 +79,11 @@ public class FuliCenterMainActivity extends BaseActivity {
                         setRadioButtonStatus(3);
                         break;
                     case 4:
-                        setRadioButtonStatus(4);
+                        if (FuliCenterApplication.getInstance().getUser() == null) {
+                            startActivity(new Intent(FuliCenterMainActivity.this, LoginActivity.class));
+                        }
+                            setRadioButtonStatus(4);
+
                         break;
                 }
             }
@@ -126,6 +135,7 @@ public class FuliCenterMainActivity extends BaseActivity {
         public Parcelable saveState() {
             return super.saveState();
         }
+
     }
 
     private void initView() {
@@ -177,12 +187,14 @@ public class FuliCenterMainActivity extends BaseActivity {
 //        Log.e(TAG, "s=" + s);
 //        action01 = Integer.parseInt(builder.substring(s.length()-1));
         mvpGoods.setCurrentItem(index);
-        if (index != currentIndex) {
+        if (index != haha) {
             setRadioButtonStatus(index);
         }
+
         if (index != 4) {
             currentIndex = index;
         }
+        haha=index;
         Log.e(TAG, "index=" + index + ",currentIndex=" + currentIndex);
     }
 
@@ -199,7 +211,10 @@ public class FuliCenterMainActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
+        if (FuliCenterApplication.getInstance().getUser() != null) {
+        } else {
+            setRadioButtonStatus(action);
+        }
     }
 
     @Override
@@ -214,27 +229,31 @@ public class FuliCenterMainActivity extends BaseActivity {
             mvpGoods.setCurrentItem(action);
         }
     }
-    String fragmentName;
-    public Handler handler =new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            if (msg !=null) {
-                switch (msg.what) {
-                    case 100:
-                        fragmentName = SettingsFragment.class.getName();
-                        replaceFragment(R.id.fragment1, fragmentName);
-                        break;
-                }
-            }
-        }
-    };
-    protected void replaceFragment(int viewResource, String fragmentName) {
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        Fragment fragment = Fragment.instantiate(this, fragmentName);
-        ft.replace(viewResource, fragment);
-        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        ft.commit();
-        getSupportFragmentManager().executePendingTransactions();
-    }
+//    String fragmentName;
+//    public Handler handler =new Handler(){
+//        @Override
+//        public void handleMessage(Message msg) {
+//            super.handleMessage(msg);
+//            if (msg !=null) {
+//                switch (msg.what) {
+//                    case 100:
+//                        fragmentName = SettingsFragment.class.getName();
+//                        replaceFragment(R.id.fragment1, fragmentName);
+//                        break;
+//                    case 200:
+//                        fragmentName = PersonalCenterFragment.class.getName();
+//                        replaceFragment(R.id.fragment2,fragmentName);
+//                        break;
+//                }
+//            }
+//        }
+//    };
+//    protected void replaceFragment(int viewResource, String fragmentName) {
+//        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//        Fragment fragment = Fragment.instantiate(this, fragmentName);
+//        ft.replace(viewResource, fragment);
+//        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+//        ft.commit();
+//        getSupportFragmentManager().executePendingTransactions();
+//    }
 }
