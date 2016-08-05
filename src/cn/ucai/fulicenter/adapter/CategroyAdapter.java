@@ -1,18 +1,24 @@
 package cn.ucai.fulicenter.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import cn.ucai.fulicenter.D;
 import cn.ucai.fulicenter.I;
 import cn.ucai.fulicenter.ImageLoader;
 import cn.ucai.fulicenter.R;
+import cn.ucai.fulicenter.activity.BoutiqueChildActivity;
+import cn.ucai.fulicenter.activity.CategoryChildActivity;
 import cn.ucai.fulicenter.bean.CategoryChildBean;
 import cn.ucai.fulicenter.bean.CategoryGroupBean;
 
@@ -20,6 +26,7 @@ import cn.ucai.fulicenter.bean.CategoryGroupBean;
  * Created by sks on 2016/8/2.
  */
 public class CategroyAdapter extends BaseExpandableListAdapter {
+    private static final String TAG = CategroyAdapter.class.getSimpleName();
     Context mContext;
     ArrayList<CategoryGroupBean> mGroupList;
     ArrayList<ArrayList<CategoryChildBean>> mChildList;
@@ -107,6 +114,7 @@ public class CategroyAdapter extends BaseExpandableListAdapter {
             holder = new ChildViewHolder();
             holder.ivChild = (ImageView) layout.findViewById(R.id.ivChild);
             holder.tvChild = (TextView) layout.findViewById(R.id.tvChild);
+            holder.layoutChild = (RelativeLayout) layout.findViewById(R.id.layout_child);
             layout.setTag(holder);
         } else {
             holder = (ChildViewHolder) layout.getTag();
@@ -123,7 +131,13 @@ public class CategroyAdapter extends BaseExpandableListAdapter {
                 .defaultPicture(R.drawable.default_image)
                 .listener(viewGroup)
                 .showImage(mContext);
-
+        holder.layoutChild.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mContext.startActivity(new Intent(mContext, CategoryChildActivity.class).putExtra(D.NewGood.KEY_GOODS_ID, child.getId()).putExtra("TITLE",child.getName()));
+                Log.e(TAG, "child.getId=" + child.getId());
+            }
+        });
         return layout;
     }
 
@@ -131,6 +145,18 @@ public class CategroyAdapter extends BaseExpandableListAdapter {
     public boolean isChildSelectable(int i, int i1) {
         return false;
     }
+
+    public void addGroup(ArrayList<CategoryGroupBean> categoryGroupBeen) {
+        this.mGroupList.addAll(categoryGroupBeen);
+        notifyDataSetChanged();
+    }
+
+    public void addChild(ArrayList<ArrayList<CategoryChildBean>> array) {
+        this.mChildList.addAll(array);
+        notifyDataSetChanged();
+    }
+
+
     class GroupViewHolder{
         ImageView ivGroup,ivSelect;
         TextView tvGroup;
@@ -138,5 +164,11 @@ public class CategroyAdapter extends BaseExpandableListAdapter {
     class ChildViewHolder{
         ImageView ivChild;
         TextView tvChild;
+        RelativeLayout layoutChild;
+    }
+    public void addItems( ArrayList<CategoryGroupBean> groupList,ArrayList<ArrayList<CategoryChildBean>> categoryChildBeen1) {
+        this.mGroupList.addAll(groupList);
+        this.mChildList.addAll(categoryChildBeen1);
+        notifyDataSetChanged();
     }
 }

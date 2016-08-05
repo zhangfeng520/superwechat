@@ -2,12 +2,14 @@ package cn.ucai.fulicenter.activity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -23,7 +25,7 @@ import cn.ucai.fulicenter.adapter.NewGoodsAdapter;
 import cn.ucai.fulicenter.bean.NewGoodBean;
 import cn.ucai.fulicenter.data.OkHttpUtils2;
 
-public class CategoryChildActivity extends Activity {
+public class CategoryChildActivity extends Activity implements View.OnClickListener{
     final static String TAG = NewGoodsFragment.class.getSimpleName();
     Context mContext;
     static final int ACTION_DOWNLOAD=0;
@@ -37,8 +39,11 @@ public class CategoryChildActivity extends Activity {
     ArrayList<NewGoodBean> mGoodsList;
     TextView mtvRefreshHint,tvTitle;
     GridLayoutManager mLayoutManager;
-
-
+    private Button btnPrice;
+    private Button btnTime;
+    private boolean mSortPrice;
+    private boolean mSortTime;
+    private int sortBy;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +55,8 @@ public class CategoryChildActivity extends Activity {
     }
     private void setListener() {
         setDownListener();
+        btnPrice.setOnClickListener(this);
+        btnTime.setOnClickListener(this);
     }
 
     private void setDownListener() {
@@ -106,9 +113,9 @@ public class CategoryChildActivity extends Activity {
                                 mtvRefreshHint.setVisibility(View.GONE);
                                 ImageLoader.release();
                                 break;
-                            case ACTION_PULL_UP:
-                                mAdapter.addGoodsList(mGoodsList);
-                                break;
+//                            case ACTION_PULL_UP:
+//                                mAdapter.addGoodsList(mGoodsList);
+//                                break;
                         }
                     }
 
@@ -131,12 +138,48 @@ public class CategoryChildActivity extends Activity {
         msrl = (SwipeRefreshLayout)findViewById(R.id.srl);
         mtvRefreshHint = (TextView) findViewById(R.id.tvRefreshHint);
         tvTitle = (TextView) findViewById(R.id.tvTitle);
-        String title = getIntent().getStringExtra("TITLE");
-        tvTitle.setText(title);
+        btnPrice = (Button) findViewById(R.id.btnPrice);
+        btnTime = (Button) findViewById(R.id.btnTime);
     }
 
     public void onBack(View view) {
         finish();
     }
 
+    private void changeImage(int drawableId,Button btn) {
+        Drawable rewardIcon = getResources().getDrawable(drawableId);
+        if(rewardIcon!=null)
+        {
+            rewardIcon.setBounds(0, 0, rewardIcon.getMinimumWidth(), rewardIcon.getMinimumHeight());
+            btn.setCompoundDrawables(null, null,rewardIcon, null);
+        }
+    }
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btnPrice:
+                if (mSortPrice) {
+                    sortBy = I.SORT_BY_PRICE_ASC;
+                   changeImage(R.drawable.upup,btnPrice);
+                } else {
+                    sortBy = I.SORT_BY_PRICE_DESC;
+                    changeImage(R.drawable.downdown,btnPrice);
+                }
+                mSortPrice = !mSortPrice;
+                break;
+            case R.id.btnTime:
+                if (mSortTime) {
+                    sortBy = I.SORT_BY_ADDTIME_ASC;
+                    changeImage(R.drawable.upup,btnTime);
+                    Log.e(TAG, "btnTimeup");
+                } else {
+                    sortBy = I.SORT_BY_ADDTIME_DESC;
+                    changeImage(R.drawable.downdown,btnTime);
+                    Log.e(TAG, "btnTimedown");
+                }
+                mSortTime = !mSortTime;
+                break;
+        }
+        mAdapter.setSortBy(sortBy);
+    }
 }
