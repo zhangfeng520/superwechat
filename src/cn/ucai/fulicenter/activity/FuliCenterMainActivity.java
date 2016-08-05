@@ -2,11 +2,14 @@ package cn.ucai.fulicenter.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +17,9 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import cn.ucai.fulicenter.Fragments.BoutiqueFragment;
 import cn.ucai.fulicenter.Fragments.CartFragment;
@@ -43,9 +49,6 @@ public class FuliCenterMainActivity extends BaseActivity {
         initFragment();
         initView();
         setListener();
-        String username = getIntent().getStringExtra("username");
-        Intent intent = new Intent();
-        intent.putExtra("username", username);
     }
 
     private void setListener() {
@@ -142,39 +145,45 @@ public class FuliCenterMainActivity extends BaseActivity {
         mAdapter = new GoodsAdapter(getSupportFragmentManager(), mFragments);
         mvpGoods.setAdapter(mAdapter);
     }
-
+    int action01;
+    StringBuilder builder = new StringBuilder("");
     public void onCheckedChange(View view) {
         switch (view.getId()) {
             case R.id.rbGoodNews:
                 index=0;
-                mvpGoods.setCurrentItem(0);
                 break;
             case R.id.rbBoutique:
                 index=1;
-                mvpGoods.setCurrentItem(1);
                 break;
             case R.id.rbCategory:
                 index=2;
-                mvpGoods.setCurrentItem(2);
                 break;
             case R.id.rbCart:
                 index=3;
-                mvpGoods.setCurrentItem(3);
                 break;
             case R.id.rbContact:
-                if (FuliCenterApplication.getInstance().getUser() != null) {
-                    mvpGoods.setCurrentItem(4);
-                    index=4;
-                }else{
-                    startActivity(new Intent(FuliCenterMainActivity.this,LoginActivity.class));
+                if (FuliCenterApplication.getInstance().getUser() == null) {
+                    startActivity(new Intent(this, LoginActivity.class).putExtra("action", currentIndex));
+                } else {
+                    index = 4;
                 }
                 break;
         }
+//        if (index != 4) {
+//            builder.append(index);
+//        }
+//        Log.e(TAG, "builder=" + builder);
+//        String s = builder.toString();
+//        Log.e(TAG, "s=" + s);
+//        action01 = Integer.parseInt(builder.substring(s.length()-1));
+        mvpGoods.setCurrentItem(index);
         if (index != currentIndex) {
             setRadioButtonStatus(index);
         }
+        if (index != 4) {
+            currentIndex = index;
+        }
         Log.e(TAG, "index=" + index + ",currentIndex=" + currentIndex);
-        currentIndex = index;
     }
 
     private void setRadioButtonStatus(int index) {
@@ -186,10 +195,46 @@ public class FuliCenterMainActivity extends BaseActivity {
             }
         }
     }
-
+    int action;
     @Override
     protected void onResume() {
         super.onResume();
-        setRadioButtonStatus(index);
+
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        action = getIntent().getIntExtra("action", 0);
+        Log.e(TAG, "returnaction=" + action);
+        if (FuliCenterApplication.getInstance().getUser() != null) {
+            mvpGoods.setCurrentItem(4);
+        } else {
+            mvpGoods.setCurrentItem(action);
+        }
+    }
+    String fragmentName;
+    public Handler handler =new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (msg !=null) {
+                switch (msg.what) {
+                    case 100:
+                        fragmentName = SettingsFragment.class.getName();
+                        replaceFragment(R.id.fragment1, fragmentName);
+                        break;
+                }
+            }
+        }
+    };
+    protected void replaceFragment(int viewResource, String fragmentName) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        Fragment fragment = Fragment.instantiate(this, fragmentName);
+        ft.replace(viewResource, fragment);
+        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        ft.commit();
+        getSupportFragmentManager().executePendingTransactions();
     }
 }
