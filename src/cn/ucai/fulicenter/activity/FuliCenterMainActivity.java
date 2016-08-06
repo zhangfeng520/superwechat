@@ -194,7 +194,7 @@ public class FuliCenterMainActivity extends BaseActivity {
         if (index != 4) {
             currentIndex = index;
         }
-        haha=index;
+        haha=100;
         Log.e(TAG, "index=" + index + ",currentIndex=" + currentIndex);
     }
 
@@ -211,10 +211,10 @@ public class FuliCenterMainActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (FuliCenterApplication.getInstance().getUser() != null) {
-        } else {
-            setRadioButtonStatus(action);
-        }
+//        if (FuliCenterApplication.getInstance().getUser() != null) {
+//        } else {
+//            setRadioButtonStatus(action);
+//        }
     }
 
     @Override
@@ -222,11 +222,13 @@ public class FuliCenterMainActivity extends BaseActivity {
         super.onNewIntent(intent);
         setIntent(intent);
         action = getIntent().getIntExtra("action", 0);
+        FuliCenterApplication.getInstance().setAction(action);
         Log.e(TAG, "returnaction=" + action);
         if (FuliCenterApplication.getInstance().getUser() != null) {
             mvpGoods.setCurrentItem(4);
         } else {
-            mvpGoods.setCurrentItem(action);
+            int yy = FuliCenterApplication.getInstance().getAction();
+            mvpGoods.setCurrentItem(yy);
         }
     }
 //    String fragmentName;

@@ -350,9 +350,11 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                             FuliCenterApplication.getInstance().getCollectGoods().clear();
                             pd.dismiss();
                             // 重新显示登陆页面
-                           finish();
-                            int action = getIntent().getIntExtra("action", 0);
+                            FuliCenterApplication.getInstance().setB(1);
+                            finish();
+                            int action = FuliCenterApplication.getInstance().getAction();
                             startActivity(new Intent(SettingActivity.this, LoginActivity.class).putExtra("action",action));
+                            Log.e(TAG, "action=" + action);
 
                         }
                     });

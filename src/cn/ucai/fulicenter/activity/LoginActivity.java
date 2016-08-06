@@ -40,6 +40,7 @@ import cn.ucai.fulicenter.Utils;
 import cn.ucai.fulicenter.applib.controller.HXSDKHelper;
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMGroupManager;
+import com.easemob.chat.StartServiceReceiver;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
@@ -81,6 +82,7 @@ public class LoginActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		action = getIntent().getIntExtra("action", 0);
+		FuliCenterApplication.getInstance().setAction(action);
 //		action01 = getIntent().getIntExtra("action01", 0);
 		Log.e(TAG, "action=" + action);
 		// 如果用户名密码都有，直接进入主页面
@@ -365,11 +367,16 @@ public class LoginActivity extends BaseActivity {
 	}
 
 	public void onBack(View view) {
-//		if (FuliCenterApplication.getInstance().getUser() != null) {
-//			startActivity(new Intent(this, FuliCenterMainActivity.class).putExtra("action", action01));
-//			Log.e(TAG, "终于到我了01！");
-//		} else {
-			startActivity(new Intent(this,FuliCenterMainActivity.class).putExtra("action",action));
-			Log.e(TAG, "终于到我了02！");
+
+		if (FuliCenterApplication.getInstance().getB() == 1) {
+			FuliCenterApplication.getInstance().setAction(action);
+			startActivity(new Intent(LoginActivity.this,FuliCenterMainActivity.class).putExtra("action",action));
+//			FuliCenterApplication.getInstance().setB(0);
+		} else {
+			FuliCenterApplication.getInstance().setAction(action);
+//			FuliCenterApplication.getInstance().setB(0);
+			finish();
+		}
+		Log.e(TAG, "终于到我了02！");
 	}
 }
