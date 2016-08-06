@@ -125,6 +125,8 @@ public class GoodDetailsActivity extends BaseActivity {
                 }else {
                     Toast.makeText(GoodDetailsActivity.this, "请先进行登录", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(GoodDetailsActivity.this,LoginActivity.class));
+                    //增加全局变量判断如果是从商品详情进入的登录界面，如果选择返回，则返回当前页面
+                    FuliCenterApplication.getInstance().setB(0);
                 }
             }
         });
