@@ -53,6 +53,8 @@ import cn.ucai.fulicenter.bean.UserAvatar;
 import cn.ucai.fulicenter.data.OkHttpUtils2;
 import cn.ucai.fulicenter.db.UserDao;
 import cn.ucai.fulicenter.domain.User;
+import cn.ucai.fulicenter.task.DownloadCollectCountTask;
+import cn.ucai.fulicenter.task.DownloadCollectTask;
 import cn.ucai.fulicenter.task.DownloadContactListTask;
 import cn.ucai.fulicenter.utils.CommonUtils;
 import cn.ucai.fulicenter.utils.UserUtils;
@@ -62,7 +64,7 @@ import cn.ucai.fulicenter.utils.UserUtils;
  *
  */
 public class LoginActivity extends BaseActivity {
-	private static final String TAG = "LoginActivity";
+	private static final String TAG = LoginActivity.class.getSimpleName();
 	public static final int REQUEST_CODE_SETNICK = 1;
 	private EditText usernameEditText;
 	private EditText passwordEditText;
@@ -73,15 +75,20 @@ public class LoginActivity extends BaseActivity {
 
 	private String currentUsername;
 	private String currentPassword;
-
+	int action;
+//	int action01;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		action = getIntent().getIntExtra("action", 0);
+//		action01 = getIntent().getIntExtra("action01", 0);
+		Log.e(TAG, "action=" + action);
 		// 如果用户名密码都有，直接进入主页面
 		if (DemoHXSDKHelper.getInstance().isLogined()) {
 			autoLogin = true;
-			startActivity(new Intent(LoginActivity.this, MainActivity.class));
+			//如果用户已登录，直接进入FuliCenterActivity的Fragment
+			startActivity(new Intent(LoginActivity.this, FuliCenterMainActivity.class).putExtra("username",currentUsername));
+
 
 			return;
 		}
@@ -188,7 +195,8 @@ public class LoginActivity extends BaseActivity {
 
 	private void loginAppServer() {
 		final OkHttpUtils2<String> utils2 = new OkHttpUtils2<String>();
-		utils2.setRequestUrl(I.REQUEST_LOGIN)
+		utils2.url(I.SERVER_ROOTT)
+				.addParam(I.KEY_REQUEST,I.REQUEST_LOGIN)
 				.addParam(I.User.USER_NAME,currentUsername)
 				.addParam(I.User.PASSWORD,currentPassword)
 				.targetClass(String.class)
@@ -197,7 +205,7 @@ public class LoginActivity extends BaseActivity {
 					public void onSuccess(String s) {
 						Log.e(TAG, "s" + s);
 						Result result = Utils.getResultFromJson(s, UserAvatar.class);
-						Log.e(TAG, "result=" + result);
+						Log.e(TAG, "result000001=" + result);
 						if (result != null && result.isRetMsg()) {
 							UserAvatar user = (UserAvatar) result.getRetData();
 							Log.e(TAG, "user=" + user);
@@ -242,7 +250,7 @@ public class LoginActivity extends BaseActivity {
 				.execute(new OkHttpUtils2.OnCompleteListener<Message>() {
 					@Override
 					public void onSuccess(Message result) {
-						Log.e(TAG, "result = " + result.toString());
+						Log.e(TAG, "result000002= " + result.toString());
 					}
 
 					@Override
@@ -297,9 +305,11 @@ public class LoginActivity extends BaseActivity {
 		}
 		// 进入主页面
 		Intent intent = new Intent(LoginActivity.this,
-				MainActivity.class);
+				FuliCenterMainActivity.class).putExtra("action",action);
 		startActivity(intent);
-
+		//登录后保存用户收藏数量和收藏内容到全局变量
+		new DownloadCollectTask(LoginActivity.this,currentUsername).execute();
+		new DownloadCollectCountTask(LoginActivity.this,currentUsername).execute();
 		finish();
 	}
 
@@ -352,5 +362,14 @@ public class LoginActivity extends BaseActivity {
 		if (autoLogin) {
 			return;
 		}
+	}
+
+	public void onBack(View view) {
+//		if (FuliCenterApplication.getInstance().getUser() != null) {
+//			startActivity(new Intent(this, FuliCenterMainActivity.class).putExtra("action", action01));
+//			Log.e(TAG, "终于到我了01！");
+//		} else {
+			startActivity(new Intent(this,FuliCenterMainActivity.class).putExtra("action",action));
+			Log.e(TAG, "终于到我了02！");
 	}
 }
