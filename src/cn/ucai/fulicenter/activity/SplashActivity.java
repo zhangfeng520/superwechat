@@ -21,6 +21,8 @@ import cn.ucai.fulicenter.bean.Result;
 import cn.ucai.fulicenter.bean.UserAvatar;
 import cn.ucai.fulicenter.data.OkHttpUtils2;
 import cn.ucai.fulicenter.db.UserDao;
+import cn.ucai.fulicenter.task.DownloadCollectCountTask;
+import cn.ucai.fulicenter.task.DownloadCollectTask;
 import cn.ucai.fulicenter.task.DownloadContactListTask;
 
 /**
@@ -68,7 +70,8 @@ public class SplashActivity extends BaseActivity {
 					Log.e(TAG, "user=" + user);
 					//闪屏优化
 					if (user == null) {final OkHttpUtils2<String> utils = new OkHttpUtils2<String>();
-						utils.setRequestUrl(I.REQUEST_FIND_USER)
+						utils.url(I.SERVER_ROOTT)
+								.addParam(I.KEY_REQUEST,I.REQUEST_FIND_USER)
 								.addParam(I.User.USER_NAME,userName)
 								.targetClass(String.class)
 								.execute(new OkHttpUtils2.OnCompleteListener<String>() {
@@ -98,6 +101,8 @@ public class SplashActivity extends BaseActivity {
 						FuliCenterApplication.currentUserNick = user.getMUserNick();
 					}
 					new DownloadContactListTask(SplashActivity.this,userName).execute();
+					new DownloadCollectTask(SplashActivity.this,userName).execute();
+					new DownloadCollectCountTask(SplashActivity.this,userName).execute();
 //					闪屏
 
 					long costTime = System.currentTimeMillis() - start;
