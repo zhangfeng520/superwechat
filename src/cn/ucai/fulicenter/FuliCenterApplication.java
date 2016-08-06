@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 import cn.ucai.fulicenter.bean.CollectBean;
+import cn.ucai.fulicenter.bean.GoodDetailsBean;
 import cn.ucai.fulicenter.bean.MemberUserAvatar;
 import cn.ucai.fulicenter.bean.UserAvatar;
 
@@ -45,6 +46,26 @@ public class FuliCenterApplication extends Application {
     private ArrayList<CollectBean>  collectGoods;
     //保存用户收藏数量
     private int collectCount;
+    //得到商品的详细数据；
+    private GoodDetailsBean goodDetailsBean;
+    //按钮的显示action
+    private int action;
+
+    public int getAction() {
+        return action;
+    }
+
+    public void setAction(int action) {
+        this.action = action;
+    }
+
+    public GoodDetailsBean getGoodDetailsBean() {
+        return goodDetailsBean;
+    }
+
+    public void setGoodDetailsBean(GoodDetailsBean goodDetailsBean) {
+        this.goodDetailsBean = goodDetailsBean;
+    }
 
     public int getCollectCount() {
         return collectCount;
