@@ -85,7 +85,6 @@ public class GoodDetailsActivity extends BaseActivity {
                 });
 
         final UserAvatar user = FuliCenterApplication.getInstance().getUser();
-        final int count = FuliCenterApplication.getInstance().getCollectCount();
         //收藏的点击事件
         ivCollect.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +98,7 @@ public class GoodDetailsActivity extends BaseActivity {
                             .execute(new OkHttpUtils2.OnCompleteListener<String>() {
                                 @Override
                                 public void onSuccess(String s) {
+                                    int count = FuliCenterApplication.getInstance().getCollectCount();
                                     Log.e(TAG, "s=" + s);
                                     Gson gson = new Gson();
                                     MessageBean msg = gson.fromJson(s, MessageBean.class);
@@ -114,7 +114,6 @@ public class GoodDetailsActivity extends BaseActivity {
                                         //添加收藏
                                         addCollect(user.getMUserName());
                                     }
-                                    new DownloadCollectTask(GoodDetailsActivity.this,user.getMUserName()).execute();
                                 }
 
                                 @Override
@@ -149,6 +148,9 @@ public class GoodDetailsActivity extends BaseActivity {
                         if (msg.isSuccess()) {
                             Log.e(TAG, "delete成功啦");
                             Toast.makeText(GoodDetailsActivity.this, "取消收藏成功啦！", Toast.LENGTH_SHORT).show();
+                            UserAvatar user = FuliCenterApplication.getInstance().getUser();
+                            new DownloadCollectTask(GoodDetailsActivity.this,user.getMUserName()).execute();
+
                         }
                     }
 
@@ -195,6 +197,8 @@ public class GoodDetailsActivity extends BaseActivity {
                             Log.e(TAG, "累死宝宝了");
                             Log.e(TAG, "collectBean=" + collectBean);
                             Toast.makeText(GoodDetailsActivity.this, "添加收藏成功啦！", Toast.LENGTH_SHORT).show();
+                            UserAvatar user = FuliCenterApplication.getInstance().getUser();
+                            new DownloadCollectTask(GoodDetailsActivity.this,user.getMUserName()).execute();
                         }
                     }
 
@@ -258,6 +262,7 @@ public class GoodDetailsActivity extends BaseActivity {
     }
 
     public void onBack(View view) {
+        //返回时清空得到的gooddetailsbean
         FuliCenterApplication.getInstance().setGoodDetailsBean(null);
         finish();
     }
