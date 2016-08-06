@@ -1,20 +1,24 @@
 package cn.ucai.fulicenter.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import cn.ucai.fulicenter.D;
 import cn.ucai.fulicenter.FuliCenterApplication;
 import cn.ucai.fulicenter.I;
 import cn.ucai.fulicenter.ImageLoader;
 import cn.ucai.fulicenter.R;
+import cn.ucai.fulicenter.activity.GoodDetailsActivity;
 import cn.ucai.fulicenter.bean.CollectBean;
 import cn.ucai.fulicenter.data.OkHttpUtils2;
 
@@ -42,7 +46,7 @@ public class CollectGoodsAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         MyViewHolder viewHolder = (MyViewHolder) holder;
-        CollectBean good = mCollectList.get(position);
+        final CollectBean good = mCollectList.get(position);
         viewHolder.tvGoodsName.setText(good.getGoodsName());
         viewHolder.tvGoodsEnglishName.setText(good.getGoodsEnglishName());
         ImageLoader.build()
@@ -55,6 +59,13 @@ public class CollectGoodsAdapter extends RecyclerView.Adapter {
                 .defaultPicture(R.drawable.default_image)
                 .listener(parent)
                 .showImage(mContext);
+        //增加收藏商品的商品点击事件，跳转到商品详情
+        viewHolder.layout_collect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mContext.startActivity(new Intent(mContext, GoodDetailsActivity.class).putExtra((D.NewGood.KEY_GOODS_ID),good.getGoodsId()));
+            }
+        });
     }
 
     @Override
@@ -65,11 +76,13 @@ public class CollectGoodsAdapter extends RecyclerView.Adapter {
     class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView ivAvatar;
         TextView tvGoodsName,tvGoodsEnglishName;
+        RelativeLayout layout_collect;
         public MyViewHolder(View itemView) {
             super(itemView);
             ivAvatar = (ImageView) itemView.findViewById(R.id.ivAvatar);
             tvGoodsName = (TextView) itemView.findViewById(R.id.tvGoodsTitle);
             tvGoodsEnglishName = (TextView) itemView.findViewById(R.id.tvPrice);
+            layout_collect = (RelativeLayout) itemView.findViewById(R.id.layout_collect);
         }
     }
 }
