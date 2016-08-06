@@ -23,6 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import cn.ucai.fulicenter.bean.CollectBean;
 import cn.ucai.fulicenter.bean.MemberUserAvatar;
 import cn.ucai.fulicenter.bean.UserAvatar;
 
@@ -40,6 +41,26 @@ public class FuliCenterApplication extends Application {
     public Map<String, HashMap<String, MemberUserAvatar>> memberMap = new HashMap<String, HashMap<String, MemberUserAvatar>>();
     //判断是否为好友，如果是好友返回1，不是好友返回0；
     public int b;
+    //保存用户收藏商品
+    private ArrayList<CollectBean>  collectGoods;
+    //保存用户收藏数量
+    private int collectCount;
+
+    public int getCollectCount() {
+        return collectCount;
+    }
+
+    public void setCollectCount(int collectCount) {
+        this.collectCount = collectCount;
+    }
+
+    public ArrayList<CollectBean> getCollectGoods() {
+        return collectGoods;
+    }
+
+    public void setCollectGoods(ArrayList<CollectBean> collectGoods) {
+        this.collectGoods = collectGoods;
+    }
 
     /**
      * 当前用户nickname,为了苹果推送不是userid而是昵称
