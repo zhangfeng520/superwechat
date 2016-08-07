@@ -23,6 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import cn.ucai.fulicenter.bean.CartBean;
 import cn.ucai.fulicenter.bean.CollectBean;
 import cn.ucai.fulicenter.bean.GoodDetailsBean;
 import cn.ucai.fulicenter.bean.MemberUserAvatar;
@@ -50,6 +51,26 @@ public class FuliCenterApplication extends Application {
     private GoodDetailsBean goodDetailsBean;
     //按钮的显示action
     private int action;
+    //保存购物车的数据
+    private ArrayList<CartBean>  cartGoods;
+    //保存购物车的全部数量
+    private int cartCount;
+
+    public int getCartCount() {
+        return cartCount;
+    }
+
+    public void setCartCount(int cartCount) {
+        this.cartCount = cartCount;
+    }
+
+    public ArrayList<CartBean> getCartGoods() {
+        return cartGoods;
+    }
+
+    public void setCartGoods(ArrayList<CartBean> cartGoods) {
+        this.cartGoods = cartGoods;
+    }
 
     public int getAction() {
         return action;
