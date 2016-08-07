@@ -2,6 +2,7 @@ package cn.ucai.fulicenter.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.IntegerRes;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -55,6 +56,9 @@ public class CartAdapter extends RecyclerView.Adapter{
         final MyViewHolder viewHolder = (MyViewHolder) holder;
         final CartBean good = mCartList.get(position);
         int goodId=good.getGoodsId();
+//        GoodDetailsBean goods = good.getGoods();
+//        Log.e(TAG, "goods========" + goods);
+
         final OkHttpUtils2<String> utils = new OkHttpUtils2();
         utils.setRequestUrl(I.REQUEST_FIND_GOOD_DETAILS)
                 .addParam(I.Cart.GOODS_ID, String.valueOf(goodId))
@@ -87,6 +91,9 @@ public class CartAdapter extends RecyclerView.Adapter{
                                     mContext.startActivity(new Intent(mContext, GoodDetailsActivity.class).putExtra((D.NewGood.KEY_GOODS_ID),good.getGoodsId()));
                                 }
                             });
+                            //修改购物车中单个商品显示的商品数量
+                            viewHolder.tvGoodsCount.setText(String.valueOf(good.getCount()));
+
                         } else {
                             Toast.makeText(mContext, "获取信息失败", Toast.LENGTH_SHORT).show();
                         }
@@ -102,7 +109,7 @@ public class CartAdapter extends RecyclerView.Adapter{
 
     @Override
     public int getItemCount() {
-        return mCartList==null?0:mCartList.size()+0;
+        return mCartList==null?0:mCartList.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
@@ -121,6 +128,7 @@ public class CartAdapter extends RecyclerView.Adapter{
             tvGoodsCount = (TextView) itemView.findViewById(R.id.tvGoodsCount);
             ivIncreate = (ImageView) itemView.findViewById(R.id.ivIncreate);
             ivReduce = (ImageView) itemView.findViewById(R.id.ivReduce);
+
         }
     }
 }
