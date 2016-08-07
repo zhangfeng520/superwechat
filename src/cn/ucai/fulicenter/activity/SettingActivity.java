@@ -348,6 +348,9 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                             //退出时增加清空收藏
                             FuliCenterApplication.getInstance().setCollectCount(0);
                             FuliCenterApplication.getInstance().getCollectGoods().clear();
+                            //用户退出时购物车清空数据
+                            FuliCenterApplication.getInstance().setCartCount(0);
+                            FuliCenterApplication.getInstance().getCartGoods().clear();
                             pd.dismiss();
                             // 重新显示登陆页面
                             FuliCenterApplication.getInstance().setB(1);
