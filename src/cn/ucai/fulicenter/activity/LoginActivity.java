@@ -54,6 +54,7 @@ import cn.ucai.fulicenter.bean.UserAvatar;
 import cn.ucai.fulicenter.data.OkHttpUtils2;
 import cn.ucai.fulicenter.db.UserDao;
 import cn.ucai.fulicenter.domain.User;
+import cn.ucai.fulicenter.task.DownloadCartCountTask;
 import cn.ucai.fulicenter.task.DownloadCollectCountTask;
 import cn.ucai.fulicenter.task.DownloadCollectTask;
 import cn.ucai.fulicenter.task.DownloadContactListTask;
@@ -312,6 +313,7 @@ public class LoginActivity extends BaseActivity {
 		//登录后保存用户收藏数量和收藏内容到全局变量
 		new DownloadCollectTask(LoginActivity.this,currentUsername).execute();
 		new DownloadCollectCountTask(LoginActivity.this,currentUsername).execute();
+		new DownloadCartCountTask(LoginActivity.this,currentUsername).execute();
 		finish();
 	}
 
