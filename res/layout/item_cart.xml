@@ -9,7 +9,7 @@
         android:background="@color/white">
 
         <TextView
-            android:id="@+id/tvGoodsName"
+            android:id="@+id/tvGoodsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -41,11 +41,16 @@
             android:layout_toRightOf="@id/tvGoodsCount"
             android:layout_centerInParent="true"
             />
+        <CheckBox
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
     </RelativeLayout>
     <RelativeLayout
-        android:id="@+id/layout_cart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/layout_cart"
         >
         <ImageView
             android:id="@+id/ivAvatar"
@@ -53,7 +58,7 @@
             android:layout_height="120dp"
             android:src="@drawable/nopic"/>
         <TextView
-            android:id="@+id/tvGoodsTitle"
+            android:id="@+id/tvGoodsName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18dp"
@@ -66,7 +71,7 @@
             android:layout_height="wrap_content"
             android:textSize="18dp"
             android:text="价格"
-            android:layout_below="@id/tvGoodsTitle"
+            android:layout_below="@id/tvGoodsName"
             android:layout_toRightOf="@id/ivAvatar"
             android:layout_marginTop="30dp"
             android:textColor="@color/main_orange"/>
