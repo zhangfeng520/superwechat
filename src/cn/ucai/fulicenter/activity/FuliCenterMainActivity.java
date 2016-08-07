@@ -169,7 +169,11 @@ public class FuliCenterMainActivity extends BaseActivity {
                 index=2;
                 break;
             case R.id.rbCart:
-                index=3;
+                if (FuliCenterApplication.getInstance().getUser() == null) {
+                    startActivity(new Intent(this, LoginActivity.class).putExtra("action", currentIndex));
+                } else {
+                    index = 3;
+                }
                 break;
             case R.id.rbContact:
                 if (FuliCenterApplication.getInstance().getUser() == null) {
@@ -191,7 +195,7 @@ public class FuliCenterMainActivity extends BaseActivity {
             setRadioButtonStatus(index);
         }
 
-        if (index != 4) {
+        if (index != 4&&index!=3) {
             currentIndex = index;
         }
         haha=100;
