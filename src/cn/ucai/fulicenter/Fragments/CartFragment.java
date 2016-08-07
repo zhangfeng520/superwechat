@@ -1,7 +1,10 @@
 package cn.ucai.fulicenter.Fragments;
 
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -29,7 +32,7 @@ import cn.ucai.fulicenter.bean.CollectBean;
 public class CartFragment extends Fragment {
     private static final String TAG = CartFragment.class.getSimpleName();
     RecyclerView mrvCollectGoods;
-    ImageView mivcollectgoods;
+    ImageView cartGoods;
     Context mContext;
     ArrayList<CartBean> mCartList;
     LinearLayoutManager mLayoutManager;
@@ -54,13 +57,8 @@ public class CartFragment extends Fragment {
         mContext = layout.getContext();
         initView(layout);
         setListener();
+        updateCartContent();
         return layout;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        setListener();
     }
 
     private void setListener() {
@@ -72,14 +70,13 @@ public class CartFragment extends Fragment {
                 tvRefreshHint.setVisibility(View.VISIBLE);
                 setRecycleView();
 //                ArrayList<CollectBean> goods = FuliCenterApplication.getInstance().getCollectGoods();
-                int count = FuliCenterApplication.getInstance().getCartCount();
-                Log.e(TAG, "count=" + count);
+
             }
         });
     }
     private void initView(View layout) {
         tvRefreshHint = (TextView) layout.findViewById(R.id.tvRefreshHint);
-        mivcollectgoods = (ImageView) layout.findViewById(R.id.collectgoods);
+        cartGoods = (ImageView) layout.findViewById(R.id.cartGoods);
         mrvCollectGoods = (RecyclerView)layout.findViewById(R.id.rvNewGoods);
         mCartList = FuliCenterApplication.getInstance().getCartGoods();
         mAdapter = new CartAdapter(mContext, mCartList);
@@ -88,6 +85,13 @@ public class CartFragment extends Fragment {
 
         mrvCollectGoods.setAdapter(mAdapter);
         mrvCollectGoods.setLayoutManager(mLayoutManager);
+        int count = FuliCenterApplication.getInstance().getCartCount();
+        Log.e(TAG, "count=" + count);
+        if (count > 0) {
+            cartGoods.setVisibility(View.GONE);
+        } else {
+            cartGoods.setVisibility(View.VISIBLE);
+        }
 
     }
 
@@ -95,6 +99,33 @@ public class CartFragment extends Fragment {
         initView(view);
         srl.setRefreshing(false);
         tvRefreshHint.setVisibility(View.GONE);
+
+
+    }
+
+    /**
+     * 发送广播，切换用户后，购物车界面的显示内容更新
+     */
+    class UpdateCountReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            setRecycleView();
+        }
+    }
+    UpdateCountReceiver mReceiver;
+
+    private void updateCartContent() {
+        mReceiver = new UpdateCountReceiver();
+        IntentFilter filter = new IntentFilter("update_cart_list");
+        filter.addAction("update");
+        getActivity().registerReceiver(mReceiver, filter);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+       getActivity(). unregisterReceiver(mReceiver);
     }
 
 }
