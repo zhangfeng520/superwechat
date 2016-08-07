@@ -44,19 +44,19 @@ public class DownloadCartCountTask {
                     public void onSuccess(String s) {
                         Log.e(TAG,"s==="+s);
                         if (s != null) {
-                            int allCount=0;
+//                            int allCount=0;
                             Gson gson = new Gson();
                             CartBean[] CartBean = gson.fromJson(s, CartBean[].class);
                             ArrayList<CartBean> cartBean = utils.array2List(CartBean);
                             Log.e(TAG, "cartBean=" + cartBean);
                             //保存用户购物车商品到全局变量
                             FuliCenterApplication.getInstance().setCartGoods(cartBean);
-                            for (CartBean good : cartBean) {
-                                int count = good.getCount();
-                                allCount+=count;
-                            }
+//                            for (CartBean good : cartBean) {
+//                                int count = good.getCount();
+//                                allCount+=count;
+//                            }
                             //保存用户购物车商品数量到全局变量
-                            FuliCenterApplication.getInstance().setCartCount(allCount);
+                            FuliCenterApplication.getInstance().setCartCount(cartBean.size());
                             mContext.sendStickyBroadcast(new Intent("update_cart_list"));
                         }
                     }
