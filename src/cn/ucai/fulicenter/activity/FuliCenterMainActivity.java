@@ -1,6 +1,9 @@
 package cn.ucai.fulicenter.activity;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -35,7 +38,7 @@ import cn.ucai.fulicenter.R;
  */
 public class FuliCenterMainActivity extends BaseActivity {
     private static final String TAG = FuliCenterMainActivity.class.getSimpleName();
-    RadioButton rbNewGoods,rbBoutique,rbCategory,rbCart,rbContact;
+    RadioButton rbNewGoods, rbBoutique, rbCategory, rbCart, rbContact;
     TextView tvCartHint;
     RadioButton[] rbArr;
     Fragment[] mFragments;
@@ -44,6 +47,7 @@ public class FuliCenterMainActivity extends BaseActivity {
     int haha;
     ViewPager mvpGoods;
     GoodsAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,8 +56,8 @@ public class FuliCenterMainActivity extends BaseActivity {
         initView();
         setListener();
         setRadioButtonStatus(0);
+        updateCount();
     }
-
 
 
     private void setListener() {
@@ -82,7 +86,7 @@ public class FuliCenterMainActivity extends BaseActivity {
                         if (FuliCenterApplication.getInstance().getUser() == null) {
                             startActivity(new Intent(FuliCenterMainActivity.this, LoginActivity.class));
                         }
-                            setRadioButtonStatus(4);
+                        setRadioButtonStatus(4);
 
                         break;
                 }
@@ -93,6 +97,7 @@ public class FuliCenterMainActivity extends BaseActivity {
 
             }
         });
+
     }
 
 
@@ -105,12 +110,15 @@ public class FuliCenterMainActivity extends BaseActivity {
         mFragments[4] = new PersonalCenterFragment();
 
     }
+
     class GoodsAdapter extends FragmentPagerAdapter {
         Fragment[] fragments;
+
         public GoodsAdapter(FragmentManager fm, Fragment[] fragments) {
             super(fm);
             this.fragments = fragments;
         }
+
         @Override
         public Fragment getItem(int position) {
             return fragments[position];
@@ -154,19 +162,23 @@ public class FuliCenterMainActivity extends BaseActivity {
         mvpGoods = (ViewPager) findViewById(R.id.vpGoods);
         mAdapter = new GoodsAdapter(getSupportFragmentManager(), mFragments);
         mvpGoods.setAdapter(mAdapter);
+
+
     }
+
     int action01;
     StringBuilder builder = new StringBuilder("");
+
     public void onCheckedChange(View view) {
         switch (view.getId()) {
             case R.id.rbGoodNews:
-                index=0;
+                index = 0;
                 break;
             case R.id.rbBoutique:
-                index=1;
+                index = 1;
                 break;
             case R.id.rbCategory:
-                index=2;
+                index = 2;
                 break;
             case R.id.rbCart:
                 if (FuliCenterApplication.getInstance().getUser() == null) {
@@ -195,15 +207,15 @@ public class FuliCenterMainActivity extends BaseActivity {
             setRadioButtonStatus(index);
         }
 
-        if (index != 4&&index!=3) {
+        if (index != 4 && index != 3) {
             currentIndex = index;
         }
-        haha=100;
+        haha = 100;
         Log.e(TAG, "index=" + index + ",currentIndex=" + currentIndex);
     }
 
     private void setRadioButtonStatus(int index) {
-        for(int i=0;i<rbArr.length;i++) {
+        for (int i = 0; i < rbArr.length; i++) {
             if (index == i) {
                 rbArr[i].setChecked(true);
             } else {
@@ -211,10 +223,13 @@ public class FuliCenterMainActivity extends BaseActivity {
             }
         }
     }
+
     int action;
+
     @Override
     protected void onResume() {
         super.onResume();
+
 //        if (FuliCenterApplication.getInstance().getUser() != null) {
 //        } else {
 //            setRadioButtonStatus(action);
@@ -235,7 +250,41 @@ public class FuliCenterMainActivity extends BaseActivity {
             mvpGoods.setCurrentItem(yy);
         }
     }
-//    String fragmentName;
+
+    /**
+     * 发送广播，在用户退出后购物车数量清空，实时更新
+     */
+    class UpdateCountReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int count = FuliCenterApplication.getInstance().getCartCount();
+            if (count > 0) {
+                tvCartHint.setText(String.valueOf(count));
+                tvCartHint.setVisibility(View.VISIBLE);
+            } else {
+                tvCartHint.setVisibility(View.GONE);
+            }
+            if (FuliCenterApplication.getInstance().getUser() == null) {
+                tvCartHint.setVisibility(View.GONE);
+            }
+        }
+    }
+    UpdateCountReceiver mReceiver;
+
+    private void updateCount() {
+        mReceiver = new UpdateCountReceiver();
+        IntentFilter filter = new IntentFilter("update_cart_list");
+        filter.addAction("update");
+        registerReceiver(mReceiver, filter);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(mReceiver);
+    }
+    //    String fragmentName;
 //    public Handler handler =new Handler(){
 //        @Override
 //        public void handleMessage(Message msg) {
