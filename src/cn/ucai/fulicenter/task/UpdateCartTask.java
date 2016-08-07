@@ -1,8 +1,11 @@
 package cn.ucai.fulicenter.task;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
@@ -11,6 +14,7 @@ import cn.ucai.fulicenter.I;
 import cn.ucai.fulicenter.activity.BaseActivity;
 import cn.ucai.fulicenter.bean.CartBean;
 import cn.ucai.fulicenter.bean.GoodDetailsBean;
+import cn.ucai.fulicenter.bean.MessageBean;
 import cn.ucai.fulicenter.data.OkHttpUtils2;
 
 /**
@@ -81,7 +85,13 @@ public class UpdateCartTask extends BaseActivity {
                         @Override
                         public void onSuccess(String result) {
                             Log.e(TAG, "result=" + result);
+                            Gson gson = new Gson();
+                            MessageBean msg = gson.fromJson(result, MessageBean.class);
+                            mCart.setId(Integer.parseInt(msg.getMsg()));
+                            ArrayList<CartBean> cartGoods = FuliCenterApplication.getInstance().getCartGoods();
+                            cartGoods.add(mCart);
                             Toast.makeText(UpdateCartTask.this, "增加商品成功", Toast.LENGTH_SHORT).show();
+                            sendBroadcast(new Intent("update_cart"));
                         }
 
                         @Override
