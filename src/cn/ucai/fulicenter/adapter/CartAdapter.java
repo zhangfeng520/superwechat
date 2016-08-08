@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -24,11 +25,13 @@ import cn.ucai.fulicenter.FuliCenterApplication;
 import cn.ucai.fulicenter.I;
 import cn.ucai.fulicenter.ImageLoader;
 import cn.ucai.fulicenter.R;
+import cn.ucai.fulicenter.Utils;
 import cn.ucai.fulicenter.activity.GoodDetailsActivity;
 import cn.ucai.fulicenter.bean.CartBean;
 import cn.ucai.fulicenter.bean.CollectBean;
 import cn.ucai.fulicenter.bean.GoodDetailsBean;
 import cn.ucai.fulicenter.data.OkHttpUtils2;
+import cn.ucai.fulicenter.task.DownloadCartCountTask;
 
 /**
  * Created by sks on 2016/8/7.
@@ -68,7 +71,7 @@ public class CartAdapter extends RecyclerView.Adapter{
                     public void onSuccess(String result) {
                         Log.e(TAG, "result===" + result);
                         Gson gson = new Gson();
-                        GoodDetailsBean goodDetailsBean = gson.fromJson(result, GoodDetailsBean.class);
+                        final GoodDetailsBean goodDetailsBean = gson.fromJson(result, GoodDetailsBean.class);
                         if (goodDetailsBean != null) {
                             //得到点击数据
                             viewHolder.tvGoodsName.setText(goodDetailsBean.getGoodsName());
@@ -93,6 +96,26 @@ public class CartAdapter extends RecyclerView.Adapter{
                             });
                             //修改购物车中单个商品显示的商品数量
                             viewHolder.tvGoodsCount.setText(String.valueOf(good.getCount()));
+                            //增加按钮的点击事件
+                            viewHolder.ivIncreate.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Utils.addCart(mContext,goodDetailsBean);
+                                    viewHolder.tvGoodsCount.setText(String.valueOf(Integer.parseInt(viewHolder.tvGoodsCount.getText().toString()) + 1));
+                                    new DownloadCartCountTask(mContext, FuliCenterApplication.getInstance().getUserName()).execute();
+                                }
+                            });
+                            //减少按钮的点击事件
+                            viewHolder.ivReduce.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Utils.deleteCart(mContext, goodDetailsBean);
+                                   viewHolder.tvGoodsCount.setText(String.valueOf(Integer.parseInt(viewHolder.tvGoodsCount.getText().toString())-1));
+                                    new DownloadCartCountTask(mContext, FuliCenterApplication.getInstance().getUserName()).execute();
+
+                                }
+                            });
+                            //保存全部价格到全局变量（当checkbox被选中的时候）
 
                         } else {
                             Toast.makeText(mContext, "获取信息失败", Toast.LENGTH_SHORT).show();
@@ -128,6 +151,7 @@ public class CartAdapter extends RecyclerView.Adapter{
             tvGoodsCount = (TextView) itemView.findViewById(R.id.tvGoodsCount);
             ivIncreate = (ImageView) itemView.findViewById(R.id.ivIncreate);
             ivReduce = (ImageView) itemView.findViewById(R.id.ivReduce);
+
 
         }
     }
