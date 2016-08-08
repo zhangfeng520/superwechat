@@ -18,12 +18,15 @@ import cn.ucai.fulicenter.D;
 import cn.ucai.fulicenter.FuliCenterApplication;
 import cn.ucai.fulicenter.I;
 import cn.ucai.fulicenter.R;
+import cn.ucai.fulicenter.Utils;
 import cn.ucai.fulicenter.bean.AlbumsBean;
+import cn.ucai.fulicenter.bean.CartBean;
 import cn.ucai.fulicenter.bean.CollectBean;
 import cn.ucai.fulicenter.bean.GoodDetailsBean;
 import cn.ucai.fulicenter.bean.MessageBean;
 import cn.ucai.fulicenter.bean.UserAvatar;
 import cn.ucai.fulicenter.data.OkHttpUtils2;
+import cn.ucai.fulicenter.task.DownloadCartCountTask;
 import cn.ucai.fulicenter.task.DownloadCollectTask;
 import cn.ucai.fulicenter.view.FlowIndicator;
 import cn.ucai.fulicenter.view.SlideAutoLoopView;
@@ -59,33 +62,34 @@ public class GoodDetailsActivity extends BaseActivity {
     }
 
     private void setListener() {
-        final OkHttpUtils2<String> utils = new OkHttpUtils2();
-        utils.setRequestUrl(I.REQUEST_FIND_GOOD_DETAILS)
-                .addParam(I.Cart.GOODS_ID,String.valueOf(mGoodsId))
-                .targetClass(String.class)
-                .execute(new OkHttpUtils2.OnCompleteListener<String>() {
-                    @Override
-                    public void onSuccess(String result) {
-                        Log.e(TAG, "result===" + result);
-                        Gson gson = new Gson();
-                        GoodDetailsBean goodDetailsBean = gson.fromJson(result, GoodDetailsBean.class);
-                        if (goodDetailsBean != null) {
-                            showGoodDetails(goodDetailsBean);
-                            //得到点击数据
-                            FuliCenterApplication.getInstance().setGoodDetailsBean(goodDetailsBean);
-                        }else{
-                            Toast.makeText(GoodDetailsActivity.this, "获取信息失败", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onError(String error) {
-                        Log.e(TAG, "error=" + error);
-                    }
-                });
-
         final UserAvatar user = FuliCenterApplication.getInstance().getUser();
+        //获取商品信息
+        getGoodDetails();
         //收藏的点击事件
+        SetOnCollectListener(user);
+        ivCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (user != null) {
+                    //修改商品个数保存数据到全局变量
+                   Utils.addCart(getApplicationContext(),FuliCenterApplication.getInstance().getGoodDetailsBean());
+                   new DownloadCartCountTask(getApplicationContext(), user.getMUserName()).execute();
+                    tvCartCount.setText(String.valueOf(Integer.parseInt(tvCartCount.getText().toString())+1));
+                } else {
+                    Toast.makeText(GoodDetailsActivity.this, "请先进行登录", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(GoodDetailsActivity.this,LoginActivity.class));
+                    //增加全局变量判断如果是从商品详情进入的登录界面，如果选择返回，则返回当前页面
+                    FuliCenterApplication.getInstance().setB(0);
+                }
+            }
+        });
+    }
+
+    /**
+     * 收藏按钮点击事件
+     * @param user
+     */
+    private void SetOnCollectListener(final UserAvatar user) {
         ivCollect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,6 +135,37 @@ public class GoodDetailsActivity extends BaseActivity {
             }
         });
     }
+
+    /**
+     * 商品详情的获取
+     */
+    private void getGoodDetails() {
+        final OkHttpUtils2<String> utils = new OkHttpUtils2();
+        utils.setRequestUrl(I.REQUEST_FIND_GOOD_DETAILS)
+                .addParam(I.Cart.GOODS_ID,String.valueOf(mGoodsId))
+                .targetClass(String.class)
+                .execute(new OkHttpUtils2.OnCompleteListener<String>() {
+                    @Override
+                    public void onSuccess(String result) {
+                        Log.e(TAG, "result===" + result);
+                        Gson gson = new Gson();
+                        GoodDetailsBean goodDetailsBean = gson.fromJson(result, GoodDetailsBean.class);
+                        if (goodDetailsBean != null) {
+                            showGoodDetails(goodDetailsBean);
+                            //得到点击数据
+                            FuliCenterApplication.getInstance().setGoodDetailsBean(goodDetailsBean);
+                        }else{
+                            Toast.makeText(GoodDetailsActivity.this, "获取信息失败", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onError(String error) {
+                        Log.e(TAG, "error=" + error);
+                    }
+                });
+    }
+
     /**
      * 删除收藏
      * create by MrZhang
@@ -169,6 +204,7 @@ public class GoodDetailsActivity extends BaseActivity {
      */
     private void addCollect(final String userName) {
         final GoodDetailsBean good = FuliCenterApplication.getInstance().getGoodDetailsBean();
+        Log.e(TAG, "增加收藏时good的属性：" + good);
         final OkHttpUtils2<String> utlis = new OkHttpUtils2<String>();
         utlis.setRequestUrl(I.REQUEST_ADD_COLLECT)
                 .addParam(I.Collect.USER_NAME,userName)
@@ -260,6 +296,13 @@ public class GoodDetailsActivity extends BaseActivity {
         WebSettings settings = mwbGoodBrief.getSettings();
         settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         settings.setBuiltInZoomControls(true);
+        //如果用户没登录或者用户商品的购物车数量为空则隐藏数字图标
+        if (FuliCenterApplication.getInstance().getUser() == null || FuliCenterApplication.getInstance().getCartCount() == 0) {
+            tvCartCount.setVisibility(View.GONE);
+        } else {
+            tvCartCount.setVisibility(View.VISIBLE);
+            tvCartCount.setText(String.valueOf(FuliCenterApplication.getInstance().getCartCount()));
+        }
 
     }
 
