@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,7 @@ import cn.ucai.fulicenter.bean.NewGoodBean;
  * Created by sks on 2016/8/1.
  */
 public class NewGoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    private static final String TAG = NewGoodsAdapter.class.getSimpleName();
     Context mContext;
     ArrayList<NewGoodBean> mGoodsList;
     static final int ITEM_FOOTER=1;
@@ -51,7 +53,7 @@ public class NewGoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         this.mContext = mContext;
         this.mGoodsList = mGoodsList;
         mGoodsList.addAll(mGoodsList);
-        sortByAddTime();
+//        sortByAddTime();
     }
 
     @Override
@@ -87,8 +89,8 @@ public class NewGoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 .url(I.SERVER_ROOT)
                 .addParam(I.KEY_REQUEST,I.REQUEST_DOWNLOAD_ALBUM_IMG)
                 .addParam("img_url",goods.getGoodsImg())
-                .width(180)
-                .height(200)
+                .width(300)
+                .height(400)
                 .imageView(viewHolder.ivNewGoods)
                 .defaultPicture(R.drawable.default_image)
                 .listener(parent)
@@ -156,6 +158,45 @@ public class NewGoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             @Override
             public int compare(NewGoodBean newGoodBean, NewGoodBean t1) {
                 return (int) (Long.valueOf(newGoodBean.getAddTime())-Long.valueOf(t1.getAddTime()));
+            }
+        });
+    }
+    private int sortBy;
+
+    public void setSortBy(int sortBy) {
+        this.sortBy = sortBy;
+        sortBy();
+        notifyDataSetChanged();
+    }
+
+    private void sortBy() {
+        Collections.sort(mGoodsList, new Comparator<NewGoodBean>() {
+            @Override
+            public int compare(NewGoodBean t1, NewGoodBean t2) {
+                int result =0;
+                switch (sortBy) {
+                    case I.SORT_BY_ADDTIME_ASC:
+                        result=(int) (Long.valueOf(t1.getAddTime())-Long.valueOf(t2.getAddTime()));
+                        Log.e(TAG, "t1.addTime=" + t1.getAddTime() + "t2.addTime=" + t2.getAddTime());
+                        break;
+                    case I.SORT_BY_ADDTIME_DESC:
+                        result=(int) (Long.valueOf(t2.getAddTime())-Long.valueOf(t1.getAddTime()));
+                        Log.e(TAG, "t1.addTime=" + t1.getAddTime() + "t2.addTime=" + t2.getAddTime());
+                        break;
+                    case I.SORT_BY_PRICE_ASC:
+                        result = convertPrice(t1.getCurrencyPrice()) - convertPrice(t2.getCurrencyPrice());
+                        Log.e(TAG, "t1.t1.getCurrencyPrice()=" +t1.getCurrencyPrice() + "t2.getCurrencyPrice()" + t2.getCurrencyPrice());
+                        break;
+                    case I.SORT_BY_PRICE_DESC:
+                        result = convertPrice(t2.getCurrencyPrice()) - convertPrice(t1.getCurrencyPrice());
+                        break;
+                }
+                return result;
+            }
+
+            private int convertPrice(String price) {
+                price = price.substring(1);
+                return Integer.parseInt(price);
             }
         });
     }

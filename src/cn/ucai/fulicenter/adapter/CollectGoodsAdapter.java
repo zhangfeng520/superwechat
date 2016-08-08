@@ -70,7 +70,7 @@ public class CollectGoodsAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return mCollectList.size();
+        return mCollectList==null?0:mCollectList.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {

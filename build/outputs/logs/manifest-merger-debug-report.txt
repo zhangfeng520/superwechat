@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:2:1-300:12
+ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:2:1-314:12
 	package
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:3:5-33
 		INJECTED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml
@@ -133,7 +133,7 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:40
 	android:name
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:40:22-78
 application
-ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:42:5-298:19
+ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:42:5-312:19
 MERGED from [com.android.support:support-v4:24.0.0] C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:24.0.0] C:\Users\sks\AndroidStudioProjects\superwechat\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:25:5-20
 	android:label
@@ -145,7 +145,7 @@ MERGED from [com.android.support:support-v4:24.0.0] C:\Users\sks\AndroidStudioPr
 	android:name
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:43:9-46
 activity#cn.ucai.fulicenter.activity.FuliCenterMainActivity
-ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:47:9-52:64
+ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:47:9-52:55
 	android:screenOrientation
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:50:13-49
 	android:launchMode
@@ -511,6 +511,34 @@ ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:28
 	android:name
 		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:288:13-52
 activity#cn.ucai.fulicenter.activity.BoutiqueChildActivity
-ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:297:9-77
+ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:297:9-300:55
+	android:screenOrientation
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:299:13-49
+	android:theme
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:300:13-52
 	android:name
-		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:297:19-65
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:298:13-59
+activity#cn.ucai.fulicenter.activity.CategoryChildActivity
+ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:301:9-304:55
+	android:screenOrientation
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:303:13-49
+	android:theme
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:304:13-52
+	android:name
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:302:13-59
+activity#cn.ucai.fulicenter.activity.SettingActivity
+ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:305:9-308:55
+	android:screenOrientation
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:307:13-49
+	android:theme
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:308:13-52
+	android:name
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:306:13-53
+activity#cn.ucai.fulicenter.activity.CollectGoodsActivity
+ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:309:9-311:54
+	android:screenOrientation
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:310:13-49
+	android:theme
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:311:13-52
+	android:name
+		ADDED from C:\Users\sks\AndroidStudioProjects\superwechat\AndroidManifest.xml:309:19-64

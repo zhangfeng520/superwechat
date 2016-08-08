@@ -23,6 +23,45 @@
             android:src="@drawable/message"
             android:layout_alignParentRight="true"/>
     </RelativeLayout>
+    <ImageView
+        android:id="@+id/cartGoods"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/cartnopic"
+        />
+    <RelativeLayout
+        android:id="@+id/layoutCountPrice"
+        android:layout_width="match_parent"
+        android:background="@drawable/relativestyle"
+        android:layout_height="60dp">
+        <TextView
+            android:id="@+id/tv01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="合计："
+            android:textSize="30dp"
+            android:layout_centerVertical="true"
+            android:textColor="#000"/>
+        <TextView
+            android:id="@+id/tvCountPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥9998"
+            android:textColor="@color/main_orange"
+            android:textSize="25dp"
+            android:layout_toRightOf="@id/tv01"
+            android:layout_centerVertical="true"/>
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/main_orange"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="购买"
+            />
+    </RelativeLayout>
+
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/srl"
         android:layout_width="match_parent"
@@ -45,6 +84,6 @@
                 />
 
         </LinearLayout>
-
     </android.support.v4.widget.SwipeRefreshLayout>
+
 </LinearLayout>

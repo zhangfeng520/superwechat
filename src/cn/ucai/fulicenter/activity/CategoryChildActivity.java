@@ -22,8 +22,10 @@ import cn.ucai.fulicenter.I;
 import cn.ucai.fulicenter.ImageLoader;
 import cn.ucai.fulicenter.R;
 import cn.ucai.fulicenter.adapter.NewGoodsAdapter;
+import cn.ucai.fulicenter.bean.CategoryChildBean;
 import cn.ucai.fulicenter.bean.NewGoodBean;
 import cn.ucai.fulicenter.data.OkHttpUtils2;
+import cn.ucai.fulicenter.view.CatChildFilterButton;
 
 public class CategoryChildActivity extends Activity implements View.OnClickListener{
     final static String TAG = NewGoodsFragment.class.getSimpleName();
@@ -44,6 +46,8 @@ public class CategoryChildActivity extends Activity implements View.OnClickListe
     private boolean mSortPrice;
     private boolean mSortTime;
     private int sortBy;
+    private CatChildFilterButton mCatChildFilterButton;
+    private String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +61,8 @@ public class CategoryChildActivity extends Activity implements View.OnClickListe
         setDownListener();
         btnPrice.setOnClickListener(this);
         btnTime.setOnClickListener(this);
+        ArrayList<CategoryChildBean> childList = (ArrayList<CategoryChildBean>) getIntent().getSerializableExtra("childList");
+        mCatChildFilterButton.setOnCatFilterClickListener(name,childList);
     }
 
     private void setDownListener() {
@@ -77,7 +83,7 @@ public class CategoryChildActivity extends Activity implements View.OnClickListe
     }
 
     private void downloadNewGoodsList(final int action, int pageId) {
-        final int CAT_ID = getIntent().getIntExtra(D.NewGood.KEY_GOODS_ID, 0);
+        final int CAT_ID = getIntent().getIntExtra(I.CategoryChild.CAT_ID, 0);
         final OkHttpUtils2<String> utils = new OkHttpUtils2<String>();
         utils.setRequestUrl(I.REQUEST_FIND_GOODS_DETAILS)
                 .addParam("cat_id",String.valueOf(CAT_ID))
@@ -140,6 +146,9 @@ public class CategoryChildActivity extends Activity implements View.OnClickListe
         tvTitle = (TextView) findViewById(R.id.tvTitle);
         btnPrice = (Button) findViewById(R.id.btnPrice);
         btnTime = (Button) findViewById(R.id.btnTime);
+        mCatChildFilterButton = (CatChildFilterButton) findViewById(R.id.btnCatChildFilter);
+        name=getIntent().getStringExtra(I.CategoryGroup.NAME);
+        mCatChildFilterButton.setText(name);
     }
 
     public void onBack(View view) {

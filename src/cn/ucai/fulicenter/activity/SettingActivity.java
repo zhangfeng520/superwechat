@@ -358,6 +358,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                             int action = FuliCenterApplication.getInstance().getAction();
                             startActivity(new Intent(SettingActivity.this, LoginActivity.class).putExtra("action",action));
                             Log.e(TAG, "action=" + action);
+                            sendStickyBroadcast(new Intent("update"));
 
                         }
                     });

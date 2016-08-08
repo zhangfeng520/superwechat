@@ -3,23 +3,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#eff2f6"
-    android:orientation="vertical" >
-
+    android:orientation="vertical"
+    android:padding="10dp">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1" >
+        android:layout_height="50dp"
+        android:background="@color/good_detail_bg_white">
+        <LinearLayout
+            android:id="@+id/ll_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp">
+            <ImageView
+                android:id="@+id/back"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/good_detail_bg_white"
+                android:onClick="onBack"
+                android:src="@drawable/back_press"
+                android:layout_gravity="center_vertical"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-             android:drawableLeft="@drawable/mobile"
-            android:gravity="center_vertical"
-            android:text="超级微信"
-            android:textSize="30dp"
-            android:textColor="#000"
-            android:layout_centerInParent="true"
-           />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            >
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="帐号登录"
+                android:textSize="18dp"
+                android:textColor="#000"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
     </RelativeLayout>
 
     <RelativeLayout
@@ -31,8 +52,7 @@
             android:id="@+id/rl_username"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            android:layout_marginLeft="28dp"
-            android:layout_marginRight="28dp"
+            android:layout_marginTop="20dp"
             android:background="#fff" >
 
             <ImageView
@@ -62,8 +82,6 @@
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:layout_below="@id/rl_username"
-            android:layout_marginLeft="28dp"
-            android:layout_marginRight="28dp"
             android:layout_marginTop="10dp"
             android:background="#fff" >
 
@@ -96,48 +114,37 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="30dp"
-            android:orientation="horizontal" >
-
+            android:orientation="vertical" >
             <Button
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:layout_weight="1"
-                android:background="@drawable/button_register_bg"
-                android:gravity="center"
-                android:onClick="register"
-                android:paddingBottom="7dp"
-                android:paddingTop="7dp"
-                android:text="@string/register"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:layout_weight="1"
-                android:background="@drawable/button_login_bg"
+                android:background="@color/main_orange"
                 android:gravity="center"
                 android:onClick="login"
                 android:paddingBottom="7dp"
                 android:paddingTop="7dp"
-                android:text="@string/login"
+                android:text="登录"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/buttonstyle"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:onClick="register"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp"
+                android:text="免费注册"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/main_orange"
+                android:textSize="18sp" />
+
+
         </LinearLayout>
     </RelativeLayout>
-    <Button
-        android:id="@+id/tvIp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="设置服务器的IP地址"
-        android:textSize="20dp"
-        android:textColor="#000"
-        android:layout_alignParentBottom="true"
-        android:background="#fff"/>
+
 
 </LinearLayout>

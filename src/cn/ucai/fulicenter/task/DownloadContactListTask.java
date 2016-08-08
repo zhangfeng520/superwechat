@@ -28,7 +28,8 @@ public class DownloadContactListTask {
     }
     public void execute(){
         final OkHttpUtils2<String> utils = new OkHttpUtils2<String>();
-        utils.setRequestUrl(I.REQUEST_DOWNLOAD_CONTACT_ALL_LIST)
+        utils.url(I.SERVER_ROOTT)
+                .addParam(I.KEY_REQUEST,I.REQUEST_DOWNLOAD_CONTACT_ALL_LIST)
                 .addParam(I.Contact.USER_NAME,userName)
                 .targetClass(String.class)
                 .execute(new OkHttpUtils2.OnCompleteListener<String>() {

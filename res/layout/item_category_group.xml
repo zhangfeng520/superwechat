@@ -2,13 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="80dp"
-    android:background="#fff"
+    android:background="@color/good_detail_bg_white"
+    android:layout_marginLeft="20dp"
+    android:layout_marginBottom="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="20dp"
     android:padding="10dp"
     >
     <ImageView
         android:id="@+id/ivGroup"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:src="@drawable/default_image"
         android:layout_marginLeft="10dp"
         android:layout_centerVertical="true"/>
@@ -18,6 +22,7 @@
         android:layout_height="wrap_content"
         android:text="饰品"
         android:textSize="30dp"
+        android:background="@null"
         android:textColor="#000"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@id/ivGroup"
@@ -25,7 +30,7 @@
     <ImageView
         android:id="@+id/ivSelect"
         android:layout_width="40dp"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
         android:src="@drawable/expand_on"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"/>

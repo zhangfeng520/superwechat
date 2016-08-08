@@ -55,6 +55,7 @@ public class BoutiqueFragment extends Fragment {
         initView(layout);
         initData();
         setListener();
+        int action = getActivity().getIntent().getIntExtra("action", 0);
         return layout;
     }
 

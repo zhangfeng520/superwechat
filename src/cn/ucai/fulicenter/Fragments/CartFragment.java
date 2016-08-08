@@ -15,9 +15,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 
 import cn.ucai.fulicenter.FuliCenterApplication;
 import cn.ucai.fulicenter.R;
@@ -25,6 +28,7 @@ import cn.ucai.fulicenter.adapter.CartAdapter;
 import cn.ucai.fulicenter.adapter.CollectGoodsAdapter;
 import cn.ucai.fulicenter.bean.CartBean;
 import cn.ucai.fulicenter.bean.CollectBean;
+import cn.ucai.fulicenter.bean.GoodDetailsBean;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,6 +44,9 @@ public class CartFragment extends Fragment {
     //增加下拉刷新
     SwipeRefreshLayout srl;
     TextView tvRefreshHint;
+
+    RelativeLayout layoutCountPrice;
+    TextView tvCountPrice;
 
     View view ;
 
@@ -82,16 +89,21 @@ public class CartFragment extends Fragment {
         mAdapter = new CartAdapter(mContext, mCartList);
         mLayoutManager = new LinearLayoutManager(mContext);
         srl = (SwipeRefreshLayout)layout.findViewById(R.id.srl);
-
+        layoutCountPrice = (RelativeLayout) layout.findViewById(R.id.layoutCountPrice);
         mrvCollectGoods.setAdapter(mAdapter);
         mrvCollectGoods.setLayoutManager(mLayoutManager);
         int count = FuliCenterApplication.getInstance().getCartCount();
+
+        tvCountPrice = (TextView) layout.findViewById(R.id.tvCountPrice);
         Log.e(TAG, "count=" + count);
         if (count > 0) {
             cartGoods.setVisibility(View.GONE);
+            layoutCountPrice.setVisibility(View.VISIBLE);
         } else {
             cartGoods.setVisibility(View.VISIBLE);
+            layoutCountPrice.setVisibility(View.GONE);
         }
+        sumPrice();
 
     }
 
@@ -126,6 +138,20 @@ public class CartFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
        getActivity(). unregisterReceiver(mReceiver);
+    }
+
+    public void sumPrice() {
+        int sum=0;
+        if (mCartList.size() != 0 && mCartList.size() > 0) {
+            for (CartBean cartBean : mCartList) {
+                GoodDetailsBean goods = cartBean.getGoods();
+                Log.e(TAG, "我是大goods"+goods);
+                if (goods != null && cartBean.isChecked()) {
+                    sum += (Integer.parseInt(goods.getCurrencyPrice().substring(1))) * cartBean.getCount();
+                }
+            }
+        }
+        tvCountPrice.setText("总价：￥"+sum);
     }
 
 }

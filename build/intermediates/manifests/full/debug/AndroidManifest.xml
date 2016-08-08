@@ -294,7 +294,22 @@
         <!-- android:theme="@style/horizontal_slide" -->
         <!-- android:windowSoftInputMode="adjustPan"> -->
         <!-- </activity> -->
-        <activity android:name="cn.ucai.fulicenter.activity.BoutiqueChildActivity" />
+        <activity
+            android:name="cn.ucai.fulicenter.activity.BoutiqueChildActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+        <activity
+            android:name="cn.ucai.fulicenter.activity.CategoryChildActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+        <activity
+            android:name="cn.ucai.fulicenter.activity.SettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+        <activity
+            android:name="cn.ucai.fulicenter.activity.CollectGoodsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
     </application>
 
 </manifest>

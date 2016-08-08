@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -17,10 +18,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import cn.ucai.fulicenter.FuliCenterApplication;
 import cn.ucai.fulicenter.R;
+import cn.ucai.fulicenter.activity.CollectGoodsActivity;
 import cn.ucai.fulicenter.activity.FuliCenterMainActivity;
 import cn.ucai.fulicenter.activity.LoginActivity;
 import cn.ucai.fulicenter.activity.SettingActivity;
@@ -38,11 +41,11 @@ public class PersonalCenterFragment extends Fragment {
     Context mContext;
     LinearLayoutManager mlayout;
     int action;
-    private Handler handler;
     public PersonalCenterFragment() {
         // Required empty public constructor
     }
-
+//    Handler handler;
+//
 //    @Override
 //    public void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
@@ -58,8 +61,6 @@ public class PersonalCenterFragment extends Fragment {
         View layout = inflater.inflate(R.layout.fragment_personal_center, container, false);
         mContext = layout.getContext();
         initView(layout);
-        action = getActivity().getIntent().getIntExtra("action", 0);
-        Log.e(TAG, "action=" + action);
         return layout;
     }
 
@@ -75,11 +76,13 @@ public class PersonalCenterFragment extends Fragment {
         TextView tvSettings;
         ImageView ivAvatar;
         TextView tvUserName;
+        RelativeLayout layout_collect;
         public MyViewHolder(View itemView) {
             super(itemView);
             tvSettings = (TextView) itemView.findViewById(R.id.tvSettings);
             ivAvatar = (ImageView) itemView.findViewById(R.id.ivAvatar);
             tvUserName = (TextView) itemView.findViewById(R.id.tvUserName);
+            layout_collect = (RelativeLayout) itemView.findViewById(R.id.layout_collect);
         }
     }
 
@@ -118,8 +121,14 @@ public class PersonalCenterFragment extends Fragment {
             holder.tvSettings.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                        startActivity(new Intent(mContext, SettingActivity.class).putExtra("action",action));
+                        startActivity(new Intent(mContext, SettingActivity.class));
 //                    handler.sendEmptyMessage(100);
+                }
+            });
+            holder.layout_collect.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(mContext, CollectGoodsActivity.class));
                 }
             });
             return holder;

@@ -1,25 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/common_bg"
-    android:orientation="vertical" >
-
+    android:id="@+id/fragment2"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/common_bg"
+        android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height_top_bar"
-        android:background="@color/top_bar_normal_bg"
-        android:gravity="center_vertical" >
+        android:layout_height="50dp"
+        android:background="@color/good_detail_bg_white">
+        <LinearLayout
+            android:id="@+id/ll_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp">
+            <ImageView
+                android:id="@+id/back"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/good_detail_bg_white"
+                android:onClick="onBack"
+                android:src="@drawable/back_press"
+                android:layout_gravity="center_vertical"/>
 
-        <TextView
-            android:id="@+id/message_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/set"
-            android:textColor="#fff"
-            android:textSize="18sp" />
+        </LinearLayout>
     </RelativeLayout>
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/height_top_bar"-->
+        <!--android:background="@color/top_bar_normal_bg"-->
+        <!--android:gravity="center_vertical" >-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/message_title"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:text="@string/set"-->
+            <!--android:textColor="#fff"-->
+            <!--android:textSize="18sp" />-->
+    <!--</RelativeLayout>-->
 
     <ScrollView
         android:layout_width="match_parent"
@@ -38,7 +63,7 @@
                 android:layout_marginRight="10dip"
                 android:layout_marginTop="10dip"
                 android:orientation="vertical" >
-                
+
 
                 <TextView
                     android:layout_width="match_parent"
@@ -410,3 +435,4 @@
     </ScrollView>
 
 </LinearLayout>
+</FrameLayout>

@@ -67,12 +67,6 @@ public class RegisterActivity extends BaseActivity {
 	}
 
 	private void setListener() {
-		findViewById(R.id.btnLogin).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				finish();
-			}
-		});
 		findViewById(R.id.btnRegister).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -159,7 +153,8 @@ public class RegisterActivity extends BaseActivity {
 	private void registerAppSever() {
 		File file = new File(OnSetAvatarListener.getAvatarPath(RegisterActivity.this,I.AVATAR_TYPE_USER_PATH),avatarName+I.AVATAR_SUFFIX_JPG);
 		final OkHttpUtils2<Result> utils = new OkHttpUtils2<Result>();
-		utils.setRequestUrl(I.REQUEST_REGISTER)
+		utils.url(I.SERVER_ROOTT)
+				.addParam(I.KEY_REQUEST,I.REQUEST_REGISTER)
 				.addParam(I.User.USER_NAME,username)
 				.addParam(I.User.PASSWORD,pwd)
 				.addParam(I.User.NICK,nick)
@@ -230,7 +225,8 @@ public class RegisterActivity extends BaseActivity {
 
 	private void unRegisterAppServer() {
 		final OkHttpUtils2<Result> utils2 = new OkHttpUtils2<Result>();
-		utils2.setRequestUrl(I.REQUEST_UNREGISTER)
+		utils2.url(I.SERVER_ROOTT)
+				.addParam(I.KEY_REQUEST,I.REQUEST_UNREGISTER)
 				.addParam(I.User.USER_NAME,username)
 				.targetClass(Result.class)
 				.execute(new OkHttpUtils2.OnCompleteListener<Result>() {
@@ -246,7 +242,7 @@ public class RegisterActivity extends BaseActivity {
 				});
 	}
 
-	public void back(View view) {
+	public void onBack(View view) {
 		finish();
 	}
 

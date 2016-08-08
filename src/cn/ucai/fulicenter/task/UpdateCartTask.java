@@ -43,7 +43,7 @@ public class UpdateCartTask extends BaseActivity {
                                 ArrayList<CartBean> cartGoods = FuliCenterApplication.getInstance().getCartGoods();
                                 cartGoods.remove(mCart);
                                 Log.e(TAG, "delete=" + s);
-                                Toast.makeText(UpdateCartTask.this, "删除物品成功", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mContext, "删除物品成功", Toast.LENGTH_SHORT).show();
                             }
 
                             @Override
@@ -52,6 +52,7 @@ public class UpdateCartTask extends BaseActivity {
                             }
                         });
             } else {
+                Log.e(TAG, "我错了");
                 final OkHttpUtils2<String> utils = new OkHttpUtils2<>();
                 utils.setRequestUrl(I.REQUEST_UPDATE_CART)
                         .addParam(I.Cart.ID,String.valueOf(mCart.getId()))
@@ -62,8 +63,12 @@ public class UpdateCartTask extends BaseActivity {
                             @Override
                             public void onSuccess(String result) {
                                 ArrayList<CartBean> cartGoods = FuliCenterApplication.getInstance().getCartGoods();
-                                cartGoods.set(cartGoods.indexOf(mCart), mCart);
-                                Log.e(TAG, "修改商品成功");
+                                FuliCenterApplication.getInstance().getCartGoods().remove(cartGoods.size()-1);
+                                FuliCenterApplication.getInstance().getCartGoods().add(mCart);
+//                                cartGoods.set(cartGoods.indexOf(mCart), mCart);
+                                Log.e(TAG, "修改商品成功"+cartGoods.size());
+                                Toast.makeText(mContext, "修改商品数量成功", Toast.LENGTH_SHORT).show();
+//                                FuliCenterApplication.getInstance().setCartGoods(mCart);
                             }
 
                             @Override
@@ -90,8 +95,8 @@ public class UpdateCartTask extends BaseActivity {
                             mCart.setId(Integer.parseInt(msg.getMsg()));
                             ArrayList<CartBean> cartGoods = FuliCenterApplication.getInstance().getCartGoods();
                             cartGoods.add(mCart);
-                            Toast.makeText(UpdateCartTask.this, "增加商品成功", Toast.LENGTH_SHORT).show();
-                            sendBroadcast(new Intent("update_cart"));
+                            Toast.makeText(mContext, "增加商品成功", Toast.LENGTH_SHORT).show();
+//                            sendStickyBroadcast(new Intent("update_cart_list"));
                         }
 
                         @Override

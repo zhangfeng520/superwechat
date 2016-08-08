@@ -17,6 +17,11 @@
           <theme>@android:style/Theme.Holo</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/res/layout/activity_register.xml">
+        <config>
+          <theme>@android:style/Theme.Holo</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/res/layout/common_head_title.xml">
         <config>
           <theme>@android:style/Theme.Holo</theme>
@@ -27,7 +32,17 @@
           <theme>@android:style/Theme.Holo</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/res/layout/fragment_cart.xml">
+        <config>
+          <theme>@android:style/Theme.Holo</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/res/layout/fragment_category.xml">
+        <config>
+          <theme>@android:style/Theme.Holo</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/res/layout/fragment_conversation_settings.xml">
         <config>
           <theme>@android:style/Theme.Holo</theme>
         </config>
@@ -37,40 +52,69 @@
           <theme>@android:style/Theme.Holo</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/res/layout/item_cart.xml">
+        <config>
+          <theme>@android:style/Theme.Holo</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/res/layout/item_category_group.xml">
+        <config>
+          <theme>@android:style/Theme.Holo</theme>
+        </config>
+      </layout>
     </layouts>
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cb233c2-cde1-4221-b924-d4133349be5e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/cn/ucai/fulicenter/activity/FuliCenterMainActivity$override.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_24_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/BoutiqueChildActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/view/DisPlayUtils.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_23_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/R.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/aapt/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/annotations.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/proguard.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/public.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/res/values/values.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/aapt/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/aidl/android/support/v4/media/MediaMetadataCompat.aidl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/aidl/android/support/v4/media/RatingCompat.aidl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/aidl/android/support/v4/media/session/MediaSessionCompat.aidl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/aidl/android/support/v4/media/session/ParcelableVolumeInfo.aidl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/aidl/android/support/v4/media/session/PlaybackStateCompat.aidl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/aidl/android/support/v4/os/ResultReceiver.aidl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/annotations.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_23_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_24_0_0.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_23_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_24_0_0.xml" />
+    <list default="true" id="0cb233c2-cde1-4221-b924-d4133349be5e" name="Default" comment="分类商品排序（价格，上架时间）">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/cn/ucai/fulicenter/R$id$override.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/cn/ucai/fulicenter/R$integer$override.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/cn/ucai/fulicenter/activity/BlacklistActivity$override.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/cn/ucai/fulicenter/adapter/ContactAdapter$override.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/bibei01.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/bibei02.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/bibei03.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/bibei04.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/bibei05.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/bibei06.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/bibei07.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/bibei08.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/bibei09.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/bibei10.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/bibei11.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/bibei12.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/cartnopic.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/downdown.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/hahaha.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/increate.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/lalala.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/message.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/pull_push_arrow_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/reduce.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/shake.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/upup.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/Relativestyle.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/common_head_back.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/task/DownloadCollectCountTask.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/view/CatChildFilterButton.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RegisterActivity$5$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RegisterActivity$5$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RegisterActivity$6.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/SettingsFragment$1$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/SettingsFragment$1$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RegisterActivity$5$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RegisterActivity$5$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RegisterActivity$6.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/SettingsFragment$1$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/SettingsFragment$1$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RegisterActivity$5$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RegisterActivity$5$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RegisterActivity$6.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/SettingsFragment$1$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/SettingsFragment$1$2.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
@@ -78,8 +122,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/FuliCenterApplication.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/FuliCenterApplication.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/I.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/I.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/R$drawable.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/R$drawable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/R$id.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/R$id.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/R$integer.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/R$integer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/R$layout.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/R$layout.class" />
@@ -91,8 +137,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/R$styleable.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/R$styleable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/Utils.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/Utils.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/AlertDialog.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/AlertDialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/BaiduMapActivity$MyLocationListenner.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/BaiduMapActivity$MyLocationListenner.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/BaiduMapActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/BaiduMapActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/BlacklistActivity$BlacklistAdapater.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/BlacklistActivity$BlacklistAdapater.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/BlacklistActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/BlacklistActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ChatActivity$2.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ChatActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ChatActivity$3.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ChatActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ChatActivity$PressToSpeakListen.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ChatActivity$PressToSpeakListen.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ChatActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ChatActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ChatAllHistoryFragment.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ChatAllHistoryFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ChatHistoryFragment.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ChatHistoryFragment.class" />
@@ -104,6 +155,14 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/FuliCenterMainActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/FuliCenterMainActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ImageGridFragment$ImageAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ImageGridFragment$ImageAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ImageGridFragment.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ImageGridFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/LoginActivity$1.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/LoginActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/LoginActivity$2.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/LoginActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/LoginActivity$3$1.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/LoginActivity$3$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/LoginActivity$3.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/LoginActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/LoginActivity$4.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/LoginActivity$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/LoginActivity$5.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/LoginActivity$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/LoginActivity$6.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/LoginActivity$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/LoginActivity$7.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/LoginActivity$7.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/LoginActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/LoginActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/MainActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/MainActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/NewFriendsMsgActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/NewFriendsMsgActivity.class" />
@@ -112,19 +171,28 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/PublicChatRoomsActivity$ChatRoomAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/PublicChatRoomsActivity$ChatRoomAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/PublicChatRoomsActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/PublicChatRoomsActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RecorderVideoActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RecorderVideoActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RegisterActivity$1.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RegisterActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RegisterActivity$2.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RegisterActivity$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RegisterActivity$3.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RegisterActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RegisterActivity$4.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RegisterActivity$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RegisterActivity$5.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RegisterActivity$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RegisterActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RegisterActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RobotsActivity$RobotAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RobotsActivity$RobotAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RobotsActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/RobotsActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/SettingsFragment$1.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/SettingsFragment$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/SettingsFragment.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/SettingsFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ShowBigImage.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ShowBigImage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ShowNormalFileActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ShowNormalFileActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ShowVideoActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/ShowVideoActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/SplashActivity$1$1.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/SplashActivity$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/SplashActivity$1.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/SplashActivity$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/SplashActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/SplashActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/UserProfileActivity$2.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/UserProfileActivity$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/UserProfileActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/UserProfileActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/VideoCallActivity$2$3.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/VideoCallActivity$2$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/VideoCallActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/VideoCallActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/VoiceCallActivity$3$3.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/VoiceCallActivity$3$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/VoiceCallActivity$3$4$1.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/VoiceCallActivity$3$4$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/VoiceCallActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/activity/VoiceCallActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/adapter/ChatAllHistoryAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/adapter/ChatAllHistoryAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/adapter/ChatHistoryAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/adapter/ChatHistoryAdapter.class" />
@@ -133,11 +201,22 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/adapter/ExpressionAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/adapter/ExpressionAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/adapter/MessageAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/adapter/MessageAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/adapter/NewFriendsMsgAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/adapter/NewFriendsMsgAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/bean/NewGoodBean.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/bean/NewGoodBean.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/adapter/VoicePlayClickListener.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/adapter/VoicePlayClickListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/bean/CartBean.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/bean/CartBean.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/data/OkHttpUtils2.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/data/OkHttpUtils2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/listener/OnSetAvatarListener.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/listener/OnSetAvatarListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/task/DownloadContactListTask$1.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/task/DownloadContactListTask$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/task/DownloadContactListTask.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/task/DownloadContactListTask.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/task/LoadLocalBigImgTask.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/task/LoadLocalBigImgTask.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/utils/ImageUtils.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/utils/ImageUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/utils/SmileUtils.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/utils/SmileUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/utils/UserUtils.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/utils/UserUtils.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/widget/Sidebar.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/ucai/fulicenter/widget/Sidebar.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" afterPath="$PROJECT_DIR$/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" afterPath="$PROJECT_DIR$/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/FuliCenterApplication.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/FuliCenterApplication.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/I.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/I.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/R$drawable.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/R$drawable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/R$id.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/R$id.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/R$integer.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/R$integer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/R$layout.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/R$layout.class" />
@@ -149,8 +228,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/R$styleable.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/R$styleable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/Utils.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/Utils.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/AlertDialog.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/AlertDialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/BaiduMapActivity$MyLocationListenner.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/BaiduMapActivity$MyLocationListenner.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/BaiduMapActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/BaiduMapActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/BlacklistActivity$BlacklistAdapater.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/BlacklistActivity$BlacklistAdapater.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/BlacklistActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/BlacklistActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ChatActivity$2.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ChatActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ChatActivity$3.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ChatActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ChatActivity$PressToSpeakListen.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ChatActivity$PressToSpeakListen.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ChatActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ChatActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ChatAllHistoryFragment.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ChatAllHistoryFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ChatHistoryFragment.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ChatHistoryFragment.class" />
@@ -162,6 +246,14 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/FuliCenterMainActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/FuliCenterMainActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ImageGridFragment$ImageAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ImageGridFragment$ImageAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ImageGridFragment.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ImageGridFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/LoginActivity$1.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/LoginActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/LoginActivity$2.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/LoginActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/LoginActivity$3$1.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/LoginActivity$3$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/LoginActivity$3.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/LoginActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/LoginActivity$4.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/LoginActivity$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/LoginActivity$5.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/LoginActivity$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/LoginActivity$6.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/LoginActivity$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/LoginActivity$7.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/LoginActivity$7.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/LoginActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/LoginActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/MainActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/MainActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/NewFriendsMsgActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/NewFriendsMsgActivity.class" />
@@ -170,19 +262,28 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/PublicChatRoomsActivity$ChatRoomAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/PublicChatRoomsActivity$ChatRoomAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/PublicChatRoomsActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/PublicChatRoomsActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RecorderVideoActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RecorderVideoActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RegisterActivity$1.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RegisterActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RegisterActivity$2.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RegisterActivity$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RegisterActivity$3.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RegisterActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RegisterActivity$4.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RegisterActivity$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RegisterActivity$5.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RegisterActivity$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RegisterActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RegisterActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RobotsActivity$RobotAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RobotsActivity$RobotAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RobotsActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/RobotsActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/SettingsFragment$1.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/SettingsFragment$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/SettingsFragment.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/SettingsFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ShowBigImage.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ShowBigImage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ShowNormalFileActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ShowNormalFileActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ShowVideoActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/ShowVideoActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/SplashActivity$1$1.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/SplashActivity$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/SplashActivity$1.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/SplashActivity$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/SplashActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/SplashActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/UserProfileActivity$2.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/UserProfileActivity$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/UserProfileActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/UserProfileActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/VideoCallActivity$2$3.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/VideoCallActivity$2$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/VideoCallActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/VideoCallActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/VoiceCallActivity$3$3.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/VoiceCallActivity$3$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/VoiceCallActivity$3$4$1.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/VoiceCallActivity$3$4$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/VoiceCallActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/activity/VoiceCallActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/adapter/ChatAllHistoryAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/adapter/ChatAllHistoryAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/adapter/ChatHistoryAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/adapter/ChatHistoryAdapter.class" />
@@ -191,10 +292,21 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/adapter/ExpressionAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/adapter/ExpressionAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/adapter/MessageAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/adapter/MessageAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/adapter/NewFriendsMsgAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/adapter/NewFriendsMsgAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/bean/NewGoodBean.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/bean/NewGoodBean.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/adapter/VoicePlayClickListener.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/adapter/VoicePlayClickListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/bean/CartBean.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/bean/CartBean.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/data/OkHttpUtils2.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/data/OkHttpUtils2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/listener/OnSetAvatarListener.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/listener/OnSetAvatarListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/task/DownloadContactListTask$1.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/task/DownloadContactListTask$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/task/DownloadContactListTask.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/task/DownloadContactListTask.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/task/LoadLocalBigImgTask.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/task/LoadLocalBigImgTask.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/utils/ImageUtils.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/utils/ImageUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/utils/SmileUtils.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/utils/SmileUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/utils/UserUtils.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/utils/UserUtils.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/widget/Sidebar.class" afterPath="$PROJECT_DIR$/build/intermediates/incremental-verifier/debug/cn/ucai/fulicenter/widget/Sidebar.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/build/intermediates/res/resources-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/FuliCenterApplication.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/FuliCenterApplication.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/I.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/I.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/R$drawable.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/R$drawable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/R$id.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/R$id.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/R$integer.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/R$integer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/R$layout.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/R$layout.class" />
@@ -205,13 +317,14 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/R$style.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/R$style.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/R$styleable.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/R$styleable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/Utils.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/Utils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/AddContactActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/AddContactActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/AlertDialog.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/AlertDialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/BaiduMapActivity$MyLocationListenner.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/BaiduMapActivity$MyLocationListenner.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/BaiduMapActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/BaiduMapActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/BaseActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/BaseActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/BlacklistActivity$BlacklistAdapater.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/BlacklistActivity$BlacklistAdapater.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/BlacklistActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/BlacklistActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/CallActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/CallActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ChatActivity$2.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ChatActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ChatActivity$3.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ChatActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ChatActivity$PressToSpeakListen.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ChatActivity$PressToSpeakListen.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ChatActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ChatActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ChatAllHistoryFragment.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ChatAllHistoryFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ChatHistoryFragment.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ChatHistoryFragment.class" />
@@ -220,11 +333,17 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/DiagnoseActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/DiagnoseActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/EditActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/EditActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ExitGroupDialog.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ExitGroupDialog.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ForwardMessageActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ForwardMessageActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/FuliCenterMainActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/FuliCenterMainActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ImageGridActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ImageGridActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ImageGridFragment$ImageAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ImageGridFragment$ImageAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ImageGridFragment.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ImageGridFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/LoginActivity$1.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/LoginActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/LoginActivity$2.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/LoginActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/LoginActivity$3$1.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/LoginActivity$3$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/LoginActivity$3.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/LoginActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/LoginActivity$4.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/LoginActivity$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/LoginActivity$5.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/LoginActivity$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/LoginActivity$6.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/LoginActivity$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/LoginActivity$7.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/LoginActivity$7.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/LoginActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/LoginActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/MainActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/MainActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/NewFriendsMsgActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/NewFriendsMsgActivity.class" />
@@ -233,19 +352,28 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/PublicChatRoomsActivity$ChatRoomAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/PublicChatRoomsActivity$ChatRoomAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/PublicChatRoomsActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/PublicChatRoomsActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RecorderVideoActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RecorderVideoActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RegisterActivity$1.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RegisterActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RegisterActivity$2.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RegisterActivity$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RegisterActivity$3.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RegisterActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RegisterActivity$4.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RegisterActivity$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RegisterActivity$5.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RegisterActivity$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RegisterActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RegisterActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RobotsActivity$RobotAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RobotsActivity$RobotAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RobotsActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/RobotsActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/SettingsFragment$1.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/SettingsFragment$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/SettingsFragment.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/SettingsFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ShowBigImage.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ShowBigImage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ShowNormalFileActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ShowNormalFileActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ShowVideoActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/ShowVideoActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/SplashActivity$1$1.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/SplashActivity$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/SplashActivity$1.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/SplashActivity$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/SplashActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/SplashActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/UserProfileActivity$2.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/UserProfileActivity$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/UserProfileActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/UserProfileActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/VideoCallActivity$2$3.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/VideoCallActivity$2$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/VideoCallActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/VideoCallActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/VoiceCallActivity$3$3.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/VoiceCallActivity$3$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/VoiceCallActivity$3$4$1.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/VoiceCallActivity$3$4$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/VoiceCallActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/activity/VoiceCallActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/adapter/ChatAllHistoryAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/adapter/ChatAllHistoryAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/adapter/ChatHistoryAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/adapter/ChatHistoryAdapter.class" />
@@ -254,40 +382,81 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/adapter/ExpressionAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/adapter/ExpressionAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/adapter/MessageAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/adapter/MessageAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/adapter/NewFriendsMsgAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/adapter/NewFriendsMsgAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/bean/NewGoodBean.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/bean/NewGoodBean.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/adapter/VoicePlayClickListener.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/adapter/VoicePlayClickListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/bean/CartBean.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/bean/CartBean.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/data/OkHttpUtils2.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/data/OkHttpUtils2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/listener/OnSetAvatarListener.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/listener/OnSetAvatarListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/video/util/ImageCache$RetainFragment.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/video/util/ImageCache$RetainFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/task/DownloadContactListTask$1.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/task/DownloadContactListTask$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/task/DownloadContactListTask.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/task/DownloadContactListTask.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/task/LoadLocalBigImgTask.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/task/LoadLocalBigImgTask.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/utils/ImageUtils.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/utils/ImageUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/utils/SmileUtils.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/utils/SmileUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/utils/UserUtils.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/utils/UserUtils.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/widget/Sidebar.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/1/5/main/cn/ucai/fulicenter/widget/Sidebar.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/cn/ucai/fulicenter/activity/FuliCenterMainActivity$override.class" afterPath="$PROJECT_DIR$/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/cn/ucai/fulicenter/activity/FuliCenterMainActivity$override.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/outputs/apk/superwechat-debug-unaligned.apk" afterPath="$PROJECT_DIR$/build/outputs/apk/superwechat-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/outputs/apk/superwechat-debug.apk" afterPath="$PROJECT_DIR$/build/outputs/apk/superwechat-debug.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/source/r/debug/android/support/v7/recyclerview/R.java" afterPath="$PROJECT_DIR$/build/generated/source/r/debug/android/support/v7/recyclerview/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/source/r/debug/cn/ucai/fulicenter/R.java" afterPath="$PROJECT_DIR$/build/generated/source/r/debug/cn/ucai/fulicenter/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi/values.json" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi/values.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/single/drawable-hdpi-v4.json" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/single/drawable-hdpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/single/drawable.json" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/single/drawable.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/single/layout.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/bundles/debug/instant-run/AndroidManifest.xml" afterPath="$PROJECT_DIR$/build/intermediates/bundles/debug/instant-run/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterPath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugAssets/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugResources/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/instant-run-support/debug/manifest.crc" afterPath="$PROJECT_DIR$/build/intermediates/instant-run-support/debug/manifest.crc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/instant-run-support/debug/reload-changes.txt" afterPath="$PROJECT_DIR$/build/intermediates/instant-run-support/debug/reload-changes.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/activity_login.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/activity_login.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/activity_register.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/activity_register.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/fragment_conversation_settings.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/fragment_conversation_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/fragment_new_goods.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/fragment_new_goods.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/item_footer.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/item_footer.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/item_new_goods.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/item_new_goods.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/values/values.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/values/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/restart-dex/debug/build-info.xml" afterPath="$PROJECT_DIR$/build/intermediates/restart-dex/debug/build-info.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/build/intermediates/symbols/debug/R.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/build/outputs/logs/manifest-merger-debug-report.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/buttonstyle.xml" afterPath="$PROJECT_DIR$/res/drawable/buttonstyle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_category_child.xml" afterPath="$PROJECT_DIR$/res/layout/activity_category_child.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_collect_goods.xml" afterPath="$PROJECT_DIR$/res/layout/activity_collect_goods.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_login.xml" afterPath="$PROJECT_DIR$/res/layout/activity_login.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_register.xml" afterPath="$PROJECT_DIR$/res/layout/activity_register.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/fragment_cart.xml" afterPath="$PROJECT_DIR$/res/layout/fragment_cart.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/fragment_category.xml" afterPath="$PROJECT_DIR$/res/layout/fragment_category.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/fragment_conversation_settings.xml" afterPath="$PROJECT_DIR$/res/layout/fragment_conversation_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/fragment_personal_center.xml" afterPath="$PROJECT_DIR$/res/layout/fragment_personal_center.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/item_cart.xml" afterPath="$PROJECT_DIR$/res/layout/item_cart.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/item_category_child.xml" afterPath="$PROJECT_DIR$/res/layout/item_category_child.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/item_category_group.xml" afterPath="$PROJECT_DIR$/res/layout/item_category_group.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/item_collect_goods.xml" afterPath="$PROJECT_DIR$/res/layout/item_collect_goods.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/item_personal_center.xml" afterPath="$PROJECT_DIR$/res/layout/item_personal_center.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/BoutiqueFragment.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/BoutiqueFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/NewGoodsFragment.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/NewGoodsFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/CartFragment.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/CartFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/CategoryFragment.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/CategoryFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/PersonalCenterFragment.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/PersonalCenterFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/FuliCenterApplication.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/FuliCenterApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/I.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/I.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/Utils.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/Utils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/BlacklistActivity.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/BlacklistActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/BoutiqueChildActivity.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/BoutiqueChildActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/CategoryChildActivity.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/CategoryChildActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/FuliCenterMainActivity.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/FuliCenterMainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/LoginActivity.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/LoginActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/RegisterActivity.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/RegisterActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/SettingActivity.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/SettingActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/SettingsFragment.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/SettingsFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/BoutiqueAdapter.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/BoutiqueAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/CartAdapter.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/CartAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/CategroyAdapter.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/CategroyAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/CollectGoodsAdapter.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/CollectGoodsAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/NewGoodsAdapter.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/NewGoodsAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/bean/CartBean.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/bean/CartBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/task/DownloadCartCountTask.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/task/DownloadCartCountTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/task/DownloadCollectTask.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/task/DownloadCollectTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/task/DownloadContactListTask.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/task/DownloadContactListTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/task/UpdateCartTask.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/task/UpdateCartTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/utils/ImageUtils.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/utils/ImageUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/ucai/fulicenter/utils/UserUtils.java" afterPath="$PROJECT_DIR$/src/cn/ucai/fulicenter/utils/UserUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/superwechat.iml" afterPath="$PROJECT_DIR$/superwechat.iml" />
     </list>
     <ignored path="superwechat.iws" />
@@ -336,74 +505,76 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="activity_good_details.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/activity_good_details.xml">
+      <file leaf-file-name="FuliCenterMainActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/FuliCenterMainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.2028985">
-              <caret line="112" column="34" selection-start-line="110" selection-start-column="44" selection-end-line="112" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.45111492">
+              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
         </entry>
       </file>
-      <file leaf-file-name="BoutiqueChildActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/BoutiqueChildActivity.java">
+      <file leaf-file-name="PersonalCenterFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/PersonalCenterFragment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BoutiqueAdapter.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/BoutiqueAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42352942">
-              <caret line="134" column="9" selection-start-line="134" selection-start-column="9" selection-end-line="134" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_boutique_child.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/activity_boutique_child.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.4347826">
-              <caret line="1" column="59" selection-start-line="1" selection-start-column="59" selection-end-line="1" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common_head_title.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/common_head_title.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.8115942">
-              <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GoodDetailsActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/GoodDetailsActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="77" column="67" selection-start-line="77" selection-start-column="67" selection-end-line="77" selection-end-column="67" />
+              <caret line="126" column="15" selection-start-line="126" selection-start-column="15" selection-end-line="126" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_personal_center.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/fragment_personal_center.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.3043479">
+              <caret line="3" column="30" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SettingActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/SettingActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SettingsFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/SettingsFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.392857">
+              <caret line="137" column="2" selection-start-line="137" selection-start-column="2" selection-end-line="137" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#629#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#5518#5551#0" expanded="true" />
+                <element signature="e#13337#13386#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_conversation_settings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/fragment_conversation_settings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.8115942">
+              <caret line="21" column="37" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -412,6 +583,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="resourceFile" />
         <option value="layoutResourceFile_vertical" />
         <option value="Class" />
       </list>
@@ -1279,41 +1451,63 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/bean/NewGoodBean.java" />
-        <option value="$PROJECT_DIR$/res/layout/item_footer.xml" />
-        <option value="$PROJECT_DIR$/res/layout/fragment_new_goods.xml" />
-        <option value="$PROJECT_DIR$/res/layout/fragment_boutique.xml" />
-        <option value="$PROJECT_DIR$/res/layout/item_category_group.xml" />
-        <option value="$PROJECT_DIR$/res/layout/item_category_child.xml" />
-        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/CategoryFragment.java" />
-        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/FuliCenterMainActivity.java" />
+        <option value="$PROJECT_DIR$/res/drawable/Relativestyle.xml" />
         <option value="$PROJECT_DIR$/res/layout/fragment_category.xml" />
-        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/view/SlideAutoLoopView.java" />
-        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/Utils.java" />
-        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/HttpUtils.java" />
-        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/utils/ImageLoader.java" />
-        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/ImageLoader.java" />
-        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/CategroyAdapter.java" />
-        <option value="$PROJECT_DIR$/res/layout/item_new_goods.xml" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/ChatRoomAdapter.java" />
-        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/SettingsFragment.java" />
-        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/GoodDetailsActivity.java" />
-        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/view/DisPlayUtils.java" />
-        <option value="$PROJECT_DIR$/res/layout/activity_good_details.xml" />
-        <option value="$PROJECT_DIR$/res/layout/item_boutique.xml" />
-        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/BoutiqueAdapter.java" />
+        <option value="$PROJECT_DIR$/res/layout/common_head_back.xml" />
         <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/NewGoodsAdapter.java" />
-        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/NewGoodsFragment.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/utils/ImageUtils.java" />
+        <option value="$PROJECT_DIR$/res/layout/activity_category_child.xml" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/view/CatChildFilterButton.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/CategroyAdapter.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/CategoryChildActivity.java" />
+        <option value="$PROJECT_DIR$/res/layout/activity_register.xml" />
+        <option value="$PROJECT_DIR$/res/layout/activity_login.xml" />
+        <option value="$PROJECT_DIR$/res/drawable/buttonstyle.xml" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/task/DownloadContactListTask.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/utils/UserUtils.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/bean/CategoryChildBean.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/CategoryFragment.java" />
+        <option value="$PROJECT_DIR$/res/layout/fragment_personal_center.xml" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/RegisterActivity.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/res/layout/item_personal_center.xml" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/task/DownloadCollectCountTask.java" />
+        <option value="$PROJECT_DIR$/res/layout/item_collect_goods.xml" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/data/OkHttpUtils2.java" />
+        <option value="$PROJECT_DIR$/res/layout/activity_collect_goods.xml" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/task/DownloadCollectTask.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/CollectGoodsActivity.java" />
         <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/BoutiqueFragment.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/BoutiqueAdapter.java" />
         <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/BoutiqueChildActivity.java" />
-        <option value="$PROJECT_DIR$/res/layout/activity_boutique_child.xml" />
-        <option value="$PROJECT_DIR$/res/layout/common_head_title.xml" />
+        <option value="$PROJECT_DIR$/res/layout/activity_fuli_center_main.xml" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/SplashActivity.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/CollectGoodsAdapter.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/SettingActivity.java" />
+        <option value="$PROJECT_DIR$/res/layout/fragment_cart.xml" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/BlacklistActivity.java" />
+        <option value="$PROJECT_DIR$/res/layout/activity_good_details.xml" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/I.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/task/DownloadCartCountTask.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/Utils.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/GoodDetailsActivity.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/task/UpdateCartTask.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/FuliCenterApplication.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/CartAdapter.java" />
+        <option value="$PROJECT_DIR$/res/layout/item_cart.xml" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/CartFragment.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/bean/CartBean.java" />
+        <option value="$PROJECT_DIR$/res/layout/fragment_conversation_settings.xml" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/SettingsFragment.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/PersonalCenterFragment.java" />
+        <option value="$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/FuliCenterMainActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-15" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1616" />
     <option name="height" value="876" />
   </component>
@@ -1397,6 +1591,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="task" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="superwechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="superwechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fulicenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="activity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1435,6 +1651,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1501,8 +1719,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1510,16 +1726,23 @@
     <property name="device.picker.selection" value="127.0.0.1:62001" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Day23" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="android.project.structure.last.selected" value="superwechat" />
+    <property name="android.project.structure.proportion" value="0.15" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.packageName">
       <recent name="cn.ucai.fulicenter.activity" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.ucai.fulicenter.task" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sks\AndroidStudioProjects\superwechat\res\drawable" />
-      <recent name="C:\Users\sks\AndroidStudioProjects\superwechat\src\cn\ucai\fulicenter" />
       <recent name="C:\Users\sks\AndroidStudioProjects\superwechat\res\layout" />
       <recent name="C:\Users\sks\AndroidStudioProjects\superwechat\src\cn\ucai\fulicenter\view" />
+      <recent name="C:\Users\sks\AndroidStudioProjects\superwechat\src\cn\ucai\fulicenter" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.superwechat">
@@ -1796,12 +2019,6 @@
       <option name="number" value="Default" />
       <updated>1470099165381</updated>
     </task>
-    <task id="LOCAL-00001" summary="新品显示">
-      <created>1470104574936</created>
-      <option name="number" value="00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1470104574936</updated>
-    </task>
     <task id="LOCAL-00002" summary="精选显示">
       <created>1470106922504</created>
       <option name="number" value="00002" />
@@ -1844,11 +2061,263 @@
       <option name="project" value="LOCAL" />
       <updated>1470225951181</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="精选首页的增加">
+      <created>1470226015666</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1470226015666</updated>
+    </task>
+    <task id="LOCAL-00010" summary="精选二级页面的增加，Manifest修改">
+      <created>1470227244973</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1470227244973</updated>
+    </task>
+    <task id="LOCAL-00011" summary="分类首页的增加">
+      <created>1470290081625</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1470290081625</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Manifest的修改">
+      <created>1470296751057</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1470296751057</updated>
+    </task>
+    <task id="LOCAL-00013" summary="分类二级页面商品的增加和商品详情">
+      <created>1470296798775</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1470296798775</updated>
+    </task>
+    <task id="LOCAL-00014" summary="登录页面修改，按钮边框颜色修改">
+      <created>1470304331173</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1470304331173</updated>
+    </task>
+    <task id="LOCAL-00015" summary="分类首页大小类一一对应">
+      <created>1470305336282</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1470305336282</updated>
+    </task>
+    <task id="LOCAL-00016" summary="注册页面布局修改">
+      <created>1470307627184</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1470307627184</updated>
+    </task>
+    <task id="LOCAL-00017" summary="个人资料页面的修改">
+      <created>1470316290552</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1470316290552</updated>
+    </task>
+    <task id="LOCAL-00018" summary="分类商品排序（价格，上架时间）">
+      <created>1470379729262</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1470379729262</updated>
+    </task>
+    <task id="LOCAL-00019" summary="点击个人中心跳转登录，未登录返回时显示点击前的页面">
+      <created>1470410746101</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1470410746101</updated>
+    </task>
+    <task id="LOCAL-00020" summary="同一Activity切换不同碎片">
+      <created>1470423640047</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1470423640047</updated>
+    </task>
+    <task id="LOCAL-00021" summary="设置头像、昵称和设置的监听">
+      <created>1470426755771</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1470426755771</updated>
+    </task>
+    <task id="LOCAL-00022" summary="滑动碎片增加保护，Settings布局增加返回按钮">
+      <created>1470429312544</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1470429312544</updated>
+    </task>
+    <task id="LOCAL-00023" summary="我的收藏准备工作CollectGoodsActivity和相应布局item">
+      <created>1470466480570</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1470466480570</updated>
+    </task>
+    <task id="LOCAL-00024" summary="保存收藏ArrayList&lt;CollectBean&gt;和int count到全局变量，增加其对应的task">
+      <created>1470468508206</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1470468508206</updated>
+    </task>
+    <task id="LOCAL-00025" summary="闪屏界面获取用户收藏数量和收藏内容">
+      <created>1470468617070</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1470468617070</updated>
+    </task>
+    <task id="LOCAL-00026" summary="登录后保存用户收藏数量和收藏内容到全局变量">
+      <created>1470468753787</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1470468753788</updated>
+    </task>
+    <task id="LOCAL-00027" summary="我的收藏增加Adapter和页面显示">
+      <created>1470470919541</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1470470919541</updated>
+    </task>
+    <task id="LOCAL-00028" summary="退出时增加清空收藏和收藏数目">
+      <created>1470471418084</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1470471418084</updated>
+    </task>
+    <task id="LOCAL-00029" summary="增加收藏商品的商品点击事件，跳转到商品详情">
+      <created>1470471857693</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1470471857693</updated>
+    </task>
+    <task id="LOCAL-00030" summary="商品详情里的收藏按钮完善">
+      <created>1470477091114</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1470477091114</updated>
+    </task>
+    <task id="LOCAL-00031" summary="下拉刷新完善全局变量结构，实现刷新显示个人收藏删除商品">
+      <created>1470503261458</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1470503261458</updated>
+    </task>
+    <task id="LOCAL-00032" summary="完善登录的条件">
+      <created>1470513336489</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1470513336489</updated>
+    </task>
+    <task id="LOCAL-00033" summary="增加全局变量判断如果是从商品详情进入的登录界面，如果选择返回，则返回当前页面">
+      <created>1470513355510</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1470513355510</updated>
+    </task>
+    <task id="LOCAL-00034" summary="保存全局变量action">
+      <created>1470513401785</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1470513401785</updated>
+    </task>
+    <task id="LOCAL-00035" summary="购物车布局的增加">
+      <created>1470541786445</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1470541786445</updated>
+    </task>
+    <task id="LOCAL-00036" summary="增加购物车的全局变量和CartTask">
+      <created>1470542664157</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1470542664157</updated>
+    </task>
+    <task id="LOCAL-00037" summary="闪屏或者登录时得到购物车的数据">
+      <created>1470542811050</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1470542811050</updated>
+    </task>
+    <task id="LOCAL-00038" summary="用户退出时购物车清空数据">
+      <created>1470542934133</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1470542934133</updated>
+    </task>
+    <task id="LOCAL-00039" summary="购物车的适配器以及Fragment的显示">
+      <created>1470546744399</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1470546744399</updated>
+    </task>
+    <task id="LOCAL-00040" summary="添加逻辑结构，如果用户未登录点击购物车，跳转到登录界面">
+      <created>1470547762100</created>
+      <option name="number" value="00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1470547762100</updated>
+    </task>
+    <task id="LOCAL-00041" summary="发送广播，在用户退出后购物车数量清空，实时更新">
+      <created>1470550890015</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1470550890015</updated>
+    </task>
+    <task id="LOCAL-00042" summary="发送广播，切换用户后，购物车界面的显示内容更新">
+      <created>1470550972993</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1470550972993</updated>
+    </task>
+    <task id="LOCAL-00043" summary="完善购物车界面布局">
+      <created>1470553221681</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1470553221681</updated>
+    </task>
+    <task id="LOCAL-00044" summary="完善购物车显示数量的个数（CartBean.size）">
+      <created>1470553479210</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1470553479210</updated>
+    </task>
+    <task id="LOCAL-00045" summary="修改购物车中单个商品显示的商品数量">
+      <created>1470560427582</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1470560427582</updated>
+    </task>
+    <task id="LOCAL-00046" summary="添加购物车页面加减号点击事件的方法">
+      <created>1470581542221</created>
+      <option name="number" value="00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1470581542221</updated>
+    </task>
+    <task id="LOCAL-00047" summary="添加更新购物车的Task">
+      <created>1470584669935</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1470584669935</updated>
+    </task>
+    <task id="LOCAL-00048" summary="task保存购物车数据">
+      <created>1470585605025</created>
+      <option name="number" value="00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1470585605025</updated>
+    </task>
+    <task id="LOCAL-00049" summary="修改商品个数保存数据到全局变量">
+      <created>1470631332498</created>
+      <option name="number" value="00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1470631332498</updated>
+    </task>
+    <task id="LOCAL-00050" summary="购物车界面，增加减少按钮的监听">
+      <created>1470634190740</created>
+      <option name="number" value="00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1470634190742</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-15" y="0" width="1616" height="876" extended-state="0" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1857,16 +2326,16 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4275766" sideWeight="0.095115684" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23816156" sideWeight="0.90488434" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25128534" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36768803" sideWeight="0.49485862" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5961003" sideWeight="0.48714653" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14763232" sideWeight="0.90488434" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17352185" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0626741" sideWeight="0.49485862" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2270195" sideWeight="0.48714653" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2281491" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.030205656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1880,6 +2349,36 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4275766" sideWeight="0.095115684" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27437326" sideWeight="0.90488434" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08676092" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38022283" sideWeight="0.5392031" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26413882" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17827298" sideWeight="0.49485862" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5961003" sideWeight="0.48714653" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23971723" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1893,186 +2392,149 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="新品显示" />
-    <MESSAGE value="精选显示" />
-    <MESSAGE value="碎片滑动监听" />
-    <MESSAGE value="Fragment图片排序（按时间）" />
-    <MESSAGE value="商品详情布局增加（带资源文件）" />
-    <MESSAGE value="得到商品详情的数据" />
-    <MESSAGE value="商品详情页面的增加" />
-    <MESSAGE value="竞选页面的修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="竞选页面的修改" />
+    <MESSAGE value="登录后保存用户收藏数量和收藏内容到全局变量" />
+    <MESSAGE value="我的收藏增加Adapter和页面显示" />
+    <MESSAGE value="退出时增加清空收藏和收藏数目" />
+    <MESSAGE value="增加收藏商品的商品点击事件，跳转到商品详情" />
+    <MESSAGE value="商品详情里的收藏按钮完善" />
+    <MESSAGE value="下拉刷新完善全局变量结构，实现刷新显示个人收藏删除商品" />
+    <MESSAGE value="完善登录的条件" />
+    <MESSAGE value="增加全局变量判断如果是从商品详情进入的登录界面，如果选择返回，则返回当前页面" />
+    <MESSAGE value="保存全局变量action" />
+    <MESSAGE value="购物车布局的增加" />
+    <MESSAGE value="增加购物车的全局变量和CartTask" />
+    <MESSAGE value="闪屏或者登录时得到购物车的数据" />
+    <MESSAGE value="用户退出时购物车清空数据" />
+    <MESSAGE value="购物车的适配器以及Fragment的显示" />
+    <MESSAGE value="添加逻辑结构，如果用户未登录点击购物车，跳转到登录界面" />
+    <MESSAGE value="发送广播，在用户退出后购物车数量清空，实时更新" />
+    <MESSAGE value="发送广播，切换用户后，购物车界面的显示内容更新" />
+    <MESSAGE value="完善购物车界面布局" />
+    <MESSAGE value="完善购物车显示数量的个数（CartBean.size）" />
+    <MESSAGE value="修改购物车中单个商品显示的商品数量" />
+    <MESSAGE value="添加购物车页面加减号点击事件的方法" />
+    <MESSAGE value="添加更新购物车的Task" />
+    <MESSAGE value="task保存购物车数据" />
+    <MESSAGE value="修改商品个数保存数据到全局变量" />
+    <MESSAGE value="购物车界面，增加减少按钮的监听" />
+    <option name="LAST_COMMIT_MESSAGE" value="购物车界面，增加减少按钮的监听" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/CategroyAdapter.java</url>
+          <line>34</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://D:/sdk/platforms/android-24/android.jar!/android/widget/BaseExpandableListAdapter.class">
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/NewGoodsAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3938731">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.46304348">
+          <caret line="91" column="26" selection-start-line="91" selection-start-column="23" selection-end-line="91" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/sdk/platforms/android-24/android.jar!/android/widget/SimpleExpandableListAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9642857">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/item_category_child.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0585586">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5448431">
-          <caret line="335" column="18" selection-start-line="335" selection-start-column="18" selection-end-line="335" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/FuliCenterApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29239765">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/fragment_category.xml">
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/bean/CollectBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/applib/utils/HXPreferenceUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4963768">
+          <caret line="59" column="22" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/sdk/platforms/android-24/android.jar!/java/lang/RuntimeException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3326613">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/sdk/platforms/android-24/android.jar!/android/app/Activity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.0">
+          <caret line="73" column="42" selection-start-line="73" selection-start-column="42" selection-end-line="73" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/NewGoodsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="137" column="54" selection-start-line="137" selection-start-column="54" selection-end-line="137" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/BoutiqueFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="72" selection-start-line="57" selection-start-column="72" selection-end-line="57" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/BoutiqueChildActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="60" selection-start-line="51" selection-start-column="60" selection-end-line="51" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/fragment_new_goods.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.6811595">
+          <caret line="31" column="51" selection-start-line="8" selection-start-column="4" selection-end-line="31" selection-end-column="51" />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/CategoryFragment.java">
+    <entry file="file://$PROJECT_DIR$/res/layout/item_collect_goods.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/FuliCenterMainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="126" column="22" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/layout_property_color.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.9032258">
+          <caret line="36" column="17" selection-start-line="1" selection-start-column="0" selection-end-line="36" selection-end-column="17" />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/Utils.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/BoutiqueAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.87152034">
-          <caret line="178" column="5" selection-start-line="178" selection-start-column="5" selection-end-line="178" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/HttpUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/view/FlowIndicator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/ImageLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/utils/ImageLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5310174">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        <state vertical-scroll-proportion="3.480409">
+          <caret line="100" column="71" selection-start-line="100" selection-start-column="71" selection-end-line="100" selection-end-column="71" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/CategroyAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="115" column="19" selection-start-line="115" selection-start-column="19" selection-end-line="115" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/row_contact.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.32994923">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/row_add_group.xml">
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/CollectGoodsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="1.1791444">
+          <caret line="99" column="0" selection-start-line="70" selection-start-column="3" selection-end-line="99" selection-end-column="0" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main_init_view.xml">
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_collect_goods.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/fragment_new_goods.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.9710145">
-          <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
-          <folding />
+        <state vertical-scroll-proportion="0.33150685">
+          <caret line="53" column="28" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -2081,299 +2543,323 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_fuli_center_main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.048387095">
+        <state vertical-scroll-proportion="0.06423983">
           <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/ChatRoomAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.63388807">
-          <caret line="74" column="24" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/ShowVideoActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/task/DownloadContactListTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/RobotsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/PublicChatRoomsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26124817">
-          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/sdk/extras/android/m2repository/com/android/support/support-v4/24.0.0/support-v4-24.0.0-sources.jar!/android/support/v4/app/Fragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21770681">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/MessageAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="131" column="21" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/SettingsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/PickContactNoCheckboxActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33236575">
-          <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/commom_back_btn.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/item_cat_filter.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/BlacklistActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13590604">
+          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/CategoryFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.5294118">
+          <caret line="106" column="79" selection-start-line="106" selection-start-column="79" selection-end-line="106" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable-hdpi/bg_cart_selected.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/bg_cart_selected.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable-xxxhdpi/bg_cart_selected.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable/selector_menu_item_cart.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_good_details.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/video/util/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3174603">
+          <caret line="84" column="38" selection-start-line="84" selection-start-column="38" selection-end-line="84" selection-end-column="38" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/I.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="43" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="43" />
+          <caret line="263" column="25" selection-start-line="263" selection-start-column="25" selection-end-line="263" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/D.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/CollectGoodsAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17416546">
-          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="55" selection-start-line="72" selection-start-column="55" selection-end-line="72" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/task/DownloadCollectCountTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_public_groups_search.xml">
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/bean/GoodDetailsBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/color/main_botton_text_color.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/view/DisPlayUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        <state vertical-scroll-proportion="1.2424242">
+          <caret line="58" column="15" selection-start-line="58" selection-start-column="15" selection-end-line="58" selection-end-column="15" />
           <folding>
-            <element signature="e#400#401#0" expanded="false" />
-            <element signature="e#449#450#0" expanded="false" />
+            <element signature="e#1493#1494#0" expanded="false" />
+            <element signature="e#1523#1524#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/view/SlideAutoLoopView.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/task/DownloadCollectTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0277078">
+          <caret line="46" column="66" selection-start-line="46" selection-start-column="66" selection-end-line="46" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/data/OkHttpUtils2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="111" column="37" selection-start-line="111" selection-start-column="37" selection-end-line="111" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#4913#4914#0" expanded="false" />
-            <element signature="e#4978#4979#0" expanded="false" />
-            <element signature="e#7038#7039#0" expanded="false" />
-            <element signature="e#7108#7109#0" expanded="false" />
-            <element signature="e#7679#7680#0" expanded="false" />
-            <element signature="e#7725#7726#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="77" column="52" selection-start-line="77" selection-start-column="52" selection-end-line="77" selection-end-column="52" />
+          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/NewGoodsAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/NewGoodsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="107" column="56" selection-start-line="107" selection-start-column="56" selection-end-line="107" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2001#2361#0" expanded="false" />
-            <element signature="e#2360#2361#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/BoutiqueFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45366797">
-          <caret line="126" column="38" selection-start-line="126" selection-start-column="38" selection-end-line="126" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_boutique_child.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/item_footer.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/item_category_group.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.066815145">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/item_boutique.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.066815145">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/item_new_goods.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.066815145">
-          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/BoutiqueChildActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_boutique_child.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.4347826">
-          <caret line="1" column="59" selection-start-line="1" selection-start-column="59" selection-end-line="1" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/common_head_title.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.8115942">
-          <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_good_details.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.2028985">
-          <caret line="112" column="34" selection-start-line="110" selection-start-column="44" selection-end-line="112" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/GoodDetailsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38009787">
+          <caret line="75" column="101" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="101" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2108#2991#0" expanded="false" />
+            <element signature="e#2990#2991#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/SplashActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.807175">
+          <caret line="106" column="86" selection-start-line="106" selection-start-column="86" selection-end-line="106" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35357141">
+          <caret line="271" column="17" selection-start-line="271" selection-start-column="17" selection-end-line="271" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4117647">
+          <caret line="217" column="22" selection-start-line="217" selection-start-column="22" selection-end-line="217" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/task/DownloadCartCountTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58305085">
+          <caret line="49" column="86" selection-start-line="49" selection-start-column="86" selection-end-line="49" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/task/UpdateCartTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39285713">
+          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/fragment_cart.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.8695652">
+          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/item_cart.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3503055">
+          <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/FuliCenterApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0910716">
+          <caret line="70" column="44" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
+          <folding>
+            <element signature="e#2327#2328#0" expanded="false" />
+            <element signature="e#2355#2356#0" expanded="false" />
+            <element signature="e#2420#2421#0" expanded="false" />
+            <element signature="e#2454#2455#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/bean/CartBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.625">
+          <caret line="98" column="1" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/CartFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3482143">
+          <caret line="145" column="22" selection-start-line="145" selection-start-column="22" selection-end-line="145" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/CartAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40892857">
+          <caret line="81" column="82" selection-start-line="81" selection-start-column="82" selection-end-line="81" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#6004#6682#0" expanded="false" />
+            <element signature="e#6681#6682#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/sdk/extras/android/m2repository/com/android/support/support-v4/24.0.0/support-v4-24.0.0-sources.jar!/android/support/v4/app/Fragment.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="77" column="67" selection-start-line="77" selection-start-column="67" selection-end-line="77" selection-end-column="67" />
+          <caret line="419" column="35" selection-start-line="419" selection-start-column="35" selection-end-line="419" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/fragment_personal_center.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3043479">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://D:/sdk/extras/android/m2repository/com/android/support/support-v4/24.0.0/support-v4-24.0.0-sources.jar!/android/support/v4/app/FragmentTransaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="173" column="53" selection-start-line="173" selection-start-column="52" selection-end-line="173" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/SettingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/fragment_conversation_settings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.8115942">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/SettingsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.392857">
+          <caret line="137" column="2" selection-start-line="137" selection-start-column="2" selection-end-line="137" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#629#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#5518#5551#0" expanded="true" />
+            <element signature="e#13337#13386#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/Fragments/PersonalCenterFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="126" column="15" selection-start-line="126" selection-start-column="15" selection-end-line="126" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/adapter/BoutiqueAdapter.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/ucai/fulicenter/activity/FuliCenterMainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42352942">
-          <caret line="134" column="9" selection-start-line="134" selection-start-column="9" selection-end-line="134" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.45111492">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding />
         </state>
       </provider>
